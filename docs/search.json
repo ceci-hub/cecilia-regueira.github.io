@@ -4,21 +4,14 @@
     "href": "Vizualizacion/index.html",
     "title": "Universidad de Montevideo: Visualización y Narrativa de datos",
     "section": "",
-    "text": "Este curso forma parte de la Maestría / Posgrado en Ciencia de Datos de la Universidad de Montevideo.\nSu objetivo es brindar los fundamentos conceptuales y prácticos de la Visualización y Narrativa de Datos (NVD), desarrollando la capacidad de explorar, comunicar e interpretar información de manera clara, efectiva y rigurosa.\nEl curso pone énfasis en el uso de la visualización como herramienta clave para el análisis de datos, la toma de decisiones y la comunicación de resultados en contextos de Data Science y Machine Learning.\n\n\n\nCada clase cuenta con: - una página con descripción y objetivos - slides en formato HTML\nUse el menú lateral para navegar por las clases.\n\n\n\n👉 Ver slides – Bienvenida 👉 Ver slides – Intro 👉 Ver slides – Datos 👉 Ver slides – Menu 👉 Ver slides – Manejo de datos 👉 Ver slides – Univariado 1 👉 Ver slides – Univariado 2 👉 Ver slides – Multivariado 1 👉 Ver slides – Multivariado 2 👉 Ver slides – Multivariado 3\nEl libro se encuentra en pdf. Si lo quiere enviar un mail a los autores para enviarlo."
+    "text": "Este curso forma parte de la Maestría / Posgrado en Ciencia de Datos de la Universidad de Montevideo.\nSu objetivo es brindar los fundamentos conceptuales y prácticos de la Visualización y Narrativa de Datos (NVD), desarrollando la capacidad de explorar, comunicar e interpretar información de manera clara, efectiva y rigurosa.\nEl curso pone énfasis en el uso de la visualización como herramienta clave para el análisis de datos, la toma de decisiones y la comunicación de resultados en contextos de Data Science y Machine Learning.\n\n\n\nEl libro se encuentra en pdf. Si desea obtenerlo debe enviar un mail a los autores para solicitarlo."
   },
   {
     "objectID": "Vizualizacion/index.html#material-del-curso",
     "href": "Vizualizacion/index.html#material-del-curso",
     "title": "Universidad de Montevideo: Visualización y Narrativa de datos",
     "section": "",
-    "text": "Cada clase cuenta con: - una página con descripción y objetivos - slides en formato HTML\nUse el menú lateral para navegar por las clases."
-  },
-  {
-    "objectID": "Vizualizacion/index.html#slides-de-la-clase",
-    "href": "Vizualizacion/index.html#slides-de-la-clase",
-    "title": "Universidad de Montevideo: Visualización y Narrativa de datos",
-    "section": "",
-    "text": "👉 Ver slides – Bienvenida 👉 Ver slides – Intro 👉 Ver slides – Datos 👉 Ver slides – Menu 👉 Ver slides – Manejo de datos 👉 Ver slides – Univariado 1 👉 Ver slides – Univariado 2 👉 Ver slides – Multivariado 1 👉 Ver slides – Multivariado 2 👉 Ver slides – Multivariado 3\nEl libro se encuentra en pdf. Si lo quiere enviar un mail a los autores para enviarlo."
+    "text": "El libro se encuentra en pdf. Si desea obtenerlo debe enviar un mail a los autores para solicitarlo."
   },
   {
     "objectID": "Vizualizacion/07B-Multivariado.html",
@@ -277,21 +270,21 @@
     "href": "awards.html#phi-theta-kappa-honor-society",
     "title": "Awards & Honors",
     "section": "Phi Theta Kappa Honor Society",
-    "text": "Phi Theta Kappa Honor Society\n⭐ Member – Phi Theta Kappa\nInternational honor society recognizing academic excellence, leadership,\nand commitment to service among high‑achieving students in higher education.\n\nThese distinctions reflect sustained academic excellence, innovation in data-driven decision making, and active engagement in the academic community."
+    "text": "Phi Theta Kappa Honor Society\n⭐ Member – Phi Theta Kappa\nInternational honor society recognizing academic excellence, leadership,\nand commitment to service among high‑achieving students in higher education.\n\n\n🏆 Love DATAWEEK 2024 — First Place Award\nRecipient of the First‑Place Award for Innovative Visualizations at Love DATAWEEK 2024, recognizing excellence in data visualization, design, and analytical storytelling with Federico Veneri.\nProject"
   },
   {
     "objectID": "applied-project.html",
     "href": "applied-project.html",
     "title": "5 minutes Applied Data Projects",
     "section": "",
-    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nInteractive dashboard developed as part of my role at Iowa State University to demonstrate applied data analysis and visualization for enrollment research. The project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\n\nInteractive income map based on public census data\nThis project presents an interactive map of household income across the United States, built through data cleaning, transformation, and visualization of American Community Survey (ACS) data from the U.S. Census Bureau.\n\nData source: U.S. Census Bureau – ACS\nFocus: household income distribution\nSkills: data manipulation, geospatial visualization, explanatory graphics\n\n👉 Interactive map:\n📍 Open Interactive Map\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\n\nInteractive income map based on public census data\nThis project presents an interactive map of household income across the United States, built through data cleaning, transformation, and visualization of American Community Survey (ACS) data from the U.S. Census Bureau.\n\nData source: U.S. Census Bureau – ACS\nFocus: household income distribution\nSkills: data manipulation, geospatial visualization, explanatory graphics\n\n👉 Interactive map:\n📍 Open Interactive Map\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
   },
   {
     "objectID": "applied-project.html#overview",
     "href": "applied-project.html#overview",
     "title": "5 minutes Applied Data Projects",
     "section": "",
-    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nInteractive dashboard developed as part of my role at Iowa State University to demonstrate applied data analysis and visualization for enrollment research. The project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\n\nInteractive income map based on public census data\nThis project presents an interactive map of household income across the United States, built through data cleaning, transformation, and visualization of American Community Survey (ACS) data from the U.S. Census Bureau.\n\nData source: U.S. Census Bureau – ACS\nFocus: household income distribution\nSkills: data manipulation, geospatial visualization, explanatory graphics\n\n👉 Interactive map:\n📍 Open Interactive Map\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\n\nInteractive income map based on public census data\nThis project presents an interactive map of household income across the United States, built through data cleaning, transformation, and visualization of American Community Survey (ACS) data from the U.S. Census Bureau.\n\nData source: U.S. Census Bureau – ACS\nFocus: household income distribution\nSkills: data manipulation, geospatial visualization, explanatory graphics\n\n👉 Interactive map:\n📍 Open Interactive Map\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
   },
   {
     "objectID": "index.html",
@@ -340,7 +333,7 @@
     "href": "index.html#teaching-thesis-supervision-academic-activity",
     "title": "Cecilia Regueira",
     "section": "Teaching, Thesis Supervision & Academic Activity",
-    "text": "Teaching, Thesis Supervision & Academic Activity\n\nStatistics – Master in Data Science, Universidad de Montevideo\n\nSupervisor of Master theses presented at the Central Bank of Uruguay (BCU):\n\nCharacterization of the Regulated Financial System of Uruguay (2013–2023)\nMachine Learning Applied to Price Duration\n\n\n\n\n\n\n\n\n## Applied Projects & Teaching Resources\n\n\nThis section highlights applied data science and visualization projects developed using publicly available U.S. datasets, designed both for teaching purposes and institutional analytics.\n\n\n\n\nStudent Migration Dashboard (USA, 2024)\nHigh School to Higher Education Enrollment\nInteractive dashboard developed as part of my role at Iowa State University to demonstrate applied data analysis and visualization for enrollment research. The project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n🎓 Student Migration Dashboard (USA, 2024)\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\nHousehold Income Mapping – United States\nInteractive income map based on public census data\nThis project presents an interactive map of household income across the United States, built through data cleaning, transformation, and visualization of American Community Survey (ACS) data from the U.S. Census Bureau.\n\nData source: U.S. Census Bureau – ACS\nFocus: household income distribution\nSkills: data manipulation, geospatial visualization, explanatory graphics\n\n👉 Interactive map:\n📍 Open Interactive Map\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+    "text": "Teaching, Thesis Supervision & Academic Activity\n\nStatistics – Master in Data Science, Universidad de Montevideo 📊 Curso de Estadística (STATS)\nData Visualization – Master in Data Science, Universidad de Montevideo 📊 Curso de Visualizacion de Datos (NVD)\nSupervisor of Master theses presented at the Central Bank of Uruguay (BCU):\n\nCharacterization of the Regulated Financial System of Uruguay (2013–2023)\nMachine Learning Applied to Price Duration\n\n\n\n\n\n\n\n\n## Applied Projects & Teaching Resources\n\n\nThis section highlights applied data science and visualization projects developed using publicly available U.S. datasets, designed both for teaching purposes and institutional analytics."
   },
   {
     "objectID": "index.html#honors-awards",
@@ -445,14 +438,7 @@
     "href": "STAT/index.html",
     "title": "Universidad de Montevideo: Introducción a la Estadística (STATS)",
     "section": "",
-    "text": "Este curso forma parte de la Maestría / Posgrado en Ciencia de Datos de la Universidad de Montevideo.\nSu objetivo es brindar las bases estadísticas necesarias para la práctica moderna de Data Science y Machine Learning."
-  },
-  {
-    "objectID": "STAT/index.html#slides-de-la-clase",
-    "href": "STAT/index.html#slides-de-la-clase",
-    "title": "Universidad de Montevideo: Introducción a la Estadística (STATS)",
-    "section": "Slides de la clase",
-    "text": "Slides de la clase\n👉 Ver slides – Curso\nEl libro se encuentra en pdf. Si lo quiere enviar un mail a los autores para enviarlo."
+    "text": "Este curso forma parte de la Maestría / Posgrado en Ciencia de Datos de la Universidad de Montevideo.\nSu objetivo es brindar las bases estadísticas necesarias para la práctica moderna de Data Science y Machine Learning.\nEl libro se encuentra en pdf. Si desea obtenerlo debe enviar un mail a los autores para solicitarlo."
   },
   {
     "objectID": "Tiendas.html",
