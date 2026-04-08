@@ -112,10 +112,21 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link active" href="./applied-project.html" aria-current="page"> 
-<span class="menu-text">5 min Project</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-small-project" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">small Project</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-small-project">    
+        <li>
+    <a class="dropdown-item" href="./applied-project.html">
+ <span class="dropdown-text">Shiny</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./tienda/index.html">
+ <span class="dropdown-text">Improve the graph</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./awards.html"> 
 <span class="menu-text">Awards</span></a>
@@ -140,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#student-migration-dashboard-usa-2024" id="toc-student-migration-dashboard-usa-2024" class="nav-link" data-scroll-target="#student-migration-dashboard-usa-2024">Student Migration Dashboard (USA, 2024)</a></li>
   <li><a href="#student-migration-dashboard-usa-2024-1" id="toc-student-migration-dashboard-usa-2024-1" class="nav-link" data-scroll-target="#student-migration-dashboard-usa-2024-1">🎓 Student Migration Dashboard (USA, 2024)</a></li>
-  <li><a href="#household-income-mapping-united-states" id="toc-household-income-mapping-united-states" class="nav-link" data-scroll-target="#household-income-mapping-united-states">Household Income Mapping – United States</a></li>
+  <li><a href="#uefa-euro-pressure-analysis-app" id="toc-uefa-euro-pressure-analysis-app" class="nav-link" data-scroll-target="#uefa-euro-pressure-analysis-app">UEFA Euro – Pressure Analysis App</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -185,17 +196,18 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://cregueira.shinyapps.io/mi_dashboard_migracion/" class="btn btn-success">🚀 Open Live Dashboard</a></p>
 </section>
 <hr>
-<section id="household-income-mapping-united-states" class="level3">
-<h3 class="anchored" data-anchor-id="household-income-mapping-united-states">Household Income Mapping – United States</h3>
-<p><strong>Interactive income map based on public census data</strong></p>
-<p>This project presents an interactive map of <strong>household income across the United States</strong>, built through data cleaning, transformation, and visualization of <strong>American Community Survey (ACS)</strong> data from the <strong>U.S. Census Bureau</strong>.</p>
-<ul>
-<li>Data source: <strong>U.S. Census Bureau – ACS</strong></li>
-<li>Focus: household income distribution</li>
-<li>Skills: data manipulation, geospatial visualization, explanatory graphics</li>
-</ul>
-<p>👉 <strong>Interactive map:</strong><br>
-<a href="data/map.html" class="btn btn-primary">📍 Open Interactive Map</a></p>
+<section id="uefa-euro-pressure-analysis-app" class="level3">
+<h3 class="anchored" data-anchor-id="uefa-euro-pressure-analysis-app">UEFA Euro – Pressure Analysis App</h3>
+<p><strong>Dashboard based on public data</strong></p>
+<p>This Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:</p>
+<p><strong>Overall Pass Performance</strong> Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.</p>
+<p><strong>Passes Under Pressure</strong> Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.</p>
+<p><strong>Ball Receipts</strong> Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.</p>
+<p><strong>Next Event Analysis</strong> Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.</p>
+<p><strong>Player Info Profile</strong> Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.</p>
+<p>Overall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.</p>
+<p>👉 <strong>Interactive Dash:</strong><br>
+<a href="https://cregueira.shinyapps.io/uefa-euro/" class="btn btn-primary">📍 Open</a></p>
 <hr>
 <p>These examples illustrate how <strong>open data</strong> can be transformed into <strong>actionable insights</strong> for decision‑making, communication, and teaching in <strong>Data Science and Analytics</strong>.</p>
 

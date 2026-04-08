@@ -277,14 +277,14 @@
     "href": "applied-project.html",
     "title": "5 minutes Applied Data Projects",
     "section": "",
-    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\n\nInteractive income map based on public census data\nThis project presents an interactive map of household income across the United States, built through data cleaning, transformation, and visualization of American Community Survey (ACS) data from the U.S. Census Bureau.\n\nData source: U.S. Census Bureau – ACS\nFocus: household income distribution\nSkills: data manipulation, geospatial visualization, explanatory graphics\n\n👉 Interactive map:\n📍 Open Interactive Map\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Open\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
   },
   {
     "objectID": "applied-project.html#overview",
     "href": "applied-project.html#overview",
     "title": "5 minutes Applied Data Projects",
     "section": "",
-    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\n\nInteractive income map based on public census data\nThis project presents an interactive map of household income across the United States, built through data cleaning, transformation, and visualization of American Community Survey (ACS) data from the U.S. Census Bureau.\n\nData source: U.S. Census Bureau – ACS\nFocus: household income distribution\nSkills: data manipulation, geospatial visualization, explanatory graphics\n\n👉 Interactive map:\n📍 Open Interactive Map\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Open\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
   },
   {
     "objectID": "index.html",
@@ -441,11 +441,60 @@
     "text": "Este curso forma parte de la Maestría / Posgrado en Ciencia de Datos de la Universidad de Montevideo.\nSu objetivo es brindar las bases estadísticas necesarias para la práctica moderna de Data Science y Machine Learning.\nEl libro se encuentra en pdf. Si desea obtenerlo debe enviar un mail a los autores para solicitarlo."
   },
   {
-    "objectID": "Tiendas.html",
-    "href": "Tiendas.html",
-    "title": "Cecilia Regueira",
+    "objectID": "tienda/index.html",
+    "href": "tienda/index.html",
+    "title": "Visualization Exercise: Retail Stores",
     "section": "",
-    "text": "import seaborn as sns\nimport matplotlib\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nimport plotly.express as px\ndf = pd.read_csv('Tiendas.csv')\n\n\ndf\n\n\n\n\n\n\n\n\nArea\nNuestra tienda\nCompetencia\n\n\n\n\n0\nLa tienda esta bien organizada\n0.40\n0.38\n\n\n1\nEl proceso de pago y check out fue sencillo?\n0.33\n0.34\n\n\n2\nLos empleados fueron amigables\n0.45\n0.50\n\n\n3\nEncontre buenas promociones\n0.45\n0.65\n\n\n4\nEncontre lo que buscaba facilmente\n0.46\n0.55\n\n\n5\nEncontre los productos que necesitaba?\n0.39\n0.49\n\n\n6\nLa atmosfera de la tienda me parecio agradable.\n0.80\n0.70\n\n\n7\nLa pagina web me resulto util\n0.35\n0.34\n\n\n8\nLa tienda tenia buenos precios.\n0.40\n0.60\n\n\n9\nLa tienda tenia una amplia variedad\n0.49\n0.47\n\n\n10\nEncontre productos que no encontre en otras ti...\n0.74\n0.54\n\n\n11\nEncontre productos a la moda\n0.65\n0.55\n\n\n\n\n\n\n\n\ndf.columns = ['Area', 'N_tienda', 'Comp'] \n\n\ndf['dif']=df['N_tienda']-df['Comp']\n\n\ndf\n\n\n\n\n\n\n\n\nArea\nN_tienda\nComp\ndif\n\n\n\n\n0\nLa tienda esta bien organizada\n0.40\n0.38\n0.02\n\n\n1\nEl proceso de pago y check out fue sencillo?\n0.33\n0.34\n-0.01\n\n\n2\nLos empleados fueron amigables\n0.45\n0.50\n-0.05\n\n\n3\nEncontre buenas promociones\n0.45\n0.65\n-0.20\n\n\n4\nEncontre lo que buscaba facilmente\n0.46\n0.55\n-0.09\n\n\n5\nEncontre los productos que necesitaba?\n0.39\n0.49\n-0.10\n\n\n6\nLa atmosfera de la tienda me parecio agradable.\n0.80\n0.70\n0.10\n\n\n7\nLa pagina web me resulto util\n0.35\n0.34\n0.01\n\n\n8\nLa tienda tenia buenos precios.\n0.40\n0.60\n-0.20\n\n\n9\nLa tienda tenia una amplia variedad\n0.49\n0.47\n0.02\n\n\n10\nEncontre productos que no encontre en otras ti...\n0.74\n0.54\n0.20\n\n\n11\nEncontre productos a la moda\n0.65\n0.55\n0.10\n\n\n\n\n\n\n\n\nimport numpy as np\n# create a list of our conditions\nconditions = [\n    (df['dif'] &gt; 0),\n    (df['dif'] == 0),\n    (df['dif'] &lt; 0)]\n\n# creo una lista de valores que queremos asignar para cada condicion\nvalues = ['green', 'yellow','red']\n\n# creo una nueva columna dentro del dataset al usar np.selectasigno los valores usando una lista de argumentos\ndf['status'] = np.select(conditions, values)\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n#ordeno la tabla\ndf = df.sort_values(by=['dif'])\n# Matplotlib \nfig, ax = plt.subplots(figsize=(12, 7))\nplt.barh(y=df.Area, width=df.dif,height=.9)\n\n# set label\nplt.xlabel(\"Diferencia entre nosotros y la competencia\")\nplt.ylabel(\"\")\nplt.title(\"Status frente a la competencia\")\n\n# Add Text watermark\nfig.text(0.9, 0.15, 'Nosotros-Competencia', fontsize=12,\n         color='grey', ha='right', va='bottom',\n         alpha=0.7)\n\nText(0.9, 0.15, 'Nosotros-Competencia')"
+    "text": "You are a data analyst working for a retail company.\nThe back-to-school season is approaching, one of the most important commercial events of the year.\nYou have received the results of a customer survey where both your customers and your competitors’ customers evaluated stores across different dimensions.\nAt first glance, some results are positive:\ncustomers rate your store better than competitors in several areas.\nYour team is brainstorming how to present these results. In particular, they want to: - Highlight strengths - Identify areas for improvement - Propose next steps\n\n\nDesign a clear and effective visualization to present the results.\n👉 Think of your presentation as a story: - Introduction - Climax - Conclusion"
+  },
+  {
+    "objectID": "tienda/index.html#scenario",
+    "href": "tienda/index.html#scenario",
+    "title": "Visualization Exercise: Retail Stores",
+    "section": "",
+    "text": "You are a data analyst working for a retail company.\nThe back-to-school season is approaching, one of the most important commercial events of the year.\nYou have received the results of a customer survey where both your customers and your competitors’ customers evaluated stores across different dimensions.\nAt first glance, some results are positive:\ncustomers rate your store better than competitors in several areas.\nYour team is brainstorming how to present these results. In particular, they want to: - Highlight strengths - Identify areas for improvement - Propose next steps\n\n\nDesign a clear and effective visualization to present the results.\n👉 Think of your presentation as a story: - Introduction - Climax - Conclusion"
+  },
+  {
+    "objectID": "tienda/index.html#identifying-the-story-components",
+    "href": "tienda/index.html#identifying-the-story-components",
+    "title": "Visualization Exercise: Retail Stores",
+    "section": "Identifying the Story Components",
+    "text": "Identifying the Story Components\n\nIntroduction\n\nWhat actions did we take?\nWhat problem are we trying to solve?\nWhat data are we using?\n\n\n\nClimax (Evidence)\n\nWhat did we learn from the data?\nWhere do we outperform the competition?\nWhere are we falling behind?\n\n\n\nConclusion\n\nWhat recommendations can we make?\nWhat concrete actions should follow?"
+  },
+  {
+    "objectID": "tienda/index.html#exploring-the-data",
+    "href": "tienda/index.html#exploring-the-data",
+    "title": "Visualization Exercise: Retail Stores",
+    "section": "Exploring the Data",
+    "text": "Exploring the Data\nWe start by loading the survey data."
+  },
+  {
+    "objectID": "tienda/index.html#other-type-of-plot",
+    "href": "tienda/index.html#other-type-of-plot",
+    "title": "Visualization Exercise: Retail Stores",
+    "section": "Other type of plot…",
+    "text": "Other type of plot…"
+  },
+  {
+    "objectID": "tienda/index.html#mmmm-maybe.",
+    "href": "tienda/index.html#mmmm-maybe.",
+    "title": "Visualization Exercise: Retail Stores",
+    "section": "mmmm Maybe….",
+    "text": "mmmm Maybe…."
+  },
+  {
+    "objectID": "tienda/index.html#barplot-for-the-win",
+    "href": "tienda/index.html#barplot-for-the-win",
+    "title": "Visualization Exercise: Retail Stores",
+    "section": "Barplot for the win",
+    "text": "Barplot for the win"
+  },
+  {
+    "objectID": "tienda/index.html#make-it-better",
+    "href": "tienda/index.html#make-it-better",
+    "title": "Visualization Exercise: Retail Stores",
+    "section": "Make it better",
+    "text": "Make it better\n\n\n\n\n\n\n\n\n\n\nfinal"
   },
   {
     "objectID": "Vizualizacion/02-Intro.html",
