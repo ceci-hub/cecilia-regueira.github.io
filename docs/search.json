@@ -466,7 +466,14 @@
     "href": "tienda/index.html#exploring-the-data",
     "title": "Visualization Exercise: Retail Stores",
     "section": "Exploring the Data",
-    "text": "Exploring the Data\nWe start by loading the survey data."
+    "text": "Exploring the Data"
+  },
+  {
+    "objectID": "tienda/index.html#first-approach",
+    "href": "tienda/index.html#first-approach",
+    "title": "Visualization Exercise: Retail Stores",
+    "section": "first approach",
+    "text": "first approach"
   },
   {
     "objectID": "tienda/index.html#other-type-of-plot",
