@@ -238,11 +238,11 @@
     "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
   },
   {
-    "objectID": "research.html#thesis-supervision-bcu-jornadas-de-economía",
-    "href": "research.html#thesis-supervision-bcu-jornadas-de-economía",
+    "objectID": "research.html#masters-thesis-advisor",
+    "href": "research.html#masters-thesis-advisor",
     "title": "Research",
-    "section": "Thesis supervision (BCU – Jornadas de Economía)",
-    "text": "Thesis supervision (BCU – Jornadas de Economía)\n🔹 Hermes Javier López Sosa\nCaracterización del Sistema Financiero Regulado de Uruguay (2013–2023)\n🔹 Martín Rey & Paolo Pinotti\nMachine Learning aplicado a duración de precios\nPresented at: https://www.bcu.gub.uy/Comunicaciones/Paginas/JAE.aspx"
+    "section": "🎓 Master’s Thesis Advisor",
+    "text": "🎓 Master’s Thesis Advisor\n🔹 Hermes Javier López Sosa\nCharacterization of Uruguay’s Regulated Financial System (2013–2023)\n🔹 Martín Rey & Paolo Pinotti\nMachine Learning Applications to Price Duration\nPresented at: Central Bank of Uruguay (BCU), 2025 📊 View Presentations"
   },
   {
     "objectID": "awards.html",
@@ -291,21 +291,14 @@
     "href": "index.html",
     "title": "Cecilia Regueira",
     "section": "",
-    "text": "Economist and Data Scientist with extensive experience in data analysis, applied statistics, machine learning, and data visualization.\nI currently teach Statistics in the Master in Data Science at Universidad de Montevideo and work as a Senior Data Analyst in higher education analytics.\nMy work bridges academic research and applied data science, with a strong focus on pricing, public expenditure, and decision‑making under uncertainty."
-  },
-  {
-    "objectID": "index.html#profile",
-    "href": "index.html#profile",
-    "title": "Cecilia Regueira",
-    "section": "",
-    "text": "Economist and Data Scientist with extensive experience in data analysis, applied statistics, machine learning, and data visualization.\nI currently teach Statistics in the Master in Data Science at Universidad de Montevideo and work as a Senior Data Analyst in higher education analytics.\nMy work bridges academic research and applied data science, with a strong focus on pricing, public expenditure, and decision‑making under uncertainty."
+    "text": "NoteProfile\n\n\n\nEconomist and Data Scientist with over ten years of experience across higher education analytics, applied data science, and economic consulting. My work spans academic research and real‑world applications, with a strong focus on causal inference, statistical modeling, machine learning, and data visualization. I have led data‑driven projects for universities, international organizations, government agencies, and private firms, applying econometrics and advanced analytics to problems in pricing, public expenditure, labor markets, and decision‑making under uncertainty. I bring extensive experience translating complex analytical findings into clear, actionable insights for diverse stakeholders, and I am deeply committed to evidence‑based policy and data‑informed decision‑making."
   },
   {
     "objectID": "index.html#current-positions",
     "href": "index.html#current-positions",
     "title": "Cecilia Regueira",
     "section": "Current Positions",
-    "text": "Current Positions\nSenior Data Analyst\nEnrollment Research & Analytics – Iowa State University\n2022 – Present\n\nData modeling and analytics for recruitment and enrollment strategy\n\nDevelopment of innovative models for undergraduate and graduate recruitment\n\nAwarded for innovation in analytics and modeling\n\nInstructor – Statistics for Data Science\nMaster in Data Science – Universidad de Montevideo\n2024 – Present\n\nApplied statistics for data science\n\nProbability, inference, experimentation, and interpretation for ML contexts"
+    "text": "Current Positions\nEconomist and Data Scientist with extensive experience in data analysis, applied statistics, machine learning, and data visualization.\nI currently teach Statistics in the Master in Data Science at Universidad de Montevideo and work as a Senior Data Analyst in higher education analytics.\nMy work bridges academic research and applied data science, with a strong focus on pricing, public expenditure, and decision‑making under uncertainty.\n📊 2022 – Present Senior Data Analyst Enrollment Research & Analytics – Iowa State University\nLead data modeling and analytics initiatives to support undergraduate and graduate recruitment and enrollment strategy Develop and implement innovative analytical models to improve student recruitment effectiveness Recognized with institutional awards for innovation in analytics and modeling\n🎓📈 2023 – Present Professor – Statistics, Master in Data Science Universidad de Montevideo\nDeliver graduate-level instruction in applied statistics for data science Teach probability, statistical inference, experimentation, and interpretation with a focus on machine learning applications\n🎓📈2022 – Present Professor – Data Visualization, Master in Data Science Universidad de Montevideo\nLead courses on data visualization, emphasizing effective visual communication and data storytelling Train students in exploratory analysis and visualization to support data-driven decision-making"
   },
   {
     "objectID": "index.html#research-interests",
@@ -318,36 +311,43 @@
     "objectID": "index.html#education",
     "href": "index.html#education",
     "title": "Cecilia Regueira",
-    "section": "Education",
-    "text": "Education\nMaster in Economics\nUniversidad de la República (Uruguay)\n2017 – 2020\nThesis: Pricing Strategies of Supermarkets in Uruguay\nSelected for publication in the department’s academic series\nPostgraduate Degree in Big Data Analysis\nUniversidad ORT (Uruguay)\nCertificate in Data Science & Analytics\nDes Moines Area Community College (DMACC – USA)\n- President’s List - Member of Phi Theta Kappa Honor Society\nBachelor of Science in Economics\nUniversidad de la República (Uruguay)"
+    "section": "🎓 Education",
+    "text": "🎓 Education\nMaster in Economics\nUniversidad de la República (Uruguay)\n2017 – 2020\nThesis: Pricing Strategies of Supermarkets in Uruguay\nSelected for publication in the department’s academic series\nPostgraduate Degree in Big Data Analysis\nUniversidad ORT (Uruguay)\nCertificate in Data Science & Analytics\nDes Moines Area Community College (DMACC – USA)\n- President’s List - Member of Phi Theta Kappa Honor Society\nBachelor of Science in Economics\nUniversidad de la República (Uruguay)"
   },
   {
     "objectID": "index.html#selected-experience",
     "href": "index.html#selected-experience",
     "title": "Cecilia Regueira",
-    "section": "Selected Experience",
-    "text": "Selected Experience\n\nSenior Data Analyst – Iowa State University\n\nData Analyst – Corteva Agriscience\n\nAnalyst & Data Scientist – Consulting (Uruguay & USA)\n\nExternal Consultant – Inter‑American Development Bank\n\nData Analyst – Ministry of Public Health (Uruguay)\n\nExperience spans academic research, government, consulting, and private sector, working with large‑scale datasets, ETL pipelines, and applied ML models."
+    "section": "🎓📊 Selected Experience",
+    "text": "🎓📊 Selected Experience\n\nSenior Data Analyst – Iowa State University\n\nData Analyst – Corteva Agriscience\n\nAnalyst & Data Scientist – Consulting (Uruguay & USA)\n\nExternal Consultant – Inter‑American Development Bank\n\nData Analyst – Ministry of Public Health (Uruguay)\n\nExperience spans academic research, government, consulting, and private sector, working with large‑scale datasets, ETL pipelines, and applied ML models."
   },
   {
     "objectID": "index.html#teaching-thesis-supervision-academic-activity",
     "href": "index.html#teaching-thesis-supervision-academic-activity",
     "title": "Cecilia Regueira",
-    "section": "Teaching, Thesis Supervision & Academic Activity",
-    "text": "Teaching, Thesis Supervision & Academic Activity\n\nStatistics – Master in Data Science, Universidad de Montevideo 📊 Curso de Estadística (STATS)\nData Visualization – Master in Data Science, Universidad de Montevideo 📊 Curso de Visualizacion de Datos (NVD)\nSupervisor of Master theses presented at the Central Bank of Uruguay (BCU):\n\nCharacterization of the Regulated Financial System of Uruguay (2013–2023)\nMachine Learning Applied to Price Duration\n\n\n\n\n\n\n\n\n## Applied Projects & Teaching Resources\n\n\nThis section highlights applied data science and visualization projects developed using publicly available U.S. datasets, designed both for teaching purposes and institutional analytics."
+    "section": "📚 *Teaching, Thesis Supervision & Academic Activity**",
+    "text": "📚 *Teaching, Thesis Supervision & Academic Activity**\n\nStatistics – Master in Data Science, Universidad de Montevideo 📊 STATS\nData Visualization – Master in Data Science, Universidad de Montevideo 📊 NVD\nMaster’s Thesis Advisor\n\nAdvised graduate research on financial system regulation and market structure (2013–2023) Guided applied research on machine learning methods for price duration analysis"
+  },
+  {
+    "objectID": "index.html#applied-projects-teaching-resources",
+    "href": "index.html#applied-projects-teaching-resources",
+    "title": "Cecilia Regueira",
+    "section": "🧮 Applied Projects & Teaching Resources",
+    "text": "🧮 Applied Projects & Teaching Resources\nThis section highlights applied data science and visualization projects developed using publicly available U.S. datasets, designed both for teaching purposes and institutional analytics."
   },
   {
     "objectID": "index.html#honors-awards",
     "href": "index.html#honors-awards",
     "title": "Cecilia Regueira",
-    "section": "Honors & Awards",
-    "text": "Honors & Awards\n\nRecruitment Innovation Award – Iowa State University (2024)\n\nLove DATAWEEK 2024 — First Place Award\nPresident’s List – DMACC\n\nPhi Theta Kappa International Honor Society"
+    "section": "🏆 Honors & Awards",
+    "text": "🏆 Honors & Awards\n\nRecruitment Innovation Award – Iowa State University (2024)\n\nLove DATAWEEK 2024 — First Place Award\nPresident’s List – DMACC\n\nPhi Theta Kappa International Honor Society"
   },
   {
     "objectID": "index.html#technical-skills",
     "href": "index.html#technical-skills",
     "title": "Cecilia Regueira",
-    "section": "Technical Skills",
-    "text": "Technical Skills\nProgramming & Tools\nR · Python · SQL · Stata · Power BI · Tableau · QlikView · Shiny\nMethods\nRegression · Machine Learning · XGBoost · Random Forest · Experimental Design · Data Visualization\nLanguages\nSpanish · English · Portuguese\n\n📧 Contact\nceciliaregueira.m@gmail.com\nLinkedIn · GitHub"
+    "section": "🧠 Technical Skills",
+    "text": "🧠 Technical Skills\nProgramming & Tools\nR · Python · SQL · Stata · Power BI · Tableau · QlikView · Shiny\nMethods\nRegression · Machine Learning · XGBoost · Random Forest · Experimental Design · Data Visualization\nLanguages\nSpanish · English · Portuguese\n\n📧 Contact\nceciliaregueira.m@gmail.com\nLinkedIn · GitHub"
   },
   {
     "objectID": "STAT/01-bienvenida.html",
