@@ -324,21 +324,21 @@
   {
     "objectID": "Mentorias/Code_BP.html",
     "href": "Mentorias/Code_BP.html",
-    "title": "Best Practices for Reproducible Research Data Work",
+    "title": "Best Practices for Coding",
     "section": "",
     "text": "Note\n\n\n\nAfter more than ten years of hands‑on coding and applied research experience, this article presents a rigorous and comprehensive set of best practices for reproducible, transparent, and collaborative data work.\nThis summary synthesizes and integrates key principles from Clean Code: A Handbook of Agile Software Craftsmanship by Robert C. Martin—which emphasizes readable, maintainable, and professional code—and Development Research in Practice: The DIME Analytics Data Handbook by the World Bank, which formalizes end‑to‑end standards for reproducible, ethical, and collaborative research workflows."
   },
   {
     "objectID": "Mentorias/Code_BP.html#executive-summary",
     "href": "Mentorias/Code_BP.html#executive-summary",
-    "title": "Best Practices for Reproducible Research Data Work",
+    "title": "Best Practices for Coding",
     "section": "",
     "text": "Note\n\n\n\nAfter more than ten years of hands‑on coding and applied research experience, this article presents a rigorous and comprehensive set of best practices for reproducible, transparent, and collaborative data work.\nThis summary synthesizes and integrates key principles from Clean Code: A Handbook of Agile Software Craftsmanship by Robert C. Martin—which emphasizes readable, maintainable, and professional code—and Development Research in Practice: The DIME Analytics Data Handbook by the World Bank, which formalizes end‑to‑end standards for reproducible, ethical, and collaborative research workflows."
   },
   {
     "objectID": "Mentorias/Code_BP.html#best-practices-for-code-and-analysis-include",
     "href": "Mentorias/Code_BP.html#best-practices-for-code-and-analysis-include",
-    "title": "Best Practices for Reproducible Research Data Work",
+    "title": "Best Practices for Coding",
     "section": "Best practices for code and analysis include:",
     "text": "Best practices for code and analysis include:\n\n1. Reproducibility and a Clean Code\nReproducibility is achieved by structuring projects so that all results can be regenerated from raw data using clearly defined master scripts. Computational reproducibility is treated as a core research output, enabling independent verification and reuse of methods across contexts and over time.\nRobert C. Martin emphasizes that code is a primary communication artifact, not merely an execution mechanism. Core contributions of Clean Code include:\n\nReadability and Intentionality – Code should be easy to read and self‑explanatory\n\nSingle Responsibility and Modularity – Each function or script should do one thing well\n\nMeaningful Comments and Documentation – Comments explain why decisions were made, not just what the code does\n\nRefactoring as a Continuous Practice – Code quality improves through regular, incremental cleanup\n\n\n\n✅ Click to read more\n\nReproducibility ensures that research findings can be independently verified and consistently regenerated using the same data and code. In practice, this requires structuring analytical workflows so that all results—tables, figures, and statistics—are produced directly from raw or well‑documented intermediate data using executable code. Reproducibility is therefore not an afterthought, but a design principle applied throughout the project lifecycle.\nA core practice is the use of a master script, which defines software versions, directory paths, and execution order, and runs all data processing and analysis steps end to end. By changing only a single file path or configuration parameter, another researcher should be able to rerun the complete workflow on a different machine and reproduce identical results.\nWell‑written reproducible code is modular, readable, and well documented. Tasks are split into separate scripts (for example, 01_clean_data, 02_construct_variables, 03_analysis), each with clear headers describing inputs, outputs, and purpose. Version control systems such as Git track changes over time, enabling transparent review of how results evolve.\nReproducibility is further strengthened through dynamic documents, such as Quarto, R Markdown, or Jupyter notebooks, which integrate code, outputs, and narrative text in a single source file. Any change in data or code is immediately reflected in the final report.\nImportantly, computational reproducibility is treated as a research output in its own right. Reproducibility packages typically include executable code, minimal working data (or detailed metadata when access is restricted), documentation, and a README file with clear instructions.\n\nReproducible research requires clearly structured, documented, and executable code. While the principles of reproducibility are consistent across disciplines, their implementation varies by programming environment.\n\n 📘 View Code Examples \n\n\n\n2. Transparency\nTransparency requires thorough documentation of data, code, and research decisions, with public release whenever legally and ethically feasible. Using trusted external repositories—such as GitHub, OSF, or institutional data catalogs—ensures long‑term access, accountability, and opportunities for reuse.\nWhere transparency requires openness, Clean Code ensures that what is open is also understandable.\n\n\n3. Ethical and Secure Data Handling\nEthical and secure data handling protects research participants by enforcing informed consent, separating and encrypting sensitive information, and complying with applicable legal and institutional standards. Careful data governance throughout the project lifecycle ensures privacy, minimizes risk, and maintains trust while still enabling scientific transparency.\nIn higher education settings, researchers and analysts must comply with the Family Educational Rights and Privacy Act (FERPA), which governs access to student education records. Compliance requires limiting access to personally identifiable information, applying appropriate de‑identification practices, and ensuring data are used solely for legitimate educational or research purposes.\n\n\n4.Data Work as a Collaborative Process\nData work is inherently collaborative and depends on shared standards, clear communication, and coordinated workflows across research teams. Treating data work as a collective responsibility—rather than an individual or ad hoc activity—reduces errors, improves efficiency, and strengthens institutional memory.\nEffective collaborative data work relies on standardization and transparency. Common folder structures, naming conventions, coding styles, and version control systems allow team members to contribute with minimal friction. Documentation of decisions and data transformations ensures continuity across staff transitions and supports meaningful peer review.\nEqually important is the use of shared tools and workflows, such as version‑controlled repositories, task‑tracking systems, and dynamic documents that integrate code and outputs. Regular code review and clear role definition foster accountability while encouraging collective learning.\nWhere collaborative data work requires shared standards, Agile software development provides the team practices that sustain those standards over time.\n\n\n✅ Click to read about Agile practices\n\nAgile Software Development emphasizes team‑based workflows, rapid feedback, and adaptability:\n\nIterative development supports early validation of assumptions and outputs\n\nShared ownership of code reduces risk from staff turnover\n\nContinuous integration and testing prevent silent errors\n\nProfessional responsibility emphasizes correctness, clarity, and maintainability\n\nTogether, these principles reinforce the view that reproducibility is a continuous process and that collaboration must be intentionally designed and maintained."
   },
@@ -667,63 +667,63 @@
   {
     "objectID": "tienda/index.html",
     "href": "tienda/index.html",
-    "title": "Visualization Exercise: Retail Stores",
+    "title": "Story Telling importance",
     "section": "",
-    "text": "You are a data analyst working for a retail company.\nThe back-to-school season is approaching, one of the most important commercial events of the year.\nYou have received the results of a customer survey where both your customers and your competitors’ customers evaluated stores across different dimensions.\nAt first glance, some results are positive:\ncustomers rate your store better than competitors in several areas.\nYour team is brainstorming how to present these results. In particular, they want to: - Highlight strengths - Identify areas for improvement - Propose next steps\n\n\nDesign a clear and effective visualization to present the results.\n👉 Think of your presentation as a story: - Introduction - Climax - Conclusion"
+    "text": "You are a data analyst working for a retail company.\nThe back-to-school season is approaching, one of the most important commercial events of the year.\nYou have received the results of a customer survey where both your customers and your competitors’ customers evaluated stores across different dimensions.\nAt first glance, some results are positive:\ncustomers rate your store better than competitors in several areas.\nYour team is brainstorming how to present these results. In particular, they want to:\n\nHighlight strengths\nIdentify areas for improvement\nPropose next steps\n\n\n\nDesign a clear and effective visualization to present the results.\n👉 Think of your presentation as a story: - Introduction - Climax - Conclusion"
   },
   {
     "objectID": "tienda/index.html#scenario",
     "href": "tienda/index.html#scenario",
-    "title": "Visualization Exercise: Retail Stores",
+    "title": "Story Telling importance",
     "section": "",
-    "text": "You are a data analyst working for a retail company.\nThe back-to-school season is approaching, one of the most important commercial events of the year.\nYou have received the results of a customer survey where both your customers and your competitors’ customers evaluated stores across different dimensions.\nAt first glance, some results are positive:\ncustomers rate your store better than competitors in several areas.\nYour team is brainstorming how to present these results. In particular, they want to: - Highlight strengths - Identify areas for improvement - Propose next steps\n\n\nDesign a clear and effective visualization to present the results.\n👉 Think of your presentation as a story: - Introduction - Climax - Conclusion"
+    "text": "You are a data analyst working for a retail company.\nThe back-to-school season is approaching, one of the most important commercial events of the year.\nYou have received the results of a customer survey where both your customers and your competitors’ customers evaluated stores across different dimensions.\nAt first glance, some results are positive:\ncustomers rate your store better than competitors in several areas.\nYour team is brainstorming how to present these results. In particular, they want to:\n\nHighlight strengths\nIdentify areas for improvement\nPropose next steps\n\n\n\nDesign a clear and effective visualization to present the results.\n👉 Think of your presentation as a story: - Introduction - Climax - Conclusion"
   },
   {
     "objectID": "tienda/index.html#identifying-the-story-components",
     "href": "tienda/index.html#identifying-the-story-components",
-    "title": "Visualization Exercise: Retail Stores",
+    "title": "Story Telling importance",
     "section": "Identifying the Story Components",
     "text": "Identifying the Story Components\n\nIntroduction\n\nWhat actions did we take?\nWhat problem are we trying to solve?\nWhat data are we using?\n\n\n\nClimax (Evidence)\n\nWhat did we learn from the data?\nWhere do we outperform the competition?\nWhere are we falling behind?\n\n\n\nConclusion\n\nWhat recommendations can we make?\nWhat concrete actions should follow?"
   },
   {
     "objectID": "tienda/index.html#exploring-the-data",
     "href": "tienda/index.html#exploring-the-data",
-    "title": "Visualization Exercise: Retail Stores",
+    "title": "Story Telling importance",
     "section": "Exploring the Data",
     "text": "Exploring the Data"
   },
   {
     "objectID": "tienda/index.html#first-approach",
     "href": "tienda/index.html#first-approach",
-    "title": "Visualization Exercise: Retail Stores",
+    "title": "Story Telling importance",
     "section": "first approach",
     "text": "first approach"
   },
   {
     "objectID": "tienda/index.html#other-type-of-plot",
     "href": "tienda/index.html#other-type-of-plot",
-    "title": "Visualization Exercise: Retail Stores",
+    "title": "Story Telling importance",
     "section": "Other type of plot…",
     "text": "Other type of plot…"
   },
   {
     "objectID": "tienda/index.html#mmmm-maybe.",
     "href": "tienda/index.html#mmmm-maybe.",
-    "title": "Visualization Exercise: Retail Stores",
+    "title": "Story Telling importance",
     "section": "mmmm Maybe….",
     "text": "mmmm Maybe…."
   },
   {
     "objectID": "tienda/index.html#barplot-for-the-win",
     "href": "tienda/index.html#barplot-for-the-win",
-    "title": "Visualization Exercise: Retail Stores",
+    "title": "Story Telling importance",
     "section": "Barplot for the win",
     "text": "Barplot for the win"
   },
   {
     "objectID": "tienda/index.html#make-it-better",
     "href": "tienda/index.html#make-it-better",
-    "title": "Visualization Exercise: Retail Stores",
+    "title": "Story Telling importance",
     "section": "Make it better",
     "text": "Make it better\n\n\n\n\n\n\n\n\n\n\nfinal"
   },
