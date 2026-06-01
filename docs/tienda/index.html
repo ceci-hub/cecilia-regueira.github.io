@@ -9,7 +9,7 @@
 <meta name="author" content="Federico Veneri">
 <meta name="author" content="Cecilia Regueira">
 
-<title>Visualization Exercise: Retail Stores – Cecilia Regueira</title>
+<title>Story Telling importance – Cecilia Regueira</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +70,26 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+<script src="../site_libs/datatables-binding-0.33/datatables.js"></script>
+
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+<script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+<link href="../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
 
 
 </head>
@@ -112,6 +132,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../Vizualizacion/index.html">
  <span class="dropdown-text">Data Visualization Course</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../STAT/tool.html">
+ <span class="dropdown-text">Tools for Inference</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -121,11 +145,26 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-project">    
         <li>
     <a class="dropdown-item" href="../applied-project.html">
- <span class="dropdown-text">Shiny</span></a>
+ <span class="dropdown-text">Dash in Shiny</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tienda/index.html">
- <span class="dropdown-text">Improve the graph</span></a>
+ <span class="dropdown-text">Story Telling</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mentor" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Mentor</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mentor">    
+        <li>
+    <a class="dropdown-item" href="../Mentorias/STAT_QA.html">
+ <span class="dropdown-text">Mock Int Stat</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Mentorias/Code_BP.html">
+ <span class="dropdown-text">Code BP</span></a>
   </li>  
     </ul>
   </li>
@@ -160,6 +199,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul></li>
   <li><a href="#exploring-the-data" id="toc-exploring-the-data" class="nav-link" data-scroll-target="#exploring-the-data">Exploring the Data</a></li>
+  <li><a href="#first-approach" id="toc-first-approach" class="nav-link" data-scroll-target="#first-approach">first approach</a></li>
   <li><a href="#other-type-of-plot" id="toc-other-type-of-plot" class="nav-link" data-scroll-target="#other-type-of-plot">Other type of plot…</a></li>
   <li><a href="#mmmm-maybe." id="toc-mmmm-maybe." class="nav-link" data-scroll-target="#mmmm-maybe.">mmmm Maybe….</a></li>
   <li><a href="#barplot-for-the-win" id="toc-barplot-for-the-win" class="nav-link" data-scroll-target="#barplot-for-the-win">Barplot for the win</a></li>
@@ -175,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Visualization Exercise: Retail Stores</h1>
+<h1 class="title">Story Telling importance</h1>
 <p class="subtitle lead">Exercise</p>
 </div>
 
@@ -207,7 +247,12 @@ The <strong>back-to-school season</strong> is approaching, one of the most impor
 <p>You have received the results of a <strong>customer survey</strong> where both your customers and your competitors’ customers evaluated stores across different dimensions.</p>
 <p>At first glance, some results are positive:<br>
 customers rate <strong>your store better than competitors</strong> in several areas.</p>
-<p>Your team is brainstorming how to present these results. In particular, they want to: - Highlight <strong>strengths</strong> - Identify <strong>areas for improvement</strong> - Propose <strong>next steps</strong></p>
+<p>Your team is brainstorming how to present these results. In particular, they want to:</p>
+<ul>
+<li>Highlight <strong>strengths</strong></li>
+<li>Identify <strong>areas for improvement</strong></li>
+<li>Propose <strong>next steps</strong></li>
+</ul>
 <section id="your-task" class="level3">
 <h3 class="anchored" data-anchor-id="your-task">Your task</h3>
 <p>Design a clear and effective <strong>visualization</strong> to present the results.</p>
@@ -242,12 +287,20 @@ customers rate <strong>your store better than competitors</strong> in several ar
 </section>
 <section id="exploring-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="exploring-the-data">Exploring the Data</h2>
-<p>We start by loading the survey data.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-11fe480e806f9e557c18" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-11fe480e806f9e557c18">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],["La tienda esta bien organizada","El proceso de pago y check out fue sencillo?","Los empleados fueron amigables","Encontre buenas promociones","Encontre lo que buscaba facilmente","Encontre los productos que necesitaba?","La atmosfera de la tienda me parecio agradable.","La pagina web me resulto util","La tienda tenia buenos precios.","La tienda tenia una amplia variedad","Encontre productos que no encontre en otras tienda?","Encontre productos a la moda"],[0.4,0.33,0.45,0.45,0.46,0.39,0.8,0.35,0.4,0.49,0.74,0.65],[0.38,0.34,0.5,0.65,0.55,0.49,0.7,0.34,0.6,0.47,0.54,0.55]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Area<\/th>\n      <th>Nuestra tienda<\/th>\n      <th>Competencia<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":true,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Area","targets":1},{"name":"Nuestra tienda","targets":2},{"name":"Competencia","targets":3}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="first-approach" class="level2">
+<h2 class="anchored" data-anchor-id="first-approach">first approach</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -259,7 +312,7 @@ customers rate <strong>your store better than competitors</strong> in several ar
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -271,7 +324,7 @@ customers rate <strong>your store better than competitors</strong> in several ar
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -283,7 +336,7 @@ customers rate <strong>your store better than competitors</strong> in several ar
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -295,7 +348,7 @@ customers rate <strong>your store better than competitors</strong> in several ar
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -306,7 +359,7 @@ customers rate <strong>your store better than competitors</strong> in several ar
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
