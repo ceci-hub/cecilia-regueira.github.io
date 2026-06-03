@@ -263,7 +263,7 @@ Table&nbsp;2: Transaction by clients
 </section>
 <section id="section-1" class="slide level2 center">
 <h2></h2>
-<p><strong>The dataset is transaction-level financial data with the Fraud label on it</strong></p>
+<p><strong>The dataset is transaction-level financial data </strong></p>
 <ul>
 <li>Customer/account info</li>
 <li>Transaction details (DataTime, Amount)</li>
@@ -271,7 +271,7 @@ Table&nbsp;2: Transaction by clients
 </ul>
 <details>
 <summary>
-<strong>✅ Obs</strong>
+<strong>Obs.</strong>
 </summary>
 <div class="cell">
 <div id="tbl-head" class="cell quarto-float quarto-figure quarto-figure-center">
@@ -473,15 +473,6 @@ Table&nbsp;3: Observation Example
 </section>
 <section id="modeling-approach-1" class="slide level2 center">
 <h2>Modeling Approach</h2>
-<p>We tested several machine learning models:</p>
-<ul>
-<li>Logistic Regression (simpler, more interpretable)</li>
-<li>Random Forest (more complex, higher accuracy)</li>
-</ul>
-</section>
-<section id="modeling-approach-2" class="slide level2 center">
-<h2>Modeling Approach</h2>
-<p>We tested several machine learning models:</p>
 <ul>
 <li>Logistic Regression (simpler, more interpretable)</li>
 <li>Random Forest (more complex, higher accuracy)</li>
@@ -490,20 +481,6 @@ Table&nbsp;3: Observation Example
 </section>
 <section id="model-performance-business-impact" class="slide level2 center">
 <h2>Model Performance &amp; Business Impact:</h2>
-<details>
-<summary>
-<strong>✅ Comp</strong>
-</summary>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</details>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fqdievdifs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -966,9 +943,9 @@ Table&nbsp;3: Observation Example
 </tr>
 <tr class="gt_col_headings header">
 <th id="Model" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Model</th>
-<th id="recall" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Recall (Cases)</th>
+<th id="recall" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Recall (All Fraud)</th>
 <th id="fraud_capture_rate_amt" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Fraud Captured ($)</th>
-<th id="false_alerts_per_1000" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">False Alerts / 1K</th>
+<th id="false_alerts_per_true_fraud" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">False Alerts per Fraud</th>
 <th id="fraud_prevented" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Fraud Prevented</th>
 <th id="net_benefit" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Net Benefit</th>
 </tr>
@@ -978,7 +955,7 @@ Table&nbsp;3: Observation Example
 <td class="gt_row gt_center" headers="Model">Random Forest</td>
 <td class="gt_row gt_center" headers="recall">38.9%</td>
 <td class="gt_row gt_center" headers="fraud_capture_rate_amt">63.6%</td>
-<td class="gt_row gt_center" headers="false_alerts_per_1000">152</td>
+<td class="gt_row gt_center" headers="false_alerts_per_true_fraud">33</td>
 <td class="gt_row gt_center" headers="fraud_prevented">$2,301</td>
 <td class="gt_row gt_center" headers="net_benefit" style="background-color: #1A9850; color: #FFFFFF">$1,617</td>
 </tr>
@@ -986,7 +963,7 @@ Table&nbsp;3: Observation Example
 <td class="gt_row gt_center" headers="Model">Logistic Regression</td>
 <td class="gt_row gt_center" headers="recall">77.8%</td>
 <td class="gt_row gt_center" headers="fraud_capture_rate_amt">93.4%</td>
-<td class="gt_row gt_center" headers="false_alerts_per_1000">539</td>
+<td class="gt_row gt_center" headers="false_alerts_per_true_fraud">58</td>
 <td class="gt_row gt_center" headers="fraud_prevented">$3,379</td>
 <td class="gt_row gt_center" headers="net_benefit" style="background-color: #1A9850; color: #FFFFFF">$952</td>
 </tr>
@@ -998,13 +975,6 @@ Table&nbsp;3: Observation Example
 </div>
 </section>
 <section id="section-7" class="slide level2 center">
-<h2></h2>
-<ul>
-<li><p>Random Forest model detects 38.9% of fraudulent transactions while generating approximately 152 false alerts per 1,000 transactions. This translates into an estimated prevention of $2,301, with a net benefit of $1,617.</p></li>
-<li><p>The Logistic model detects 77.8% of fraud but generates 539.3 false alerts per 1,000 transactions, illustrating the trade-off between detection and customer friction.</p></li>
-</ul>
-</section>
-<section id="section-8" class="slide level2 center">
 <h2></h2>
 <p><strong>Decision Criteria</strong>:</p>
 <ul>
@@ -1032,7 +1002,7 @@ Table&nbsp;3: Observation Example
 <h2>Q &amp; A</h2>
 <p>Thank you!</p>
 </section>
-<section id="section-9" class="slide level2 center">
+<section id="section-8" class="slide level2 center">
 <h2></h2>
 <details>
 <summary>

@@ -347,7 +347,7 @@
     "href": "Mentorias/TakeawayFT.html#section-1",
     "title": "Case of Study: Transactions Analysis",
     "section": "",
-    "text": "The dataset is transaction-level financial data with the Fraud label on it\n\nCustomer/account info\nTransaction details (DataTime, Amount)\nMerchant info (Name, type of business, location)\n\n\n\n✅ Obs\n\n\n\n\n\nTable 3: Observation Example\n\n\n\n\n\n\naccountNumber\ncustomerId\ncreditLimit\navailableMoney\ntransactionDateTime\ntransactionAmount\nmerchantName\nacqCountry\nmerchantCountryCode\nposEntryMode\nposConditionCode\nmerchantCategoryCode\ncurrentExpDate\naccountOpenDate\ndateOfLastAddressChange\ncardCVV\nenteredCVV\ncardLast4Digits\ntransactionType\ncurrentBalance\ncardPresent\nexpirationDateKeyInMatch\nisFraud\ntransactionTime\n\n\n\n\n737265056\n737265056\n5000\n5000\n2016-08-13T14:27:32\n98.55\nUber\nUS\nUS\n02\n01\nrideshare\n06/2023\n2015-03-14\n2015-03-14\n414\n414\n1803\nPURCHASE\n0\nFALSE\nFALSE\n0\n2016-08-13 14:27:32"
+    "text": "The dataset is transaction-level financial data \n\nCustomer/account info\nTransaction details (DataTime, Amount)\nMerchant info (Name, type of business, location)\n\n\n\nObs.\n\n\n\n\n\nTable 3: Observation Example\n\n\n\n\n\n\naccountNumber\ncustomerId\ncreditLimit\navailableMoney\ntransactionDateTime\ntransactionAmount\nmerchantName\nacqCountry\nmerchantCountryCode\nposEntryMode\nposConditionCode\nmerchantCategoryCode\ncurrentExpDate\naccountOpenDate\ndateOfLastAddressChange\ncardCVV\nenteredCVV\ncardLast4Digits\ntransactionType\ncurrentBalance\ncardPresent\nexpirationDateKeyInMatch\nisFraud\ntransactionTime\n\n\n\n\n737265056\n737265056\n5000\n5000\n2016-08-13T14:27:32\n98.55\nUber\nUS\nUS\n02\n01\nrideshare\n06/2023\n2015-03-14\n2015-03-14\n414\n414\n1803\nPURCHASE\n0\nFALSE\nFALSE\n0\n2016-08-13 14:27:32"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#data-caveat",
@@ -424,32 +424,18 @@
     "href": "Mentorias/TakeawayFT.html#modeling-approach-1",
     "title": "Case of Study: Transactions Analysis",
     "section": "Modeling Approach",
-    "text": "Modeling Approach\nWe tested several machine learning models:\n\nLogistic Regression (simpler, more interpretable)\nRandom Forest (more complex, higher accuracy)"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#modeling-approach-2",
-    "href": "Mentorias/TakeawayFT.html#modeling-approach-2",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "Modeling Approach",
-    "text": "Modeling Approach\nWe tested several machine learning models:\n\nLogistic Regression (simpler, more interpretable)\nRandom Forest (more complex, higher accuracy)\n\nWe also addressed the imbalance problem using techniques like SMOTE, which helps the model learn rare fraud cases better."
+    "text": "Modeling Approach\n\nLogistic Regression (simpler, more interpretable)\nRandom Forest (more complex, higher accuracy)\n\nWe also addressed the imbalance problem using techniques like SMOTE, which helps the model learn rare fraud cases better."
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#model-performance-business-impact",
     "href": "Mentorias/TakeawayFT.html#model-performance-business-impact",
     "title": "Case of Study: Transactions Analysis",
     "section": "Model Performance & Business Impact:",
-    "text": "Model Performance & Business Impact:\n\n\n✅ Comp\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (Cases)\nFraud Captured ($)\nFalse Alerts / 1K\nFraud Prevented\nNet Benefit\n\n\n\n\nRandom Forest\n38.9%\n63.6%\n152\n$2,301\n$1,617\n\n\nLogistic Regression\n77.8%\n93.4%\n539\n$3,379\n$952"
+    "text": "Model Performance & Business Impact:\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (All Fraud)\nFraud Captured ($)\nFalse Alerts per Fraud\nFraud Prevented\nNet Benefit\n\n\n\n\nRandom Forest\n38.9%\n63.6%\n33\n$2,301\n$1,617\n\n\nLogistic Regression\n77.8%\n93.4%\n58\n$3,379\n$952"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section-7",
     "href": "Mentorias/TakeawayFT.html#section-7",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "",
-    "text": "Random Forest model detects 38.9% of fraudulent transactions while generating approximately 152 false alerts per 1,000 transactions. This translates into an estimated prevention of $2,301, with a net benefit of $1,617.\nThe Logistic model detects 77.8% of fraud but generates 539.3 false alerts per 1,000 transactions, illustrating the trade-off between detection and customer friction."
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#section-8",
-    "href": "Mentorias/TakeawayFT.html#section-8",
     "title": "Case of Study: Transactions Analysis",
     "section": "",
     "text": "Decision Criteria:\n\nIf the primary goal is to minimize false negatives and ensure that most fraud cases are identified, then the logit model may be the better choice despite its higher false positive rate.\nConversely, if the focus is on achieving greater overall accuracy and reducing false alarms, the random forest model could be better, provided that the cost of missed fraud is acceptable."
@@ -476,8 +462,8 @@
     "text": "Q & A\nThank you!"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#section-9",
-    "href": "Mentorias/TakeawayFT.html#section-9",
+    "objectID": "Mentorias/TakeawayFT.html#section-8",
+    "href": "Mentorias/TakeawayFT.html#section-8",
     "title": "Case of Study: Transactions Analysis",
     "section": "",
     "text": "✅ Report\n\n\n 📘 View Step by step process"

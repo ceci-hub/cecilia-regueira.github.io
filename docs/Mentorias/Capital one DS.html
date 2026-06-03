@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Cecilia Regueira">
 
-<title>Story Telling importance – Cecilia Regueira</title>
+<title>Capital One Transactions Analysis – Cecilia Regueira</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,27 +68,36 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 
-<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-
-<script src="../site_libs/datatables-binding-0.33/datatables.js"></script>
-
-<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-
-<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-
-<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-
-<script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-
-<link href="../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
-
-<script src="../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
-
-
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -195,25 +203,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#scenario" id="toc-scenario" class="nav-link active" data-scroll-target="#scenario">Scenario</a>
-  <ul class="collapse">
-  <li><a href="#your-task" id="toc-your-task" class="nav-link" data-scroll-target="#your-task">Your task</a></li>
-  </ul></li>
-  <li><a href="#identifying-the-story-components" id="toc-identifying-the-story-components" class="nav-link" data-scroll-target="#identifying-the-story-components">Identifying the Story Components</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#climax-evidence" id="toc-climax-evidence" class="nav-link" data-scroll-target="#climax-evidence">Climax (Evidence)</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul></li>
-  <li><a href="#exploring-the-data" id="toc-exploring-the-data" class="nav-link" data-scroll-target="#exploring-the-data">Exploring the Data</a></li>
-  <li><a href="#first-approach" id="toc-first-approach" class="nav-link" data-scroll-target="#first-approach">first approach</a></li>
-  <li><a href="#other-type-of-plot" id="toc-other-type-of-plot" class="nav-link" data-scroll-target="#other-type-of-plot">Other type of plot…</a></li>
-  <li><a href="#mmmm-maybe." id="toc-mmmm-maybe." class="nav-link" data-scroll-target="#mmmm-maybe.">mmmm Maybe….</a></li>
-  <li><a href="#barplot-for-the-win" id="toc-barplot-for-the-win" class="nav-link" data-scroll-target="#barplot-for-the-win">Barplot for the win</a></li>
-  <li><a href="#make-it-better" id="toc-make-it-better" class="nav-link" data-scroll-target="#make-it-better">Make it better</a>
-  <ul class="collapse">
-  <li><a href="#final" id="toc-final" class="nav-link" data-scroll-target="#final">final</a></li>
-  </ul></li>
+  <li><a href="#download-and-load-data" id="toc-download-and-load-data" class="nav-link active" data-scroll-target="#download-and-load-data">Download and load data</a></li>
+  <li><a href="#reversed-same-account-merchant-opposite-amount-within-10-min" id="toc-reversed-same-account-merchant-opposite-amount-within-10-min" class="nav-link" data-scroll-target="#reversed-same-account-merchant-opposite-amount-within-10-min">Reversed: same account, merchant, opposite amount within 10 min</a></li>
+  <li><a href="#multi-swipe-same-merchant-same-amount-short-time-span" id="toc-multi-swipe-same-merchant-same-amount-short-time-span" class="nav-link" data-scroll-target="#multi-swipe-same-merchant-same-amount-short-time-span">Multi-swipe: same merchant, same amount, short time span</a></li>
   </ul>
 </nav>
     </div>
@@ -222,20 +214,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Story Telling importance</h1>
-<p class="subtitle lead">Exercise</p>
+<h1 class="title">Capital One Transactions Analysis</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Cecilia Regueira </p>
-          </div>
-  </div>
     
   
     
@@ -246,133 +231,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="scenario" class="level2">
-<h2 class="anchored" data-anchor-id="scenario">Scenario</h2>
-<p>You are a data analyst working for a retail company.<br>
-The <strong>back-to-school season</strong> is approaching, one of the most important commercial events of the year.</p>
-<p>You have received the results of a <strong>customer survey</strong> where both your customers and your competitors’ customers evaluated stores across different dimensions.</p>
-<p>At first glance, some results are positive:<br>
-customers rate <strong>your store better than competitors</strong> in several areas.</p>
-<p>Your team is brainstorming how to present these results. In particular, they want to:</p>
-<ul>
-<li>Highlight <strong>strengths</strong></li>
-<li>Identify <strong>areas for improvement</strong></li>
-<li>Propose <strong>next steps</strong></li>
-</ul>
-<section id="your-task" class="level3">
-<h3 class="anchored" data-anchor-id="your-task">Your task</h3>
-<p>Design a clear and effective <strong>visualization</strong> to present the results.</p>
-<p>👉 Think of your presentation as a story: - Introduction - Climax - Conclusion</p>
+<p>library(shiny) library(jsonlite) library(dplyr) library(ggplot2) library(lubridate) library(caret) library(randomForest)</p>
+<section id="download-and-load-data" class="level1">
+<h1>Download and load data</h1>
+<p>url &lt;- “https://raw.githubusercontent.com/CapitalOneRecruiting/DS/master/transactions.zip” tmp &lt;- tempfile(fileext = “.zip”) download.file(url, tmp, mode = “wb”) unzip_path &lt;- unzip(tmp, exdir = tempdir()) transactions &lt;- stream_in(file(unzip_path[1]), verbose = FALSE) transactions<span class="math inline">\(transactionTime &lt;- ymd_hms(transactions\)</span>transactionTime)</p>
+<p>summary_df &lt;- data.frame( Variable = names(transactions), Nulls = sapply(transactions, function(x) sum(is.na(x))), Unique = sapply(transactions, function(x) length(unique(x))), Min = sapply(transactions, function(x) if(is.numeric(x)) min(x, na.rm = TRUE) else NA), Max = sapply(transactions, function(x) if(is.numeric(x)) max(x, na.rm = TRUE) else NA) ) summary_df</p>
+<p>ggplot(transactions, aes(x = transactionAmount)) + geom_histogram(bins = 100, fill = “steelblue”) + labs(title = “Histogram of Transaction Amounts”, x = “Transaction Amount”, y = “Frequency”)</p>
 </section>
+<section id="reversed-same-account-merchant-opposite-amount-within-10-min" class="level1">
+<h1>Reversed: same account, merchant, opposite amount within 10 min</h1>
+<p>rev_trans &lt;- transactions %&gt;% arrange(accountNumber, transactionTime) %&gt;% group_by(accountNumber) %&gt;% mutate(nextAmount = lead(transactionAmount), nextMerchant = lead(merchant), nextTime = lead(transactionTime), reversed = transactionAmount + nextAmount == 0 &amp; merchant == nextMerchant &amp; difftime(nextTime, transactionTime, units = “mins”) &lt;= 10) %&gt;% filter(reversed == TRUE)</p>
+<p>paste(“Total reversed transactions:”, nrow(rev_trans)) paste(“Total reversed dollar amount:”, sum(abs(rev_trans$transactionAmount)))</p>
 </section>
-<section id="identifying-the-story-components" class="level2">
-<h2 class="anchored" data-anchor-id="identifying-the-story-components">Identifying the Story Components</h2>
-<section id="introduction" class="level3">
-<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
-<ul>
-<li>What actions did we take?</li>
-<li>What problem are we trying to solve?</li>
-<li>What data are we using?</li>
-</ul>
-</section>
-<section id="climax-evidence" class="level3">
-<h3 class="anchored" data-anchor-id="climax-evidence">Climax (Evidence)</h3>
-<ul>
-<li>What did we learn from the data?</li>
-<li>Where do we outperform the competition?</li>
-<li>Where are we falling behind?</li>
-</ul>
-</section>
-<section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
-<ul>
-<li>What recommendations can we make?</li>
-<li>What concrete actions should follow?</li>
-</ul>
-</section>
-</section>
-<section id="exploring-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="exploring-the-data">Exploring the Data</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-25751725ef693eba5be2" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-25751725ef693eba5be2">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],["La tienda esta bien organizada","El proceso de pago y check out fue sencillo?","Los empleados fueron amigables","Encontre buenas promociones","Encontre lo que buscaba facilmente","Encontre los productos que necesitaba?","La atmosfera de la tienda me parecio agradable.","La pagina web me resulto util","La tienda tenia buenos precios.","La tienda tenia una amplia variedad","Encontre productos que no encontre en otras tienda?","Encontre productos a la moda"],[0.4,0.33,0.45,0.45,0.46,0.39,0.8,0.35,0.4,0.49,0.74,0.65],[0.38,0.34,0.5,0.65,0.55,0.49,0.7,0.34,0.6,0.47,0.54,0.55]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Area<\/th>\n      <th>Nuestra tienda<\/th>\n      <th>Competencia<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":true,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Area","targets":1},{"name":"Nuestra tienda","targets":2},{"name":"Competencia","targets":3}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-</section>
-<section id="first-approach" class="level2">
-<h2 class="anchored" data-anchor-id="first-approach">first approach</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="other-type-of-plot" class="level2">
-<h2 class="anchored" data-anchor-id="other-type-of-plot">Other type of plot…</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="mmmm-maybe." class="level2">
-<h2 class="anchored" data-anchor-id="mmmm-maybe.">mmmm Maybe….</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="barplot-for-the-win" class="level2">
-<h2 class="anchored" data-anchor-id="barplot-for-the-win">Barplot for the win</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="make-it-better" class="level2">
-<h2 class="anchored" data-anchor-id="make-it-better">Make it better</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="final" class="level3">
-<h3 class="anchored" data-anchor-id="final">final</h3>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="multi-swipe-same-merchant-same-amount-short-time-span" class="level1">
+<h1>Multi-swipe: same merchant, same amount, short time span</h1>
+<p>multi_swipe &lt;- transactions %&gt;% arrange(accountNumber, transactionTime) %&gt;% group_by(accountNumber, merchant, transactionAmount) %&gt;% filter(n() &gt; 1) %&gt;% mutate(time_diff = as.numeric(difftime(transactionTime, lag(transactionTime), units = “mins”))) %&gt;% filter(!is.na(time_diff) &amp; time_diff &lt; 5)</p>
+<p>paste(“Multi-swipe extra transactions:”, nrow(multi_swipe) - nrow(multi_swipe %&gt;% group_by(accountNumber, merchant, transactionAmount) %&gt;% slice(1)))</p>
+<p>model_data &lt;- transactions %&gt;% mutate_if(is.character, as.factor) %&gt;% select(transactionAmount, merchant, category, isFraud) %&gt;% na.omit()</p>
+<p>set.seed(42) split &lt;- createDataPartition(model_data$isFraud, p = 0.8, list = FALSE) train &lt;- model_data[split, ] test &lt;- model_data[-split, ]</p>
+<p>rf_model &lt;- randomForest(isFraud ~ ., data = train) pred &lt;- predict(rf_model, test)</p>
+<p>confusionMatrix(pred, test$isFraud)</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
