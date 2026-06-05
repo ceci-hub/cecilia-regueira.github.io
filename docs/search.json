@@ -312,14 +312,14 @@
     "href": "Mentorias/TakeawayFT.html#section",
     "title": "Case of Study: Transactions Analysis",
     "section": "",
-    "text": "Using transactional data, we built a model that can detect fraud in real-time, reducing potential losses while controlling false alerts. The best-performing model detects up to 77.8% of fraudulent transactions."
+    "text": "Using transactional data, we built a model that can detect fraud in real-time, reducing potential losses while controlling false alerts. The model identifies up to 70% of fraudulent transactions, capturing approximately 90% of the total fraud value."
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#problem-context",
     "href": "Mentorias/TakeawayFT.html#problem-context",
     "title": "Case of Study: Transactions Analysis",
     "section": "Problem Context",
-    "text": "Problem Context\n\n\n\n\n\n\nNote\n\n\nCredit card fraud is a significant challenge for banks and can occur in many ways, ranging from individual stolen cards to large-scale breaches involving compromised card data.\nUsing a dataset of transactions labeled with an isFraud indicator, the goal is to develop a predictive model that can identify whether a transaction is fraudulent.\nWe need to find the right balance:\n\nMissing fraud vs Flagging normal transactions\nfinancial loss vs poor customer experience"
+    "text": "Problem Context\n\n\n\n\n\n\nNote\n\n\nWe need to find the right balance:\n\nMissing fraud vs Flagging normal transactions\nfinancial loss vs poor customer experience"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#dataset-overview",
@@ -340,7 +340,7 @@
     "href": "Mentorias/TakeawayFT.html#dataset-overview-2",
     "title": "Case of Study: Transactions Analysis",
     "section": "Dataset Overview",
-    "text": "Dataset Overview\n\n\n\n\nTable 1: Fraud vs Non-Fraud Summary\n\n\n\n\n\n\nisFraud\nCases\nTotal_Amount\nCase_Pct\nAmount_Pct\n\n\n\n\nNot Fraud\n773946\n$104,924,052\n98%\n97%\n\n\nFraud\n12417\n$2,796,506\n2%\n3%\n\n\n\n\n\n\n\n\n\n\n\n\nTable 2: Transaction by clients\n\n\n\n\n\n\nMean.Transaction\nmedian.Transaction\nMin.Transaction\nmax.Transaction\n\n\n\n\n157.27\n50\n1\n32850"
+    "text": "Dataset Overview\n\n\nSummary\n\n\n\n\n\nTable 1: Fraud vs Non-Fraud Summary\n\n\n\n\n\n\nisFraud\nCases\nTotal_Amount\nCase_Pct\nAmount_Pct\n\n\n\n\nNot Fraud\n773946\n$104,924,052\n98%\n97%\n\n\nFraud\n12417\n$2,796,506\n2%\n3%\n\n\n\n\n\n\n\n\n\n\n\nTransaction \n\n\n\n\n\nTable 2: Transaction by clients\n\n\n\n\n\n\nMean.Transaction\nmedian.Transaction\nMin.Transaction\nmax.Transaction\n\n\n\n\n157.27\n50\n1\n32850"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section-1",
@@ -361,7 +361,7 @@
     "href": "Mentorias/TakeawayFT.html#data-caveat-1",
     "title": "Case of Study: Transactions Analysis",
     "section": "Data Caveat:",
-    "text": "Data Caveat:\nIdentifying Reverse transactions:\n\n\n\nSummary of Reversed Transactions\n\n\nCases\nTotal Amount ($)\nCases (%)\nAmount (%)\n\n\n\n\n17757\n2666479\n2.26\n2.48"
+    "text": "Data Caveat:\nIdentifying Reverse transactions:\n\n\n \n\n\n\n\nSummary of Reversed Transactions\n\n\nCases\nTotal Amount ($)\nCases (%)\nAmount (%)\n\n\n\n\n17757\n2666479\n2.26\n2.48"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section-2",
@@ -375,49 +375,49 @@
     "href": "Mentorias/TakeawayFT.html#section-3",
     "title": "Case of Study: Transactions Analysis",
     "section": "",
-    "text": "Identifying multi-swipe:\nMulti swipe, when a vendor accidentally charges a customer’s card multiple times within a short time span.\n\n\n\nSummary of Multi-Swipe Transactions\n\n\nMulti-Swipe\nCases\nTotal Amount ($)\nCases (%)\nAmount (%)\n\n\n\n\n1\n20156\n2201824\n2.56\n2.04"
+    "text": "Identifying multi-swipe:\nMulti swipe, when a vendor accidentally charges a customer’s card multiple times within a short time span.\n\n\n \n\n\n\n\nSummary of Multi-Swipe Transactions\n\n\nMulti-Swipe\nCases\nTotal Amount ($)\nCases (%)\nAmount (%)\n\n\n\n\n1\n20156\n2201824\n2.56\n2.04"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#key-insights",
     "href": "Mentorias/TakeawayFT.html#key-insights",
     "title": "Case of Study: Transactions Analysis",
     "section": "Key Insights",
-    "text": "Key Insights\nWe explored patterns to understand what fraud looks like:\n\nFraudulent transactions tend to be larger than usual\nCertain merchant types (like online purchases or travel-related transactions) show higher fraud rates\nErrors in transaction details, such as incorrect CVV entries, are more common in fraud cases\nTiming patterns, like unusual hours, can also matter\n\nThink of fraud as behavior that ‘looks different’ from a customer’s normal habits."
+    "text": "Key Insights\nWe explored patterns to understand what fraud looks like:\n\nTransactions\nMerchant types\nCVV"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section-4",
     "href": "Mentorias/TakeawayFT.html#section-4",
     "title": "Case of Study: Transactions Analysis",
     "section": "",
-    "text": "Transactions:"
+    "text": "Transactions:\nFraudulent transactions tend to be larger than usual"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section-5",
     "href": "Mentorias/TakeawayFT.html#section-5",
     "title": "Case of Study: Transactions Analysis",
     "section": "",
-    "text": "Merchant types"
+    "text": "Certain merchant types (like online purchases or travel-related transactions) show higher fraud rates"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section-6",
     "href": "Mentorias/TakeawayFT.html#section-6",
     "title": "Case of Study: Transactions Analysis",
     "section": "",
-    "text": "incorrect CVV"
+    "text": "Errors in transaction details, such as incorrect CVV entries, are more common in fraud cases"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#feature-engineering",
     "href": "Mentorias/TakeawayFT.html#feature-engineering",
     "title": "Case of Study: Transactions Analysis",
     "section": "Feature Engineering",
-    "text": "Feature Engineering\nTo improve detection, we created new variables, such as:\n\nStandardized transaction amount (how unusual a purchase is)\nCVV mismatch score\nTime-based features like hour and weekday\nMerchant category"
+    "text": "Feature Engineering\nTo improve detection, we created new variables, such as:\n\nStandardized transaction amount\nCVV mismatch score\nTime-based features like hour and weekday\nMerchant category\n\nThink of fraud as behavior that looks different from a customer’s normal habits.\n\nTiming patterns, Average Spend Last 7 days, Number of transactions in last 24 hours, New Merchant"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#modeling-approach",
     "href": "Mentorias/TakeawayFT.html#modeling-approach",
     "title": "Case of Study: Transactions Analysis",
     "section": "Modeling Approach",
-    "text": "Modeling Approach\nI followed a traditional Train-test split (70-30) but we have client data so I first sample IDs and then within IDs sample transactions."
+    "text": "Modeling Approach\nThe data is split in two steps:\n\ncustomers are divided so that different customers appear in train and test sets (around 70% vs 30%), avoiding leakage between them.\nwithin each customer, a cutoff date is defined so that past transactions are used to build features, and a later transaction is used as the prediction target.\n\nThis ensures the model only uses historical information and mimics real-time fraud detection."
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#modeling-approach-1",
@@ -431,21 +431,28 @@
     "href": "Mentorias/TakeawayFT.html#model-performance-business-impact",
     "title": "Case of Study: Transactions Analysis",
     "section": "Model Performance & Business Impact:",
-    "text": "Model Performance & Business Impact:\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (All Fraud)\nFraud Captured ($)\nFalse Alerts per Fraud\nFraud Prevented\nNet Benefit\n\n\n\n\nRandom Forest\n38.9%\n63.6%\n33\n$2,301\n$1,617\n\n\nLogistic Regression\n77.8%\n93.4%\n58\n$3,379\n$952"
+    "text": "Model Performance & Business Impact:\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (All Fraud)\nFraud Captured ($)\nF1 Score (Balance)\nFalse Alerts / 1K\nFalse Alerts per Fraud Detected\nNet Benefit\n\n\n\n\nRandom Forest\n71.4%\n91.0%\n4.1%\n312\n47\n$1,809\n\n\nLogistic Regression\n57.1%\n80.6%\n4.1%\n246\n46\n$1,738"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section-7",
     "href": "Mentorias/TakeawayFT.html#section-7",
     "title": "Case of Study: Transactions Analysis",
     "section": "",
-    "text": "Decision Criteria:\n\nIf the primary goal is to minimize false negatives and ensure that most fraud cases are identified, then the logit model may be the better choice despite its higher false positive rate.\nConversely, if the focus is on achieving greater overall accuracy and reducing false alarms, the random forest model could be better, provided that the cost of missed fraud is acceptable."
+    "text": "Fraud is primarily driven by behavioral anomalies rather than merchant characteristics."
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#next-steps",
-    "href": "Mentorias/TakeawayFT.html#next-steps",
+    "objectID": "Mentorias/TakeawayFT.html#top-5-logistic-regression-drivers",
+    "href": "Mentorias/TakeawayFT.html#top-5-logistic-regression-drivers",
     "title": "Case of Study: Transactions Analysis",
-    "section": "Next Steps:",
-    "text": "Next Steps:\n\nI began my analysis focusing on clients rather than solely transactions because I wanted to incorporate more features associated with the previous behavior of the client.\nFor example, create an alert if we are dealing with a new merchant or if the client makes a large purchase that is 10-20% higher than the previous month by merchant Category.\n\nThis could be further refined in a latter report and would prove more valuable than a transaction based model."
+    "section": "Top 5 Logistic Regression Drivers",
+    "text": "Top 5 Logistic Regression Drivers\n\nDeviation from customer mean → ↑ fraud risk (1.83x)\nFuel transactions → ↓ fraud likelihood (0.42x)\nMobile apps → ↓ fraud likelihood (0.44x)\nOnline subscriptions → ↓ fraud likelihood (0.54x)\nHotels → ↓ fraud likelihood (0.61x)\n\n\n\n Logistic \n\n\n\n\nTop 10 Logistic Regression Drivers (Odds Ratios)\n\n\nterm\nestimate\nodds_ratio\n\n\n\n\nmerchantCategoryCode_fuel\n-0.8730864\n0.4176605\n\n\nmerchantCategoryCode_mobileapps\n-0.8199576\n0.4404503\n\n\nmerchantCategoryCode_online_subscriptions\n-0.6180838\n0.5389762\n\n\ndeviation_from_customer_mean\n0.6058728\n1.8328512\n\n\nmerchantCategoryCode_hotels\n-0.5011747\n0.6058186\n\n\navg_spend_last_7d\n0.2760432\n1.3179048\n\n\nmerchantCategoryCode_health\n0.2612835\n1.2985958\n\n\nHour\n0.2319359\n1.2610388\n\n\nmerchantCategoryCode_online_gifts\n0.1525556\n1.1648073\n\n\nmerchantCategoryCode_online_retail\n0.1212889\n1.1289510"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
+    "href": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
+    "title": "Case of Study: Transactions Analysis",
+    "section": "Top 5 Random Forest Drivers",
+    "text": "Top 5 Random Forest Drivers\n\nRecent spending behavior is the strongest predictor: sudden changes in spending patterns signal fraud\nUnusual transactions relative to a customer’s history increase risk: transactions that deviate from normal behavior are more suspicious\nTime of transaction (hour) plays a significant role: fraud tends to occur at atypical times\nTransaction size relative to normal patterns matters: unusually large or atypical amounts increase fraud likelihood\nDay of week also influences fraud patterns: certain days exhibit higher fraud activity\n\n\n\n Random Forest \n\n\n\n# A tibble: 5 × 2\n  Feature                      Importance\n  &lt;chr&gt;                             &lt;dbl&gt;\n1 avg_spend_last_7d                  9.44\n2 deviation_from_customer_mean       6.33\n3 Hour                               4.70\n4 transactionAmount_std              4.46\n5 Weekday                            2.01"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#conclusion",
@@ -466,7 +473,7 @@
     "href": "Mentorias/TakeawayFT.html#section-8",
     "title": "Case of Study: Transactions Analysis",
     "section": "",
-    "text": "✅ Report\n\n\n 📘 View Step by step process"
+    "text": "✅ Report\n\n\n 📘 View Report Style no behavior"
   },
   {
     "objectID": "Mentorias/Software_QA.html",
@@ -616,6 +623,48 @@
     "text": "Best practices for code and analysis include:\n\n1. Reproducibility and a Clean Code\nReproducibility is achieved by structuring projects so that all results can be regenerated from raw data using clearly defined master scripts. Computational reproducibility is treated as a core research output, enabling independent verification and reuse of methods across contexts and over time.\nRobert C. Martin emphasizes that code is a primary communication artifact, not merely an execution mechanism. Core contributions of Clean Code include:\n\nReadability and Intentionality – Code should be easy to read and self‑explanatory\n\nSingle Responsibility and Modularity – Each function or script should do one thing well\n\nMeaningful Comments and Documentation – Comments explain why decisions were made, not just what the code does\n\nRefactoring as a Continuous Practice – Code quality improves through regular, incremental cleanup\n\n\n\n✅ Click to read more\n\nReproducibility ensures that research findings can be independently verified and consistently regenerated using the same data and code. In practice, this requires structuring analytical workflows so that all results—tables, figures, and statistics—are produced directly from raw or well‑documented intermediate data using executable code. Reproducibility is therefore not an afterthought, but a design principle applied throughout the project lifecycle.\nA core practice is the use of a master script, which defines software versions, directory paths, and execution order, and runs all data processing and analysis steps end to end. By changing only a single file path or configuration parameter, another researcher should be able to rerun the complete workflow on a different machine and reproduce identical results.\nWell‑written reproducible code is modular, readable, and well documented. Tasks are split into separate scripts (for example, 01_clean_data, 02_construct_variables, 03_analysis), each with clear headers describing inputs, outputs, and purpose. Version control systems such as Git track changes over time, enabling transparent review of how results evolve.\nReproducibility is further strengthened through dynamic documents, such as Quarto, R Markdown, or Jupyter notebooks, which integrate code, outputs, and narrative text in a single source file. Any change in data or code is immediately reflected in the final report.\nImportantly, computational reproducibility is treated as a research output in its own right. Reproducibility packages typically include executable code, minimal working data (or detailed metadata when access is restricted), documentation, and a README file with clear instructions.\n\nReproducible research requires clearly structured, documented, and executable code. While the principles of reproducibility are consistent across disciplines, their implementation varies by programming environment.\n\n 📘 View Code Examples \n\n\n\n2. Transparency\nTransparency requires thorough documentation of data, code, and research decisions, with public release whenever legally and ethically feasible. Using trusted external repositories—such as GitHub, OSF, or institutional data catalogs—ensures long‑term access, accountability, and opportunities for reuse.\nWhere transparency requires openness, Clean Code ensures that what is open is also understandable.\n\n\n3. Ethical and Secure Data Handling\nEthical and secure data handling protects research participants by enforcing informed consent, separating and encrypting sensitive information, and complying with applicable legal and institutional standards. Careful data governance throughout the project lifecycle ensures privacy, minimizes risk, and maintains trust while still enabling scientific transparency.\nIn higher education settings, researchers and analysts must comply with the Family Educational Rights and Privacy Act (FERPA), which governs access to student education records. Compliance requires limiting access to personally identifiable information, applying appropriate de‑identification practices, and ensuring data are used solely for legitimate educational or research purposes.\n\n\n4.Data Work as a Collaborative Process\nData work is inherently collaborative and depends on shared standards, clear communication, and coordinated workflows across research teams. Treating data work as a collective responsibility—rather than an individual or ad hoc activity—reduces errors, improves efficiency, and strengthens institutional memory.\nEffective collaborative data work relies on standardization and transparency. Common folder structures, naming conventions, coding styles, and version control systems allow team members to contribute with minimal friction. Documentation of decisions and data transformations ensures continuity across staff transitions and supports meaningful peer review.\nEqually important is the use of shared tools and workflows, such as version‑controlled repositories, task‑tracking systems, and dynamic documents that integrate code and outputs. Regular code review and clear role definition foster accountability while encouraging collective learning.\nWhere collaborative data work requires shared standards, Agile software development provides the team practices that sustain those standards over time.\n\n\n✅ Click to read about Agile practices\n\nAgile Software Development emphasizes team‑based workflows, rapid feedback, and adaptability:\n\nIterative development supports early validation of assumptions and outputs\n\nShared ownership of code reduces risk from staff turnover\n\nContinuous integration and testing prevent silent errors\n\nProfessional responsibility emphasizes correctness, clarity, and maintainability\n\nTogether, these principles reinforce the view that reproducibility is a continuous process and that collaboration must be intentionally designed and maintained."
   },
   {
+    "objectID": "awards.html",
+    "href": "awards.html",
+    "title": "Awards & Honors",
+    "section": "",
+    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
+  },
+  {
+    "objectID": "awards.html#recruitment-innovation-award-2024",
+    "href": "awards.html#recruitment-innovation-award-2024",
+    "title": "Awards & Honors",
+    "section": "",
+    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
+  },
+  {
+    "objectID": "awards.html#presidents-list",
+    "href": "awards.html#presidents-list",
+    "title": "Awards & Honors",
+    "section": "President’s List",
+    "text": "President’s List\n🎓 Des Moines Area Community College (DMACC)\nRecognized for outstanding academic performance, earning placement on the\nPresident’s List during the Data Science / Analytics program."
+  },
+  {
+    "objectID": "awards.html#phi-theta-kappa-honor-society",
+    "href": "awards.html#phi-theta-kappa-honor-society",
+    "title": "Awards & Honors",
+    "section": "Phi Theta Kappa Honor Society",
+    "text": "Phi Theta Kappa Honor Society\n⭐ Member – Phi Theta Kappa\nInternational honor society recognizing academic excellence, leadership,\nand commitment to service among high‑achieving students in higher education.\n\n\n🏆 Love DATAWEEK 2024 — First Place Award\nRecipient of the First‑Place Award for Innovative Visualizations at Love DATAWEEK 2024, recognizing excellence in data visualization, design, and analytical storytelling with Federico Veneri.\nProject"
+  },
+  {
+    "objectID": "applied-project.html",
+    "href": "applied-project.html",
+    "title": "5 minutes Applied Data Projects",
+    "section": "",
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+  },
+  {
+    "objectID": "applied-project.html#overview",
+    "href": "applied-project.html#overview",
+    "title": "5 minutes Applied Data Projects",
+    "section": "",
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Cecilia Regueira",
@@ -684,55 +733,6 @@
     "title": "Cecilia Regueira",
     "section": "🌱 Beyond Work",
     "text": "🌱 Beyond Work\n📚 Current Reading (2026)\nIn 2026, my reading balances intellectual curiosity 🧠 with personal enjoyment 💫. On the analytical side, I am reading 📘 The Book of Why by Judea Pearl, which deepens my understanding of causality, causal reasoning, and counterfactual thinking 🔗, extending data science beyond prediction. I am also revisiting 📗 Thinking, Fast and Slow by Daniel Kahneman, a foundational work on judgment under uncertainty ⚖️ and cognitive bias, which continues to shape how I think about decision‑making in both research and applied analytics.\nFor emotionally heavier moments—when I’m drawn to stories that explore grief, vulnerability, and human resilience 💔➡️💪—I read the 📖 Boys of Tommen series. These novels are deeply emotional and introspective, offering space for reflection and emotional release rather than light escapism.\nIn addition, I am part of a 📘 book club, which provides a collaborative space for discussion and collective interpretation of a diverse range of texts.\nOutside of reading, I enjoy 🧘️ yoga, a practice that helps me slow down, reset, and recenter 🌿. Beyond work, I deeply value 👨👩👧 time with my family—through shared activities, everyday conversations, or simply slowing down together—an essential counterweight ⚖️ to analytical work and a constant source of perspective ✨.\n\n📧 Contact\nceciliaregueira.m@gmail.com\nLinkedIn · GitHub"
-  },
-  {
-    "objectID": "applied-project.html",
-    "href": "applied-project.html",
-    "title": "5 minutes Applied Data Projects",
-    "section": "",
-    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
-  },
-  {
-    "objectID": "applied-project.html#overview",
-    "href": "applied-project.html#overview",
-    "title": "5 minutes Applied Data Projects",
-    "section": "",
-    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
-  },
-  {
-    "objectID": "awards.html",
-    "href": "awards.html",
-    "title": "Awards & Honors",
-    "section": "",
-    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
-  },
-  {
-    "objectID": "awards.html#recruitment-innovation-award-2024",
-    "href": "awards.html#recruitment-innovation-award-2024",
-    "title": "Awards & Honors",
-    "section": "",
-    "text": "🏆 Iowa State University\nAwarded for innovative and creative contributions in recruitment analytics,\nrecognizing the development of data-driven models to support undergraduate,\ngraduate, and professional student recruitment strategies."
-  },
-  {
-    "objectID": "awards.html#presidents-list",
-    "href": "awards.html#presidents-list",
-    "title": "Awards & Honors",
-    "section": "President’s List",
-    "text": "President’s List\n🎓 Des Moines Area Community College (DMACC)\nRecognized for outstanding academic performance, earning placement on the\nPresident’s List during the Data Science / Analytics program."
-  },
-  {
-    "objectID": "awards.html#phi-theta-kappa-honor-society",
-    "href": "awards.html#phi-theta-kappa-honor-society",
-    "title": "Awards & Honors",
-    "section": "Phi Theta Kappa Honor Society",
-    "text": "Phi Theta Kappa Honor Society\n⭐ Member – Phi Theta Kappa\nInternational honor society recognizing academic excellence, leadership,\nand commitment to service among high‑achieving students in higher education.\n\n\n🏆 Love DATAWEEK 2024 — First Place Award\nRecipient of the First‑Place Award for Innovative Visualizations at Love DATAWEEK 2024, recognizing excellence in data visualization, design, and analytical storytelling with Federico Veneri.\nProject"
-  },
-  {
-    "objectID": "Mentorias/Capital one DS.html",
-    "href": "Mentorias/Capital one DS.html",
-    "title": "Capital One Transactions Analysis",
-    "section": "",
-    "text": "library(shiny) library(jsonlite) library(dplyr) library(ggplot2) library(lubridate) library(caret) library(randomForest)\n\nDownload and load data\nurl &lt;- “https://raw.githubusercontent.com/CapitalOneRecruiting/DS/master/transactions.zip” tmp &lt;- tempfile(fileext = “.zip”) download.file(url, tmp, mode = “wb”) unzip_path &lt;- unzip(tmp, exdir = tempdir()) transactions &lt;- stream_in(file(unzip_path[1]), verbose = FALSE) transactions\\(transactionTime &lt;- ymd_hms(transactions\\)transactionTime)\nsummary_df &lt;- data.frame( Variable = names(transactions), Nulls = sapply(transactions, function(x) sum(is.na(x))), Unique = sapply(transactions, function(x) length(unique(x))), Min = sapply(transactions, function(x) if(is.numeric(x)) min(x, na.rm = TRUE) else NA), Max = sapply(transactions, function(x) if(is.numeric(x)) max(x, na.rm = TRUE) else NA) ) summary_df\nggplot(transactions, aes(x = transactionAmount)) + geom_histogram(bins = 100, fill = “steelblue”) + labs(title = “Histogram of Transaction Amounts”, x = “Transaction Amount”, y = “Frequency”)\n\n\nReversed: same account, merchant, opposite amount within 10 min\nrev_trans &lt;- transactions %&gt;% arrange(accountNumber, transactionTime) %&gt;% group_by(accountNumber) %&gt;% mutate(nextAmount = lead(transactionAmount), nextMerchant = lead(merchant), nextTime = lead(transactionTime), reversed = transactionAmount + nextAmount == 0 & merchant == nextMerchant & difftime(nextTime, transactionTime, units = “mins”) &lt;= 10) %&gt;% filter(reversed == TRUE)\npaste(“Total reversed transactions:”, nrow(rev_trans)) paste(“Total reversed dollar amount:”, sum(abs(rev_trans$transactionAmount)))\n\n\nMulti-swipe: same merchant, same amount, short time span\nmulti_swipe &lt;- transactions %&gt;% arrange(accountNumber, transactionTime) %&gt;% group_by(accountNumber, merchant, transactionAmount) %&gt;% filter(n() &gt; 1) %&gt;% mutate(time_diff = as.numeric(difftime(transactionTime, lag(transactionTime), units = “mins”))) %&gt;% filter(!is.na(time_diff) & time_diff &lt; 5)\npaste(“Multi-swipe extra transactions:”, nrow(multi_swipe) - nrow(multi_swipe %&gt;% group_by(accountNumber, merchant, transactionAmount) %&gt;% slice(1)))\nmodel_data &lt;- transactions %&gt;% mutate_if(is.character, as.factor) %&gt;% select(transactionAmount, merchant, category, isFraud) %&gt;% na.omit()\nset.seed(42) split &lt;- createDataPartition(model_data$isFraud, p = 0.8, list = FALSE) train &lt;- model_data[split, ] test &lt;- model_data[-split, ]\nrf_model &lt;- randomForest(isFraud ~ ., data = train) pred &lt;- predict(rf_model, test)\nconfusionMatrix(pred, test$isFraud)"
   },
   {
     "objectID": "Mentorias/DS questions.html",
