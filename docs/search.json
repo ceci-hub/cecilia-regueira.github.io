@@ -410,14 +410,28 @@
     "href": "Mentorias/TakeawayFT.html#feature-engineering",
     "title": "Case of Study: Transactions Analysis",
     "section": "Feature Engineering",
-    "text": "Feature Engineering\nTo improve detection, we created new variables, such as:\n\nStandardized transaction amount\nCVV mismatch score\nTime-based features like hour and weekday\nMerchant category\n\nThink of fraud as behavior that looks different from a customer’s normal habits.\n\nTiming patterns, Average Spend Last 7 days, Number of transactions in last 24 hours, New Merchant"
+    "text": "Feature Engineering\nWe transformed raw data into behavioral signals:\n\nCustomers behave consistently → fraud deviates\nTime and frequency provide context\nNew merchants increase uncertainty\n\nThink of fraud as behavior that looks different from a customer’s normal habits.\n\nTiming patterns, Average Spend Last 7 days, Number of transactions in last 24 hours, New Merchant"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#section-7",
+    "href": "Mentorias/TakeawayFT.html#section-7",
+    "title": "Case of Study: Transactions Analysis",
+    "section": "",
+    "text": "Behavioral deviation"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#section-8",
+    "href": "Mentorias/TakeawayFT.html#section-8",
+    "title": "Case of Study: Transactions Analysis",
+    "section": "",
+    "text": "Time-based features"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#modeling-approach",
     "href": "Mentorias/TakeawayFT.html#modeling-approach",
     "title": "Case of Study: Transactions Analysis",
     "section": "Modeling Approach",
-    "text": "Modeling Approach\nThe data is split in two steps:\n\ncustomers are divided so that different customers appear in train and test sets (around 70% vs 30%), avoiding leakage between them.\nwithin each customer, a cutoff date is defined so that past transactions are used to build features, and a later transaction is used as the prediction target.\n\nThis ensures the model only uses historical information and mimics real-time fraud detection."
+    "text": "Modeling Approach\n\n\n \n\nThe data is split in two steps:\n\ncustomers are divided so that different customers appear in train and test sets (around 70% vs 30%), avoiding leakage between them.\nwithin each customer, a cutoff date is defined so that past transactions are used to build features, and a later transaction is used as the prediction target.\n\nThis ensures the model only uses historical information and mimics real-time fraud detection."
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#modeling-approach-1",
@@ -431,11 +445,11 @@
     "href": "Mentorias/TakeawayFT.html#model-performance-business-impact",
     "title": "Case of Study: Transactions Analysis",
     "section": "Model Performance & Business Impact:",
-    "text": "Model Performance & Business Impact:\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (All Fraud)\nFraud Captured ($)\nF1 Score (Balance)\nFalse Alerts / 1K\nFalse Alerts per Fraud Detected\nNet Benefit\n\n\n\n\nRandom Forest\n71.4%\n91.0%\n4.1%\n312\n47\n$1,809\n\n\nLogistic Regression\n57.1%\n80.6%\n4.1%\n246\n46\n$1,738"
+    "text": "Model Performance & Business Impact:\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (All Fraud)\nFraud Captured ($)\nF1 Score (Balance)\nFalse Alerts / 1K\nFalse Alerts per Fraud Detected\nNet Benefit\n\n\n\n\nRandom Forest\n78.6%\n90.6%\n5.4%\n255\n35\n$2,050\n\n\nLogistic Regression\n42.9%\n63.6%\n2.9%\n264\n66\n$1,058"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#section-7",
-    "href": "Mentorias/TakeawayFT.html#section-7",
+    "objectID": "Mentorias/TakeawayFT.html#section-9",
+    "href": "Mentorias/TakeawayFT.html#section-9",
     "title": "Case of Study: Transactions Analysis",
     "section": "",
     "text": "Fraud is primarily driven by behavioral anomalies rather than merchant characteristics."
@@ -445,14 +459,14 @@
     "href": "Mentorias/TakeawayFT.html#top-5-logistic-regression-drivers",
     "title": "Case of Study: Transactions Analysis",
     "section": "Top 5 Logistic Regression Drivers",
-    "text": "Top 5 Logistic Regression Drivers\n\nDeviation from customer mean → ↑ fraud risk (1.83x)\nFuel transactions → ↓ fraud likelihood (0.42x)\nMobile apps → ↓ fraud likelihood (0.44x)\nOnline subscriptions → ↓ fraud likelihood (0.54x)\nHotels → ↓ fraud likelihood (0.61x)\n\n\n\n Logistic \n\n\n\n\nTop 10 Logistic Regression Drivers (Odds Ratios)\n\n\nterm\nestimate\nodds_ratio\n\n\n\n\nmerchantCategoryCode_fuel\n-0.8730864\n0.4176605\n\n\nmerchantCategoryCode_mobileapps\n-0.8199576\n0.4404503\n\n\nmerchantCategoryCode_online_subscriptions\n-0.6180838\n0.5389762\n\n\ndeviation_from_customer_mean\n0.6058728\n1.8328512\n\n\nmerchantCategoryCode_hotels\n-0.5011747\n0.6058186\n\n\navg_spend_last_7d\n0.2760432\n1.3179048\n\n\nmerchantCategoryCode_health\n0.2612835\n1.2985958\n\n\nHour\n0.2319359\n1.2610388\n\n\nmerchantCategoryCode_online_gifts\n0.1525556\n1.1648073\n\n\nmerchantCategoryCode_online_retail\n0.1212889\n1.1289510"
+    "text": "Top 5 Logistic Regression Drivers\n\nDeviation from customer mean → ↑ fraud risk (1.83x)\nFuel transactions → ↓ fraud likelihood (0.42x)\nMobile apps → ↓ fraud likelihood (0.44x)\nOnline subscriptions → ↓ fraud likelihood (0.54x)\nHotels → ↓ fraud likelihood (0.61x)"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
     "href": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
     "title": "Case of Study: Transactions Analysis",
     "section": "Top 5 Random Forest Drivers",
-    "text": "Top 5 Random Forest Drivers\n\nRecent spending behavior is the strongest predictor: sudden changes in spending patterns signal fraud\nUnusual transactions relative to a customer’s history increase risk: transactions that deviate from normal behavior are more suspicious\nTime of transaction (hour) plays a significant role: fraud tends to occur at atypical times\nTransaction size relative to normal patterns matters: unusually large or atypical amounts increase fraud likelihood\nDay of week also influences fraud patterns: certain days exhibit higher fraud activity\n\n\n\n Random Forest \n\n\n\n# A tibble: 5 × 2\n  Feature                      Importance\n  &lt;chr&gt;                             &lt;dbl&gt;\n1 avg_spend_last_7d                  9.44\n2 deviation_from_customer_mean       6.33\n3 Hour                               4.70\n4 transactionAmount_std              4.46\n5 Weekday                            2.01"
+    "text": "Top 5 Random Forest Drivers\n\nRecent spending behavior is the strongest predictor\nUnusual transactions relative to a customer’s history increase risk\nTime of transaction (hour) plays a significant role\nTransaction size relative to normal patterns matters\nDay of week also influences fraud patterns"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#conclusion",
@@ -469,8 +483,36 @@
     "text": "Q & A\nThank you!"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#section-8",
-    "href": "Mentorias/TakeawayFT.html#section-8",
+    "objectID": "Mentorias/TakeawayFT.html#coefficients-features-of-importance",
+    "href": "Mentorias/TakeawayFT.html#coefficients-features-of-importance",
+    "title": "Case of Study: Transactions Analysis",
+    "section": "Coefficients / Features of Importance",
+    "text": "Coefficients / Features of Importance\n\n\n Logistic \n\n\n\n\nTop 10 Logistic Regression Drivers (Odds Ratios)\n\n\nterm\nestimate\nodds_ratio\n\n\n\n\nmerchantCategoryCode_mobileapps\n-0.6578886\n0.5179438\n\n\nmerchantCategoryCode_fuel\n-0.6379013\n0.5284002\n\n\nmerchantCategoryCode_online_subscriptions\n-0.5508310\n0.5764706\n\n\nmerchantCategoryCode_rideshare\n0.5466176\n1.7274004\n\n\nmerchantCategoryCode_hotels\n-0.4618157\n0.6301384\n\n\ndeviation_from_customer_mean\n0.3501593\n1.4192936\n\n\nmerchantCategoryCode_furniture\n0.2687793\n1.3083663\n\n\nmerchantCategoryCode_personal.care\n-0.2591341\n0.7717195\n\n\nmerchantCategoryCode_cable.phone\n-0.2479920\n0.7803662\n\n\nmerchantCategoryCode_entertainment\n0.2477416\n1.2811289\n\n\n\n\n\n\n\n\n Random Forest"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#behavioral-signals",
+    "href": "Mentorias/TakeawayFT.html#behavioral-signals",
+    "title": "Case of Study: Transactions Analysis",
+    "section": "Behavioral signals",
+    "text": "Behavioral signals"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#section-10",
+    "href": "Mentorias/TakeawayFT.html#section-10",
+    "title": "Case of Study: Transactions Analysis",
+    "section": "",
+    "text": "Standardized transaction amount"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#section-11",
+    "href": "Mentorias/TakeawayFT.html#section-11",
+    "title": "Case of Study: Transactions Analysis",
+    "section": "",
+    "text": "CVV distance"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#section-12",
+    "href": "Mentorias/TakeawayFT.html#section-12",
     "title": "Case of Study: Transactions Analysis",
     "section": "",
     "text": "✅ Report\n\n\n 📘 View Report Style no behavior"

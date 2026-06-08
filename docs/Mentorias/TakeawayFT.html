@@ -476,26 +476,54 @@ Table&nbsp;3: Observation Example
 <img data-src="TakeawayFT_files/figure-revealjs/model_plot44-1.png" width="960" class="r-stretch"></section>
 <section id="feature-engineering" class="slide level2 center">
 <h2>Feature Engineering</h2>
-<p>To improve detection, we created new variables, such as:</p>
+<p>We transformed raw data into behavioral signals:</p>
 <ul>
-<li>Standardized transaction amount</li>
-<li>CVV mismatch score</li>
-<li>Time-based features like hour and weekday</li>
-<li>Merchant category</li>
+<li>Customers behave consistently → fraud deviates</li>
+<li>Time and frequency provide context</li>
+<li>New merchants increase uncertainty</li>
 </ul>
 <p>Think of fraud as behavior that <strong>looks different</strong> from a customer’s normal habits.</p>
 <ul>
 <li>Timing patterns, Average Spend Last 7 days, Number of transactions in last 24 hours, New Merchant</li>
 </ul>
 </section>
+<section id="section-7" class="slide level2 center">
+<h2></h2>
+<p><strong>Behavioral deviation</strong></p>
+
+<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="section-8" class="slide level2 center">
+<h2></h2>
+<p><strong>Time-based features</strong></p>
+
+<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
 <section id="modeling-approach" class="slide level2 center">
 <h2>Modeling Approach</h2>
+<details>
+<summary>
+<strong> </strong>
+</summary>
 <p>The data is split in two steps:</p>
 <ul>
 <li><p>customers are divided so that different customers appear in train and test sets (around 70% vs 30%), avoiding leakage between them.</p></li>
 <li><p>within each customer, a cutoff date is defined so that past transactions are used to build features, and a later transaction is used as the prediction target.</p></li>
 </ul>
 <p>This ensures the model only uses historical information and mimics real-time fraud detection.</p>
+</details>
+<details>
+<summary>
+<strong> </strong>
+</summary>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="TakeawayFT_files/figure-revealjs/model_plot33-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
 </section>
 <section id="modeling-approach-1" class="slide level2 center">
 <h2>Modeling Approach</h2>
@@ -980,21 +1008,21 @@ Table&nbsp;3: Observation Example
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_center" headers="Model">Random Forest</td>
-<td class="gt_row gt_center" headers="recall">71.4%</td>
-<td class="gt_row gt_center" headers="fraud_capture_rate_amt">91.0%</td>
-<td class="gt_row gt_center" headers="f1">4.1%</td>
-<td class="gt_row gt_center" headers="false_alerts_per_1000">312</td>
-<td class="gt_row gt_center" headers="false_alerts_per_true_fraud">47</td>
-<td class="gt_row gt_center" headers="net_benefit" style="background-color: #1A9850; color: #FFFFFF">$1,809</td>
+<td class="gt_row gt_center" headers="recall">78.6%</td>
+<td class="gt_row gt_center" headers="fraud_capture_rate_amt">90.6%</td>
+<td class="gt_row gt_center" headers="f1">5.4%</td>
+<td class="gt_row gt_center" headers="false_alerts_per_1000">255</td>
+<td class="gt_row gt_center" headers="false_alerts_per_true_fraud">35</td>
+<td class="gt_row gt_center" headers="net_benefit" style="background-color: #1A9850; color: #FFFFFF">$2,050</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_center" headers="Model">Logistic Regression</td>
-<td class="gt_row gt_center" headers="recall">57.1%</td>
-<td class="gt_row gt_center" headers="fraud_capture_rate_amt">80.6%</td>
-<td class="gt_row gt_center" headers="f1">4.1%</td>
-<td class="gt_row gt_center" headers="false_alerts_per_1000">246</td>
-<td class="gt_row gt_center" headers="false_alerts_per_true_fraud">46</td>
-<td class="gt_row gt_center" headers="net_benefit" style="background-color: #1A9850; color: #FFFFFF">$1,738</td>
+<td class="gt_row gt_center" headers="recall">42.9%</td>
+<td class="gt_row gt_center" headers="fraud_capture_rate_amt">63.6%</td>
+<td class="gt_row gt_center" headers="f1">2.9%</td>
+<td class="gt_row gt_center" headers="false_alerts_per_1000">264</td>
+<td class="gt_row gt_center" headers="false_alerts_per_true_fraud">66</td>
+<td class="gt_row gt_center" headers="net_benefit" style="background-color: #1A9850; color: #FFFFFF">$1,058</td>
 </tr>
 </tbody>
 </table>
@@ -1003,7 +1031,7 @@ Table&nbsp;3: Observation Example
 </div>
 </div>
 </section>
-<section id="section-7" class="slide level2 center">
+<section id="section-9" class="slide level2 center">
 <h2></h2>
 <p>Fraud is primarily driven by behavioral anomalies rather than merchant characteristics.</p>
 </section>
@@ -1016,6 +1044,31 @@ Table&nbsp;3: Observation Example
 <li><strong>Online subscriptions</strong> → ↓ fraud likelihood (0.54x)</li>
 <li><strong>Hotels</strong> → ↓ fraud likelihood (0.61x)</li>
 </ul>
+</section>
+<section id="top-5-random-forest-drivers" class="slide level2 center">
+<h2>Top 5 Random Forest Drivers</h2>
+<ul>
+<li>Recent spending behavior is the strongest predictor</li>
+<li>Unusual transactions relative to a customer’s history increase risk</li>
+<li>Time of transaction (hour) plays a significant role</li>
+<li>Transaction size relative to normal patterns matters</li>
+<li>Day of week also influences fraud patterns</li>
+</ul>
+</section>
+<section id="conclusion" class="slide level2 center">
+<h2>Conclusion</h2>
+<ul>
+<li>Fraud detection = data + behavior + business context</li>
+<li>Simpler models can outperform complex ones</li>
+<li>Balance risk vs customer experience</li>
+</ul>
+</section>
+<section id="q-a" class="slide level2 center">
+<h2>Q &amp; A</h2>
+<p>Thank you!</p>
+</section>
+<section id="coefficients-features-of-importance" class="slide level2 center">
+<h2>Coefficients / Features of Importance</h2>
 <details>
 <summary>
 <strong> Logistic </strong>
@@ -1033,108 +1086,89 @@ Table&nbsp;3: Observation Example
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">merchantCategoryCode_fuel</td>
-<td style="text-align: right;">-0.8730864</td>
-<td style="text-align: right;">0.4176605</td>
+<td style="text-align: left;">merchantCategoryCode_mobileapps</td>
+<td style="text-align: right;">-0.6578886</td>
+<td style="text-align: right;">0.5179438</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">merchantCategoryCode_mobileapps</td>
-<td style="text-align: right;">-0.8199576</td>
-<td style="text-align: right;">0.4404503</td>
+<td style="text-align: left;">merchantCategoryCode_fuel</td>
+<td style="text-align: right;">-0.6379013</td>
+<td style="text-align: right;">0.5284002</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">merchantCategoryCode_online_subscriptions</td>
-<td style="text-align: right;">-0.6180838</td>
-<td style="text-align: right;">0.5389762</td>
+<td style="text-align: right;">-0.5508310</td>
+<td style="text-align: right;">0.5764706</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">deviation_from_customer_mean</td>
-<td style="text-align: right;">0.6058728</td>
-<td style="text-align: right;">1.8328512</td>
+<td style="text-align: left;">merchantCategoryCode_rideshare</td>
+<td style="text-align: right;">0.5466176</td>
+<td style="text-align: right;">1.7274004</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">merchantCategoryCode_hotels</td>
-<td style="text-align: right;">-0.5011747</td>
-<td style="text-align: right;">0.6058186</td>
+<td style="text-align: right;">-0.4618157</td>
+<td style="text-align: right;">0.6301384</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">avg_spend_last_7d</td>
-<td style="text-align: right;">0.2760432</td>
-<td style="text-align: right;">1.3179048</td>
+<td style="text-align: left;">deviation_from_customer_mean</td>
+<td style="text-align: right;">0.3501593</td>
+<td style="text-align: right;">1.4192936</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">merchantCategoryCode_health</td>
-<td style="text-align: right;">0.2612835</td>
-<td style="text-align: right;">1.2985958</td>
+<td style="text-align: left;">merchantCategoryCode_furniture</td>
+<td style="text-align: right;">0.2687793</td>
+<td style="text-align: right;">1.3083663</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Hour</td>
-<td style="text-align: right;">0.2319359</td>
-<td style="text-align: right;">1.2610388</td>
+<td style="text-align: left;">merchantCategoryCode_personal.care</td>
+<td style="text-align: right;">-0.2591341</td>
+<td style="text-align: right;">0.7717195</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">merchantCategoryCode_online_gifts</td>
-<td style="text-align: right;">0.1525556</td>
-<td style="text-align: right;">1.1648073</td>
+<td style="text-align: left;">merchantCategoryCode_cable.phone</td>
+<td style="text-align: right;">-0.2479920</td>
+<td style="text-align: right;">0.7803662</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">merchantCategoryCode_online_retail</td>
-<td style="text-align: right;">0.1212889</td>
-<td style="text-align: right;">1.1289510</td>
+<td style="text-align: left;">merchantCategoryCode_entertainment</td>
+<td style="text-align: right;">0.2477416</td>
+<td style="text-align: right;">1.2811289</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </details>
-</section>
-<section id="top-5-random-forest-drivers" class="slide level2 center">
-<h2>Top 5 Random Forest Drivers</h2>
-<ul>
-<li>Recent spending behavior is the strongest predictor: <em>sudden changes in spending patterns signal fraud</em></li>
-<li>Unusual transactions relative to a customer’s history increase risk: <em>transactions that deviate from normal behavior are more suspicious</em></li>
-<li>Time of transaction (hour) plays a significant role: <em>fraud tends to occur at atypical times</em></li>
-<li>Transaction size relative to normal patterns matters: <em>unusually large or atypical amounts increase fraud likelihood</em></li>
-<li>Day of week also influences fraud patterns: <em>certain days exhibit higher fraud activity</em></li>
-</ul>
 <details>
 <summary>
 <strong> Random Forest </strong>
 </summary>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-  Feature                      Importance
-  &lt;chr&gt;                             &lt;dbl&gt;
-1 avg_spend_last_7d                  9.44
-2 deviation_from_customer_mean       6.33
-3 Hour                               4.70
-4 transactionAmount_std              4.46
-5 Weekday                            2.01</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+<p><img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </details>
 </section>
-<section id="conclusion" class="slide level2 center">
-<h2>Conclusion</h2>
-<ul>
-<li>Fraud detection = data + behavior + business context</li>
-<li>Simpler models can outperform complex ones</li>
-<li>Balance risk vs customer experience</li>
-</ul>
+<section id="behavioral-signals" class="slide level2 center">
+<h2>Behavioral signals</h2>
 </section>
-<section id="q-a" class="slide level2 center">
-<h2>Q &amp; A</h2>
-<p>Thank you!</p>
-</section>
-<section id="section-8" class="slide level2 center">
+<section id="section-10" class="slide level2 center">
+<h2></h2>
+<p><strong>Standardized transaction amount</strong></p>
+
+<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section>
+<section id="section-11" class="slide level2 center">
+<h2></h2>
+<p><strong>CVV distance</strong></p>
+
+<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
+<section id="section-12" class="slide level2 center">
 <h2></h2>
 <details>
 <summary>
