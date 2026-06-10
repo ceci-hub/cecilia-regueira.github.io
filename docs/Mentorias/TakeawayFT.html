@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Cecilia Regueira">
-  <title>Cecilia Regueira – Case of Study: Transactions Analysis</title>
+  <title>Cecilia Regueira – Detecting Fraud</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -131,7 +131,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Case of Study: Transactions Analysis</h1>
+  <h1 class="title">Detecting Fraud</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -176,11 +176,29 @@ Cecilia Regueira
 </section>
 <section id="dataset-overview" class="slide level2 center">
 <h2>Dataset Overview</h2>
+<div class="columns">
+<div class="column">
 <ul>
-<li>780,000+ transactions &amp; ~5,000 customers</li>
-<li>30 variables</li>
+<li>780,000+ transactions | ~5,000 customers | 30 variables</li>
+</ul>
+<div class="fragment">
+<ul>
 <li>Imbalanced data (fraud ≈ 2%)</li>
 </ul>
+</div>
+<div class="fragment">
+<p><img data-src="Imagen/fraud.png" style="width:35.0%"></p>
+</div>
+</div><div class="column">
+<div class="fragment">
+<ul>
+<li>What would happen if the model just predicts everything as normal?</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>It would be 98% accurate — and still useless.</strong></p>
+</div>
+</div></div>
 </section>
 <section id="dataset-overview-1" class="slide level2 center">
 <h2>Dataset Overview</h2>
@@ -271,7 +289,7 @@ Table&nbsp;2: Transaction by clients
 </section>
 <section id="section-1" class="slide level2 center">
 <h2></h2>
-<p><strong>The dataset is transaction-level financial data </strong></p>
+<p><strong>The dataset is transaction-level financial data</strong></p>
 <ul>
 <li>Customer/account info</li>
 <li>Transaction details (DataTime, Amount)</li>
@@ -389,9 +407,13 @@ Table&nbsp;3: Observation Example
 </div>
 </details>
 </section>
-<section id="section-2" class="slide level2 center">
-<h2></h2>
+<section id="data-caveat-2" class="slide level2 center">
+<h2>Data Caveat:</h2>
 <h3 id="error-detection-there-are-some-returns-that-do-not-have-a-prior-purchase.">Error detection: There are some returns that do not have a prior purchase.</h3>
+<details>
+<summary>
+<strong> </strong>
+</summary>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top">
@@ -413,8 +435,9 @@ Table&nbsp;3: Observation Example
 </table>
 </div>
 </div>
+</details>
 </section>
-<section id="section-3" class="slide level2 center">
+<section id="section-2" class="slide level2 center">
 <h2></h2>
 <h3 id="identifying-multi-swipe">Identifying multi-swipe:</h3>
 <p>Multi swipe, when a vendor accidentally charges a customer’s card multiple times within a short time span.</p>
@@ -458,41 +481,49 @@ Table&nbsp;3: Observation Example
 <li><p><strong>CVV</strong></p></li>
 </ul>
 </section>
-<section id="section-4" class="slide level2 center">
+<section id="section-3" class="slide level2 center">
 <h2></h2>
 <p><strong>Transactions:</strong></p>
 <p>Fraudulent transactions tend to be <strong>larger</strong> than usual</p>
 
 <img data-src="TakeawayFT_files/figure-revealjs/model_plot2-1.png" width="960" class="r-stretch"></section>
-<section id="section-5" class="slide level2 center">
+<section id="section-4" class="slide level2 center">
 <h2></h2>
-<p>Certain <strong>merchant types</strong> (like online purchases or travel-related transactions) show higher fraud rates</p>
+<p>Fraud Varies by <strong>Merchant Type</strong></p>
+<p>E.g. Online purchases or travel-related transactions show higher fraud rates</p>
 
 <img data-src="TakeawayFT_files/figure-revealjs/model_plot4-1.png" width="960" class="r-stretch"></section>
-<section id="section-6" class="slide level2 center">
+<section id="section-5" class="slide level2 center">
 <h2></h2>
 <p>Errors in transaction details, such as <strong>incorrect CVV</strong> entries, are more common in fraud cases</p>
 
-<img data-src="TakeawayFT_files/figure-revealjs/model_plot44-1.png" width="960" class="r-stretch"></section>
-<section id="feature-engineering" class="slide level2 center">
-<h2>Feature Engineering</h2>
-<p>We transformed raw data into behavioral signals:</p>
+<img data-src="TakeawayFT_files/figure-revealjs/model_plot44-1.png" width="960" class="r-stretch"><p>Higher mismatch between entered and real CVV = higher fraud risk.</p>
+</section>
+<section id="what-does-fraud-look-like" class="slide level2 center">
+<h2>What does fraud look like?</h2>
 <ul>
-<li>Customers behave consistently → fraud deviates</li>
-<li>Time and frequency provide context</li>
-<li>New merchants increase uncertainty</li>
+<li>Larger transactions<br>
+</li>
+<li>Unusual behavior<br>
+</li>
+<li>CVV mismatches<br>
+</li>
+<li>Specific merchant types</li>
 </ul>
+</section>
+<section id="feature-engineering-behavioral-signals" class="slide level2 center">
+<h2>Feature Engineering / behavioral signals:</h2>
 <p>Think of fraud as behavior that <strong>looks different</strong> from a customer’s normal habits.</p>
 <ul>
 <li>Timing patterns, Average Spend Last 7 days, Number of transactions in last 24 hours, New Merchant</li>
 </ul>
 </section>
-<section id="section-7" class="slide level2 center">
+<section id="section-6" class="slide level2 center">
 <h2></h2>
 <p><strong>Behavioral deviation</strong></p>
 
 <img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
-<section id="section-8" class="slide level2 center">
+<section id="section-7" class="slide level2 center">
 <h2></h2>
 <p><strong>Time-based features</strong></p>
 
@@ -503,38 +534,39 @@ Table&nbsp;3: Observation Example
 <summary>
 <strong> </strong>
 </summary>
-<p>The data is split in two steps:</p>
+<div class="smaller">
 <ul>
 <li><p>customers are divided so that different customers appear in train and test sets (around 70% vs 30%), avoiding leakage between them.</p></li>
 <li><p>within each customer, a cutoff date is defined so that past transactions are used to build features, and a later transaction is used as the prediction target.</p></li>
 </ul>
 <p>This ensures the model only uses historical information and mimics real-time fraud detection.</p>
-</details>
-<details>
-<summary>
-<strong> </strong>
-</summary>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="TakeawayFT_files/figure-revealjs/model_plot33-1.png" width="960"></p>
-</figure>
-</div>
-</div>
 </div>
 </details>
 </section>
+<section id="section-8" class="slide level2 center">
+<h2></h2>
+
+<img data-src="Imagen/train.svg" width="100" class="r-stretch"></section>
 <section id="modeling-approach-1" class="slide level2 center">
 <h2>Modeling Approach</h2>
 <ul>
-<li>Logistic Regression (simpler, more interpretable)</li>
-<li>Random Forest (more complex, higher accuracy)</li>
+<li><p>Logistic Regression → simple, interpretable</p></li>
+<li><p>Random Forest → more flexible, captures complex patterns</p></li>
 </ul>
-<p>We also addressed the imbalance problem using techniques like SMOTE, which helps the model learn rare fraud cases better.</p>
+<div class="fragment">
+<p><img data-src="Imagen/logvsran.png" width="400"></p>
+</div>
 </section>
-<section id="model-performance-business-impact" class="slide level2 center">
-<h2>Model Performance &amp; Business Impact:</h2>
+<section id="modeling-approach-2" class="slide level2 center">
+<h2>Modeling Approach</h2>
+<p><strong>Rebalance the data</strong></p>
+<p>We also addressed the imbalance problem using techniques like SMOTE, which helps the model learn rare fraud cases better.</p>
+<div class="fragment">
+<p><img data-src="Imagen/smote.png" width="400"></p>
+</div>
+</section>
+<section id="business-impact" class="slide level2 center">
+<h2>Business Impact:</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div id="rotqnojuih" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -1035,16 +1067,44 @@ Table&nbsp;3: Observation Example
 <h2></h2>
 <p>Fraud is primarily driven by behavioral anomalies rather than merchant characteristics.</p>
 </section>
-<section id="top-5-logistic-regression-drivers" class="slide level2 center">
-<h2>Top 5 Logistic Regression Drivers</h2>
+<section id="model-explainability" class="slide level2 center">
+<h2>Model Explainability</h2>
+<p>How does the model detect fraud?</p>
 <ul>
-<li><strong>Deviation from customer mean</strong> → ↑ fraud risk (1.83x)</li>
-<li><strong>Fuel transactions</strong> → ↓ fraud likelihood (0.42x)</li>
-<li><strong>Mobile apps</strong> → ↓ fraud likelihood (0.44x)</li>
-<li><strong>Online subscriptions</strong> → ↓ fraud likelihood (0.54x)</li>
-<li><strong>Hotels</strong> → ↓ fraud likelihood (0.61x)</li>
+<li>Complex models (Random Forest) capture patterns but are harder to interpret<br>
+</li>
+<li>We use feature importance to understand key drivers<br>
+</li>
+<li>This helps translate model decisions into business insights</li>
 </ul>
 </section>
+<section id="section-10" class="slide level2 center">
+<h2></h2>
+<p><strong>Top drivers of fraud risk:</strong></p>
+
+<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
+<section id="conclusion" class="slide level2 center">
+<h2>Conclusion</h2>
+<ul>
+<li>Fraud is rare, but predictable<br>
+</li>
+<li>Fraud is driven by behavioral anomalies<br>
+</li>
+<li>The key is balancing detection vs customer experience</li>
+</ul>
+<p><strong>Fraud leaves patterns — our job is to detect them early</strong></p>
+</section>
+<section id="q-a" class="slide level2 center">
+<h2>Q &amp; A</h2>
+<p>Thank you!</p>
+</section>
+<section id="section-11" class="slide level2 center">
+<h2></h2>
+</section>
+<section id="why-was-a-transaction-flagged" class="slide level2 center">
+<h2>Why was a transaction flagged?</h2>
+
+<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
 <section id="top-5-random-forest-drivers" class="slide level2 center">
 <h2>Top 5 Random Forest Drivers</h2>
 <ul>
@@ -1055,120 +1115,30 @@ Table&nbsp;3: Observation Example
 <li>Day of week also influences fraud patterns</li>
 </ul>
 </section>
-<section id="conclusion" class="slide level2 center">
-<h2>Conclusion</h2>
+<section id="top-5-logistic-regression-drivers" class="slide level2 center">
+<h2>Top 5 Logistic Regression Drivers</h2>
 <ul>
-<li>Fraud detection = data + behavior + business context</li>
-<li>Simpler models can outperform complex ones</li>
-<li>Balance risk vs customer experience</li>
+<li><strong>Deviation from customer mean</strong> → ↑ fraud risk (1.83x)</li>
+<li><strong>Fuel transactions</strong> → ↓ fraud likelihood (0.42x)</li>
+<li><strong>Mobile apps</strong> → ↓ fraud likelihood (0.44x)</li>
+<li><strong>Online subscriptions</strong> → ↓ fraud likelihood (0.54x)</li>
+<li><strong>Hotels</strong> → ↓ fraud likelihood (0.61x)</li>
 </ul>
-</section>
-<section id="q-a" class="slide level2 center">
-<h2>Q &amp; A</h2>
-<p>Thank you!</p>
-</section>
-<section id="coefficients-features-of-importance" class="slide level2 center">
-<h2>Coefficients / Features of Importance</h2>
-<details>
-<summary>
-<strong> Logistic </strong>
-</summary>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top">
-<caption>Top 10 Logistic Regression Drivers (Odds Ratios)</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">odds_ratio</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">merchantCategoryCode_mobileapps</td>
-<td style="text-align: right;">-0.6578886</td>
-<td style="text-align: right;">0.5179438</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">merchantCategoryCode_fuel</td>
-<td style="text-align: right;">-0.6379013</td>
-<td style="text-align: right;">0.5284002</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">merchantCategoryCode_online_subscriptions</td>
-<td style="text-align: right;">-0.5508310</td>
-<td style="text-align: right;">0.5764706</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">merchantCategoryCode_rideshare</td>
-<td style="text-align: right;">0.5466176</td>
-<td style="text-align: right;">1.7274004</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">merchantCategoryCode_hotels</td>
-<td style="text-align: right;">-0.4618157</td>
-<td style="text-align: right;">0.6301384</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">deviation_from_customer_mean</td>
-<td style="text-align: right;">0.3501593</td>
-<td style="text-align: right;">1.4192936</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">merchantCategoryCode_furniture</td>
-<td style="text-align: right;">0.2687793</td>
-<td style="text-align: right;">1.3083663</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">merchantCategoryCode_personal.care</td>
-<td style="text-align: right;">-0.2591341</td>
-<td style="text-align: right;">0.7717195</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">merchantCategoryCode_cable.phone</td>
-<td style="text-align: right;">-0.2479920</td>
-<td style="text-align: right;">0.7803662</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">merchantCategoryCode_entertainment</td>
-<td style="text-align: right;">0.2477416</td>
-<td style="text-align: right;">1.2811289</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</details>
-<details>
-<summary>
-<strong> Random Forest </strong>
-</summary>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</details>
 </section>
 <section id="behavioral-signals" class="slide level2 center">
 <h2>Behavioral signals</h2>
 </section>
-<section id="section-10" class="slide level2 center">
+<section id="section-12" class="slide level2 center">
 <h2></h2>
 <p><strong>Standardized transaction amount</strong></p>
 
-<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section>
-<section id="section-11" class="slide level2 center">
+<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
+<section id="section-13" class="slide level2 center">
 <h2></h2>
 <p><strong>CVV distance</strong></p>
 
-<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
-<section id="section-12" class="slide level2 center">
+<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section>
+<section id="section-14" class="slide level2 center">
 <h2></h2>
 <details>
 <summary>

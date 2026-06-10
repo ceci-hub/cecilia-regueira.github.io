@@ -303,217 +303,245 @@
   {
     "objectID": "Mentorias/TakeawayFT.html#can-we-detect-fraud-before-it-causes-harm",
     "href": "Mentorias/TakeawayFT.html#can-we-detect-fraud-before-it-causes-harm",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "🎯 Can we detect fraud before it causes harm?",
     "text": "🎯 Can we detect fraud before it causes harm?\n\nFraud is a major challenge for banks\nOnly ~2% of transactions are fraudulent\nGoal: Build a model to predict fraud in real time"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section",
     "href": "Mentorias/TakeawayFT.html#section",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "",
     "text": "Using transactional data, we built a model that can detect fraud in real-time, reducing potential losses while controlling false alerts. The model identifies up to 70% of fraudulent transactions, capturing approximately 90% of the total fraud value."
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#problem-context",
     "href": "Mentorias/TakeawayFT.html#problem-context",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "Problem Context",
     "text": "Problem Context\n\n\n\n\n\n\nNote\n\n\nWe need to find the right balance:\n\nMissing fraud vs Flagging normal transactions\nfinancial loss vs poor customer experience"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#dataset-overview",
     "href": "Mentorias/TakeawayFT.html#dataset-overview",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "Dataset Overview",
-    "text": "Dataset Overview\n\n780,000+ transactions & ~5,000 customers\n30 variables\nImbalanced data (fraud ≈ 2%)"
+    "text": "Dataset Overview\n\n\n\n780,000+ transactions | ~5,000 customers | 30 variables\n\n\n\nImbalanced data (fraud ≈ 2%)\n\n\n\n\n\n\n\n\nWhat would happen if the model just predicts everything as normal?\n\n\n\nIt would be 98% accurate — and still useless."
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#dataset-overview-1",
     "href": "Mentorias/TakeawayFT.html#dataset-overview-1",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "Dataset Overview",
     "text": "Dataset Overview"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#dataset-overview-2",
     "href": "Mentorias/TakeawayFT.html#dataset-overview-2",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "Dataset Overview",
     "text": "Dataset Overview\n\n\nSummary\n\n\n\n\n\nTable 1: Fraud vs Non-Fraud Summary\n\n\n\n\n\n\nisFraud\nCases\nTotal_Amount\nCase_Pct\nAmount_Pct\n\n\n\n\nNot Fraud\n773946\n$104,924,052\n98%\n97%\n\n\nFraud\n12417\n$2,796,506\n2%\n3%\n\n\n\n\n\n\n\n\n\n\n\nTransaction \n\n\n\n\n\nTable 2: Transaction by clients\n\n\n\n\n\n\nMean.Transaction\nmedian.Transaction\nMin.Transaction\nmax.Transaction\n\n\n\n\n157.27\n50\n1\n32850"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section-1",
     "href": "Mentorias/TakeawayFT.html#section-1",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "",
-    "text": "The dataset is transaction-level financial data \n\nCustomer/account info\nTransaction details (DataTime, Amount)\nMerchant info (Name, type of business, location)\n\n\n\nObs.\n\n\n\n\n\nTable 3: Observation Example\n\n\n\n\n\n\naccountNumber\ncustomerId\ncreditLimit\navailableMoney\ntransactionDateTime\ntransactionAmount\nmerchantName\nacqCountry\nmerchantCountryCode\nposEntryMode\nposConditionCode\nmerchantCategoryCode\ncurrentExpDate\naccountOpenDate\ndateOfLastAddressChange\ncardCVV\nenteredCVV\ncardLast4Digits\ntransactionType\ncurrentBalance\ncardPresent\nexpirationDateKeyInMatch\nisFraud\ntransactionTime\n\n\n\n\n737265056\n737265056\n5000\n5000\n2016-08-13T14:27:32\n98.55\nUber\nUS\nUS\n02\n01\nrideshare\n06/2023\n2015-03-14\n2015-03-14\n414\n414\n1803\nPURCHASE\n0\nFALSE\nFALSE\n0\n2016-08-13 14:27:32"
+    "text": "The dataset is transaction-level financial data\n\nCustomer/account info\nTransaction details (DataTime, Amount)\nMerchant info (Name, type of business, location)\n\n\n\nObs.\n\n\n\n\n\nTable 3: Observation Example\n\n\n\n\n\n\naccountNumber\ncustomerId\ncreditLimit\navailableMoney\ntransactionDateTime\ntransactionAmount\nmerchantName\nacqCountry\nmerchantCountryCode\nposEntryMode\nposConditionCode\nmerchantCategoryCode\ncurrentExpDate\naccountOpenDate\ndateOfLastAddressChange\ncardCVV\nenteredCVV\ncardLast4Digits\ntransactionType\ncurrentBalance\ncardPresent\nexpirationDateKeyInMatch\nisFraud\ntransactionTime\n\n\n\n\n737265056\n737265056\n5000\n5000\n2016-08-13T14:27:32\n98.55\nUber\nUS\nUS\n02\n01\nrideshare\n06/2023\n2015-03-14\n2015-03-14\n414\n414\n1803\nPURCHASE\n0\nFALSE\nFALSE\n0\n2016-08-13 14:27:32"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#data-caveat",
     "href": "Mentorias/TakeawayFT.html#data-caveat",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "Data Caveat",
     "text": "Data Caveat"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#data-caveat-1",
     "href": "Mentorias/TakeawayFT.html#data-caveat-1",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "Data Caveat:",
     "text": "Data Caveat:\nIdentifying Reverse transactions:\n\n\n \n\n\n\n\nSummary of Reversed Transactions\n\n\nCases\nTotal Amount ($)\nCases (%)\nAmount (%)\n\n\n\n\n17757\n2666479\n2.26\n2.48"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#section-2",
-    "href": "Mentorias/TakeawayFT.html#section-2",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "",
-    "text": "Error detection: There are some returns that do not have a prior purchase.\n\n\n\nE.g.\n\n\ndup_key\npurchase_count\nreversal_count\n\n\n\n\n101376441_0_cheapfast.com_128_6683\n0\n1"
+    "objectID": "Mentorias/TakeawayFT.html#data-caveat-2",
+    "href": "Mentorias/TakeawayFT.html#data-caveat-2",
+    "title": "Detecting Fraud",
+    "section": "Data Caveat:",
+    "text": "Data Caveat:\nError detection: There are some returns that do not have a prior purchase.\n\n\n \n\n\n\n\nE.g.\n\n\ndup_key\npurchase_count\nreversal_count\n\n\n\n\n101376441_0_cheapfast.com_128_6683\n0\n1"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#section-3",
-    "href": "Mentorias/TakeawayFT.html#section-3",
-    "title": "Case of Study: Transactions Analysis",
+    "objectID": "Mentorias/TakeawayFT.html#section-2",
+    "href": "Mentorias/TakeawayFT.html#section-2",
+    "title": "Detecting Fraud",
     "section": "",
     "text": "Identifying multi-swipe:\nMulti swipe, when a vendor accidentally charges a customer’s card multiple times within a short time span.\n\n\n \n\n\n\n\nSummary of Multi-Swipe Transactions\n\n\nMulti-Swipe\nCases\nTotal Amount ($)\nCases (%)\nAmount (%)\n\n\n\n\n1\n20156\n2201824\n2.56\n2.04"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#key-insights",
     "href": "Mentorias/TakeawayFT.html#key-insights",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "Key Insights",
     "text": "Key Insights\nWe explored patterns to understand what fraud looks like:\n\nTransactions\nMerchant types\nCVV"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#section-4",
-    "href": "Mentorias/TakeawayFT.html#section-4",
-    "title": "Case of Study: Transactions Analysis",
+    "objectID": "Mentorias/TakeawayFT.html#section-3",
+    "href": "Mentorias/TakeawayFT.html#section-3",
+    "title": "Detecting Fraud",
     "section": "",
     "text": "Transactions:\nFraudulent transactions tend to be larger than usual"
   },
   {
+    "objectID": "Mentorias/TakeawayFT.html#section-4",
+    "href": "Mentorias/TakeawayFT.html#section-4",
+    "title": "Detecting Fraud",
+    "section": "",
+    "text": "Fraud Varies by Merchant Type\nE.g. Online purchases or travel-related transactions show higher fraud rates"
+  },
+  {
     "objectID": "Mentorias/TakeawayFT.html#section-5",
     "href": "Mentorias/TakeawayFT.html#section-5",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "",
-    "text": "Certain merchant types (like online purchases or travel-related transactions) show higher fraud rates"
+    "text": "Errors in transaction details, such as incorrect CVV entries, are more common in fraud cases\n\nHigher mismatch between entered and real CVV = higher fraud risk."
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#what-does-fraud-look-like",
+    "href": "Mentorias/TakeawayFT.html#what-does-fraud-look-like",
+    "title": "Detecting Fraud",
+    "section": "What does fraud look like?",
+    "text": "What does fraud look like?\n\nLarger transactions\n\nUnusual behavior\n\nCVV mismatches\n\nSpecific merchant types"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#feature-engineering-behavioral-signals",
+    "href": "Mentorias/TakeawayFT.html#feature-engineering-behavioral-signals",
+    "title": "Detecting Fraud",
+    "section": "Feature Engineering / behavioral signals:",
+    "text": "Feature Engineering / behavioral signals:\nThink of fraud as behavior that looks different from a customer’s normal habits.\n\nTiming patterns, Average Spend Last 7 days, Number of transactions in last 24 hours, New Merchant"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section-6",
     "href": "Mentorias/TakeawayFT.html#section-6",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "",
-    "text": "Errors in transaction details, such as incorrect CVV entries, are more common in fraud cases"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#feature-engineering",
-    "href": "Mentorias/TakeawayFT.html#feature-engineering",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "Feature Engineering",
-    "text": "Feature Engineering\nWe transformed raw data into behavioral signals:\n\nCustomers behave consistently → fraud deviates\nTime and frequency provide context\nNew merchants increase uncertainty\n\nThink of fraud as behavior that looks different from a customer’s normal habits.\n\nTiming patterns, Average Spend Last 7 days, Number of transactions in last 24 hours, New Merchant"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#section-7",
-    "href": "Mentorias/TakeawayFT.html#section-7",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "",
     "text": "Behavioral deviation"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#section-8",
-    "href": "Mentorias/TakeawayFT.html#section-8",
-    "title": "Case of Study: Transactions Analysis",
+    "objectID": "Mentorias/TakeawayFT.html#section-7",
+    "href": "Mentorias/TakeawayFT.html#section-7",
+    "title": "Detecting Fraud",
     "section": "",
     "text": "Time-based features"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#modeling-approach",
     "href": "Mentorias/TakeawayFT.html#modeling-approach",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "Modeling Approach",
-    "text": "Modeling Approach\n\n\n \n\nThe data is split in two steps:\n\ncustomers are divided so that different customers appear in train and test sets (around 70% vs 30%), avoiding leakage between them.\nwithin each customer, a cutoff date is defined so that past transactions are used to build features, and a later transaction is used as the prediction target.\n\nThis ensures the model only uses historical information and mimics real-time fraud detection."
+    "text": "Modeling Approach\n\n\n \n\n\n\ncustomers are divided so that different customers appear in train and test sets (around 70% vs 30%), avoiding leakage between them.\nwithin each customer, a cutoff date is defined so that past transactions are used to build features, and a later transaction is used as the prediction target.\n\nThis ensures the model only uses historical information and mimics real-time fraud detection."
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#modeling-approach-1",
     "href": "Mentorias/TakeawayFT.html#modeling-approach-1",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "Modeling Approach",
-    "text": "Modeling Approach\n\nLogistic Regression (simpler, more interpretable)\nRandom Forest (more complex, higher accuracy)\n\nWe also addressed the imbalance problem using techniques like SMOTE, which helps the model learn rare fraud cases better."
+    "text": "Modeling Approach\n\nLogistic Regression → simple, interpretable\nRandom Forest → more flexible, captures complex patterns"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#model-performance-business-impact",
-    "href": "Mentorias/TakeawayFT.html#model-performance-business-impact",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "Model Performance & Business Impact:",
-    "text": "Model Performance & Business Impact:\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (All Fraud)\nFraud Captured ($)\nF1 Score (Balance)\nFalse Alerts / 1K\nFalse Alerts per Fraud Detected\nNet Benefit\n\n\n\n\nRandom Forest\n78.6%\n90.6%\n5.4%\n255\n35\n$2,050\n\n\nLogistic Regression\n42.9%\n63.6%\n2.9%\n264\n66\n$1,058"
+    "objectID": "Mentorias/TakeawayFT.html#modeling-approach-2",
+    "href": "Mentorias/TakeawayFT.html#modeling-approach-2",
+    "title": "Detecting Fraud",
+    "section": "Modeling Approach",
+    "text": "Modeling Approach\nRebalance the data\nWe also addressed the imbalance problem using techniques like SMOTE, which helps the model learn rare fraud cases better."
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#business-impact",
+    "href": "Mentorias/TakeawayFT.html#business-impact",
+    "title": "Detecting Fraud",
+    "section": "Business Impact:",
+    "text": "Business Impact:\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (All Fraud)\nFraud Captured ($)\nF1 Score (Balance)\nFalse Alerts / 1K\nFalse Alerts per Fraud Detected\nNet Benefit\n\n\n\n\nRandom Forest\n78.6%\n90.6%\n5.4%\n255\n35\n$2,050\n\n\nLogistic Regression\n42.9%\n63.6%\n2.9%\n264\n66\n$1,058"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section-9",
     "href": "Mentorias/TakeawayFT.html#section-9",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "",
     "text": "Fraud is primarily driven by behavioral anomalies rather than merchant characteristics."
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#top-5-logistic-regression-drivers",
-    "href": "Mentorias/TakeawayFT.html#top-5-logistic-regression-drivers",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "Top 5 Logistic Regression Drivers",
-    "text": "Top 5 Logistic Regression Drivers\n\nDeviation from customer mean → ↑ fraud risk (1.83x)\nFuel transactions → ↓ fraud likelihood (0.42x)\nMobile apps → ↓ fraud likelihood (0.44x)\nOnline subscriptions → ↓ fraud likelihood (0.54x)\nHotels → ↓ fraud likelihood (0.61x)"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
-    "href": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "Top 5 Random Forest Drivers",
-    "text": "Top 5 Random Forest Drivers\n\nRecent spending behavior is the strongest predictor\nUnusual transactions relative to a customer’s history increase risk\nTime of transaction (hour) plays a significant role\nTransaction size relative to normal patterns matters\nDay of week also influences fraud patterns"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#conclusion",
-    "href": "Mentorias/TakeawayFT.html#conclusion",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "Conclusion",
-    "text": "Conclusion\n\nFraud detection = data + behavior + business context\nSimpler models can outperform complex ones\nBalance risk vs customer experience"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#q-a",
-    "href": "Mentorias/TakeawayFT.html#q-a",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "Q & A",
-    "text": "Q & A\nThank you!"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#coefficients-features-of-importance",
-    "href": "Mentorias/TakeawayFT.html#coefficients-features-of-importance",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "Coefficients / Features of Importance",
-    "text": "Coefficients / Features of Importance\n\n\n Logistic \n\n\n\n\nTop 10 Logistic Regression Drivers (Odds Ratios)\n\n\nterm\nestimate\nodds_ratio\n\n\n\n\nmerchantCategoryCode_mobileapps\n-0.6578886\n0.5179438\n\n\nmerchantCategoryCode_fuel\n-0.6379013\n0.5284002\n\n\nmerchantCategoryCode_online_subscriptions\n-0.5508310\n0.5764706\n\n\nmerchantCategoryCode_rideshare\n0.5466176\n1.7274004\n\n\nmerchantCategoryCode_hotels\n-0.4618157\n0.6301384\n\n\ndeviation_from_customer_mean\n0.3501593\n1.4192936\n\n\nmerchantCategoryCode_furniture\n0.2687793\n1.3083663\n\n\nmerchantCategoryCode_personal.care\n-0.2591341\n0.7717195\n\n\nmerchantCategoryCode_cable.phone\n-0.2479920\n0.7803662\n\n\nmerchantCategoryCode_entertainment\n0.2477416\n1.2811289\n\n\n\n\n\n\n\n\n Random Forest"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#behavioral-signals",
-    "href": "Mentorias/TakeawayFT.html#behavioral-signals",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "Behavioral signals",
-    "text": "Behavioral signals"
+    "objectID": "Mentorias/TakeawayFT.html#model-explainability",
+    "href": "Mentorias/TakeawayFT.html#model-explainability",
+    "title": "Detecting Fraud",
+    "section": "Model Explainability",
+    "text": "Model Explainability\nHow does the model detect fraud?\n\nComplex models (Random Forest) capture patterns but are harder to interpret\n\nWe use feature importance to understand key drivers\n\nThis helps translate model decisions into business insights"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section-10",
     "href": "Mentorias/TakeawayFT.html#section-10",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
     "section": "",
-    "text": "Standardized transaction amount"
+    "text": "Top drivers of fraud risk:"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#section-11",
-    "href": "Mentorias/TakeawayFT.html#section-11",
-    "title": "Case of Study: Transactions Analysis",
-    "section": "",
-    "text": "CVV distance"
+    "objectID": "Mentorias/TakeawayFT.html#conclusion",
+    "href": "Mentorias/TakeawayFT.html#conclusion",
+    "title": "Detecting Fraud",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nFraud is rare, but predictable\n\nFraud is driven by behavioral anomalies\n\nThe key is balancing detection vs customer experience\n\nFraud leaves patterns — our job is to detect them early"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#q-a",
+    "href": "Mentorias/TakeawayFT.html#q-a",
+    "title": "Detecting Fraud",
+    "section": "Q & A",
+    "text": "Q & A\nThank you!"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#why-was-a-transaction-flagged",
+    "href": "Mentorias/TakeawayFT.html#why-was-a-transaction-flagged",
+    "title": "Detecting Fraud",
+    "section": "Why was a transaction flagged?",
+    "text": "Why was a transaction flagged?"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
+    "href": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
+    "title": "Detecting Fraud",
+    "section": "Top 5 Random Forest Drivers",
+    "text": "Top 5 Random Forest Drivers\n\nRecent spending behavior is the strongest predictor\nUnusual transactions relative to a customer’s history increase risk\nTime of transaction (hour) plays a significant role\nTransaction size relative to normal patterns matters\nDay of week also influences fraud patterns"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#top-5-logistic-regression-drivers",
+    "href": "Mentorias/TakeawayFT.html#top-5-logistic-regression-drivers",
+    "title": "Detecting Fraud",
+    "section": "Top 5 Logistic Regression Drivers",
+    "text": "Top 5 Logistic Regression Drivers\n\nDeviation from customer mean → ↑ fraud risk (1.83x)\nFuel transactions → ↓ fraud likelihood (0.42x)\nMobile apps → ↓ fraud likelihood (0.44x)\nOnline subscriptions → ↓ fraud likelihood (0.54x)\nHotels → ↓ fraud likelihood (0.61x)"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#behavioral-signals",
+    "href": "Mentorias/TakeawayFT.html#behavioral-signals",
+    "title": "Detecting Fraud",
+    "section": "Behavioral signals",
+    "text": "Behavioral signals"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#section-12",
     "href": "Mentorias/TakeawayFT.html#section-12",
-    "title": "Case of Study: Transactions Analysis",
+    "title": "Detecting Fraud",
+    "section": "",
+    "text": "Standardized transaction amount"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#section-13",
+    "href": "Mentorias/TakeawayFT.html#section-13",
+    "title": "Detecting Fraud",
+    "section": "",
+    "text": "CVV distance"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#section-14",
+    "href": "Mentorias/TakeawayFT.html#section-14",
+    "title": "Detecting Fraud",
     "section": "",
     "text": "✅ Report\n\n\n 📘 View Report Style no behavior"
   },
