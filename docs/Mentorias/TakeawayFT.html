@@ -515,35 +515,16 @@ Table&nbsp;3: Observation Example
 <h2>Feature Engineering / behavioral signals:</h2>
 <p>Think of fraud as behavior that <strong>looks different</strong> from a customer’s normal habits.</p>
 <ul>
-<li>Timing patterns, Average Spend Last 7 days, Number of transactions in last 24 hours, New Merchant</li>
+<li>Timing patterns</li>
+<li>Average Spend Last 7 days</li>
+<li>Number of transactions in last 24 hours</li>
+<li>New Merchant</li>
 </ul>
 </section>
-<section id="section-6" class="slide level2 center">
-<h2></h2>
-<p><strong>Behavioral deviation</strong></p>
-
-<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
-<section id="section-7" class="slide level2 center">
-<h2></h2>
-<p><strong>Time-based features</strong></p>
-
-<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
 <section id="modeling-approach" class="slide level2 center">
 <h2>Modeling Approach</h2>
-<details>
-<summary>
-<strong> </strong>
-</summary>
-<div class="smaller">
-<ul>
-<li><p>customers are divided so that different customers appear in train and test sets (around 70% vs 30%), avoiding leakage between them.</p></li>
-<li><p>within each customer, a cutoff date is defined so that past transactions are used to build features, and a later transaction is used as the prediction target.</p></li>
-</ul>
-<p>This ensures the model only uses historical information and mimics real-time fraud detection.</p>
-</div>
-</details>
 </section>
-<section id="section-8" class="slide level2 center">
+<section id="section-6" class="slide level2 center">
 <h2></h2>
 
 <img data-src="Imagen/train.svg" width="100" class="r-stretch"></section>
@@ -1063,7 +1044,7 @@ Table&nbsp;3: Observation Example
 </div>
 </div>
 </section>
-<section id="section-9" class="slide level2 center">
+<section id="section-7" class="slide level2 center">
 <h2></h2>
 <p>Fraud is primarily driven by behavioral anomalies rather than merchant characteristics.</p>
 </section>
@@ -1078,33 +1059,6 @@ Table&nbsp;3: Observation Example
 <li>This helps translate model decisions into business insights</li>
 </ul>
 </section>
-<section id="section-10" class="slide level2 center">
-<h2></h2>
-<p><strong>Top drivers of fraud risk:</strong></p>
-
-<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"></section>
-<section id="conclusion" class="slide level2 center">
-<h2>Conclusion</h2>
-<ul>
-<li>Fraud is rare, but predictable<br>
-</li>
-<li>Fraud is driven by behavioral anomalies<br>
-</li>
-<li>The key is balancing detection vs customer experience</li>
-</ul>
-<p><strong>Fraud leaves patterns — our job is to detect them early</strong></p>
-</section>
-<section id="q-a" class="slide level2 center">
-<h2>Q &amp; A</h2>
-<p>Thank you!</p>
-</section>
-<section id="section-11" class="slide level2 center">
-<h2></h2>
-</section>
-<section id="why-was-a-transaction-flagged" class="slide level2 center">
-<h2>Why was a transaction flagged?</h2>
-
-<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
 <section id="top-5-random-forest-drivers" class="slide level2 center">
 <h2>Top 5 Random Forest Drivers</h2>
 <ul>
@@ -1125,20 +1079,29 @@ Table&nbsp;3: Observation Example
 <li><strong>Hotels</strong> → ↓ fraud likelihood (0.61x)</li>
 </ul>
 </section>
-<section id="behavioral-signals" class="slide level2 center">
-<h2>Behavioral signals</h2>
+<section id="conclusion" class="slide level2 center">
+<h2>Conclusion</h2>
+<ul>
+<li>Fraud is rare, but predictable<br>
+</li>
+<li>Fraud is driven by behavioral anomalies<br>
+</li>
+<li>The key is balancing detection vs customer experience</li>
+</ul>
+<p><strong>Fraud leaves patterns — our job is to detect them early</strong></p>
 </section>
-<section id="section-12" class="slide level2 center">
+<section id="q-a" class="slide level2 center">
+<h2>Q &amp; A</h2>
+<p>Thank you!</p>
+</section>
+<section id="section-8" class="slide level2 center">
 <h2></h2>
-<p><strong>Standardized transaction amount</strong></p>
+</section>
+<section id="why-was-a-transaction-flagged" class="slide level2 center">
+<h2>Why was a transaction flagged?</h2>
 
-<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
-<section id="section-13" class="slide level2 center">
-<h2></h2>
-<p><strong>CVV distance</strong></p>
-
-<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section>
-<section id="section-14" class="slide level2 center">
+<img data-src="TakeawayFT_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
+<section id="section-9" class="slide level2 center">
 <h2></h2>
 <details>
 <summary>

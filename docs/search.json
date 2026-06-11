@@ -417,28 +417,14 @@
     "href": "Mentorias/TakeawayFT.html#feature-engineering-behavioral-signals",
     "title": "Detecting Fraud",
     "section": "Feature Engineering / behavioral signals:",
-    "text": "Feature Engineering / behavioral signals:\nThink of fraud as behavior that looks different from a customer’s normal habits.\n\nTiming patterns, Average Spend Last 7 days, Number of transactions in last 24 hours, New Merchant"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#section-6",
-    "href": "Mentorias/TakeawayFT.html#section-6",
-    "title": "Detecting Fraud",
-    "section": "",
-    "text": "Behavioral deviation"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#section-7",
-    "href": "Mentorias/TakeawayFT.html#section-7",
-    "title": "Detecting Fraud",
-    "section": "",
-    "text": "Time-based features"
+    "text": "Feature Engineering / behavioral signals:\nThink of fraud as behavior that looks different from a customer’s normal habits.\n\nTiming patterns\nAverage Spend Last 7 days\nNumber of transactions in last 24 hours\nNew Merchant"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#modeling-approach",
     "href": "Mentorias/TakeawayFT.html#modeling-approach",
     "title": "Detecting Fraud",
     "section": "Modeling Approach",
-    "text": "Modeling Approach\n\n\n \n\n\n\ncustomers are divided so that different customers appear in train and test sets (around 70% vs 30%), avoiding leakage between them.\nwithin each customer, a cutoff date is defined so that past transactions are used to build features, and a later transaction is used as the prediction target.\n\nThis ensures the model only uses historical information and mimics real-time fraud detection."
+    "text": "Modeling Approach"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#modeling-approach-1",
@@ -462,8 +448,8 @@
     "text": "Business Impact:\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (All Fraud)\nFraud Captured ($)\nF1 Score (Balance)\nFalse Alerts / 1K\nFalse Alerts per Fraud Detected\nNet Benefit\n\n\n\n\nRandom Forest\n78.6%\n90.6%\n5.4%\n255\n35\n$2,050\n\n\nLogistic Regression\n42.9%\n63.6%\n2.9%\n264\n66\n$1,058"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#section-9",
-    "href": "Mentorias/TakeawayFT.html#section-9",
+    "objectID": "Mentorias/TakeawayFT.html#section-7",
+    "href": "Mentorias/TakeawayFT.html#section-7",
     "title": "Detecting Fraud",
     "section": "",
     "text": "Fraud is primarily driven by behavioral anomalies rather than merchant characteristics."
@@ -476,11 +462,18 @@
     "text": "Model Explainability\nHow does the model detect fraud?\n\nComplex models (Random Forest) capture patterns but are harder to interpret\n\nWe use feature importance to understand key drivers\n\nThis helps translate model decisions into business insights"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#section-10",
-    "href": "Mentorias/TakeawayFT.html#section-10",
+    "objectID": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
+    "href": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
     "title": "Detecting Fraud",
-    "section": "",
-    "text": "Top drivers of fraud risk:"
+    "section": "Top 5 Random Forest Drivers",
+    "text": "Top 5 Random Forest Drivers\n\nRecent spending behavior is the strongest predictor\nUnusual transactions relative to a customer’s history increase risk\nTime of transaction (hour) plays a significant role\nTransaction size relative to normal patterns matters\nDay of week also influences fraud patterns"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#top-5-logistic-regression-drivers",
+    "href": "Mentorias/TakeawayFT.html#top-5-logistic-regression-drivers",
+    "title": "Detecting Fraud",
+    "section": "Top 5 Logistic Regression Drivers",
+    "text": "Top 5 Logistic Regression Drivers\n\nDeviation from customer mean → ↑ fraud risk (1.83x)\nFuel transactions → ↓ fraud likelihood (0.42x)\nMobile apps → ↓ fraud likelihood (0.44x)\nOnline subscriptions → ↓ fraud likelihood (0.54x)\nHotels → ↓ fraud likelihood (0.61x)"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#conclusion",
@@ -504,43 +497,8 @@
     "text": "Why was a transaction flagged?"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
-    "href": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
-    "title": "Detecting Fraud",
-    "section": "Top 5 Random Forest Drivers",
-    "text": "Top 5 Random Forest Drivers\n\nRecent spending behavior is the strongest predictor\nUnusual transactions relative to a customer’s history increase risk\nTime of transaction (hour) plays a significant role\nTransaction size relative to normal patterns matters\nDay of week also influences fraud patterns"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#top-5-logistic-regression-drivers",
-    "href": "Mentorias/TakeawayFT.html#top-5-logistic-regression-drivers",
-    "title": "Detecting Fraud",
-    "section": "Top 5 Logistic Regression Drivers",
-    "text": "Top 5 Logistic Regression Drivers\n\nDeviation from customer mean → ↑ fraud risk (1.83x)\nFuel transactions → ↓ fraud likelihood (0.42x)\nMobile apps → ↓ fraud likelihood (0.44x)\nOnline subscriptions → ↓ fraud likelihood (0.54x)\nHotels → ↓ fraud likelihood (0.61x)"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#behavioral-signals",
-    "href": "Mentorias/TakeawayFT.html#behavioral-signals",
-    "title": "Detecting Fraud",
-    "section": "Behavioral signals",
-    "text": "Behavioral signals"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#section-12",
-    "href": "Mentorias/TakeawayFT.html#section-12",
-    "title": "Detecting Fraud",
-    "section": "",
-    "text": "Standardized transaction amount"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#section-13",
-    "href": "Mentorias/TakeawayFT.html#section-13",
-    "title": "Detecting Fraud",
-    "section": "",
-    "text": "CVV distance"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#section-14",
-    "href": "Mentorias/TakeawayFT.html#section-14",
+    "objectID": "Mentorias/TakeawayFT.html#section-9",
+    "href": "Mentorias/TakeawayFT.html#section-9",
     "title": "Detecting Fraud",
     "section": "",
     "text": "✅ Report\n\n\n 📘 View Report Style no behavior"
