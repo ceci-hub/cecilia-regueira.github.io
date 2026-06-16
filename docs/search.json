@@ -445,14 +445,7 @@
     "href": "Mentorias/TakeawayFT.html#business-impact",
     "title": "Detecting Fraud",
     "section": "Business Impact:",
-    "text": "Business Impact:\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (All Fraud)\nFraud Captured ($)\nFalse Alerts / 10K\nNet Benefit\n\n\n\n\nRandom Forest\n78.6%\n90.6%\n255\n$2,050\n\n\nLogistic Regression\n42.9%\n63.6%\n264\n$1,058"
-  },
-  {
-    "objectID": "Mentorias/TakeawayFT.html#model-explainability",
-    "href": "Mentorias/TakeawayFT.html#model-explainability",
-    "title": "Detecting Fraud",
-    "section": "Model Explainability",
-    "text": "Model Explainability\nHow does the model detect fraud?"
+    "text": "Business Impact:\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (All Fraud)\nFraud Captured ($)\nFalse Alerts / 10K\nNet Benefit\n\n\n\n\nRandom Forest\n78.6%\n90.6%\n255\n$2,050\n\n\nLogistic Regression\n21.4%\n37.0%\n73\n$977"
   },
   {
     "objectID": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
