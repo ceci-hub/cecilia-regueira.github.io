@@ -263,14 +263,70 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
+    "text": "Pricing Strategies of Supermarkets in Uruguay\n🔹 Master’s Thesis — M.S. Economics, Universidad de la República\n🔹 Administrative dataset: 2.6M+ price observations\n🔹 Focus: pricing dynamics, inflation, firm behavior"
   },
   {
     "objectID": "research.html#master-thesis",
     "href": "research.html#master-thesis",
     "title": "Research",
     "section": "",
-    "text": "Pricing Strategies of Supermarkets in Uruguay\n\nMaster in Economics – Universidad de la República\nDataset &gt; 700,000 price observations\nMethods: descriptive analysis, price duration, applied ML"
+    "text": "Pricing Strategies of Supermarkets in Uruguay\n🔹 Master’s Thesis — M.S. Economics, Universidad de la República\n🔹 Administrative dataset: 2.6M+ price observations\n🔹 Focus: pricing dynamics, inflation, firm behavior"
+  },
+  {
+    "objectID": "research.html#full-report-includes-full-methodology-and-appendix",
+    "href": "research.html#full-report-includes-full-methodology-and-appendix",
+    "title": "Research",
+    "section": "📄 Full Report (includes full methodology and appendix):",
+    "text": "📄 Full Report (includes full methodology and appendix):\n\n 📄 Download Full Thesis (PDF) \n\n\n\n\n📊 Methods\n\n\n\nDescriptive statistics\n\n\nSurvival analysis\n\n\nHazard modeling\n\n\nPanel data analysis\n\n\n\n\n\n🎯 Research Focus\n\n\n\nPrice-setting behavior\n\n\nInflation dynamics\n\n\nMarket structure\n\n\nFirm strategy\n\n\n\n\n\n📈 Key Findings\n\n\n\n26% of prices change monthly\n\n\nInverse frequency–magnitude pattern\n\n\nEvidence of state-dependent pricing\n\n\n\n\n\n\n📘 Trimmed Version\n\n\n🔍 Research Summary\nUnderstanding price-setting behavior is key to analyzing inflation dynamics and the effectiveness of policy. This study examines how supermarket chains in Uruguay adjust prices over time, using administrative data to evaluate frequency, magnitude, and synchronization of price changes.\n\nKey Questions\n\nAre pricing strategies consistent within chains?\n\nHow synchronized are price changes across firms?\n\nDo firms follow time-based or state-dependent pricing models?\n\n\n\n\n\n📊 Data\n\n154 products | 267 stores | 12 chains\n\n2011–2019 time period\n\n\n2.6 million observations\n\n\n✔ Monthly aggregation to remove promotional noise\n✔ Consistent product panel construction\n✔ Quality-checked administrative data\n\n\n\n⚙️ Methodology\n\nPrice Dynamics\n\nFrequency of price changes\n\nMagnitude of adjustments\n\nImplicit duration\n\n\n\nDuration Analysis\n\nSurvival functions\n\nHazard models\n\n👉 Provides evidence on how long prices remain fixed and when firms adjust\n\n\nSynchronization\n\nFisher–Konieczny index (0 = no sync, 1 = perfect sync)\n\n\n\n\n\n📈 Results\n\nPrice Behavior\n\n~26% of prices change monthly\n\nAverage duration ~ 4 months\n\nAverage change ~ 3.9%\n\n👉 Firms balance flexibility with adjustment costs\n\n\n\nFirm Strategies\n\nStrong heterogeneity across chains\n\nWithin-chain behavior is highly consistent\n\n👉 Suggests centralized pricing strategies\n\n\n\nDuration & Adjustment\n\n\n50% of prices change within 2 months\n\nHazard function is upward-sloping\n\n✅ Evidence supports state-dependent pricing\n\n\n\nSynchronization\n\nFK index: 0.52 – 0.75\n\n👉 Moderate coordination, not perfect alignment\n👉 Organizational structure explains differences\n\n\n\n\n🧠 Policy Insights\n\nMicro-price rigidity shapes inflation dynamics\n\nFrequency of adjustments affects policy transmission\n\nFirm-level behavior influences market outcomes\n\n\n\n\n⚠️ Limitations\n\nNo demand-side data\n\nStrategy drivers not directly observed\n\nProduct mix differs across chains\n\n\n\n\n🔮 Future Work\n\nIntegrate demand and competition data\n\nUse geospatial analysis\nStudy consumer response"
+  },
+  {
+    "objectID": "research.html#research-summary",
+    "href": "research.html#research-summary",
+    "title": "Research",
+    "section": "🔍 Research Summary",
+    "text": "🔍 Research Summary\nUnderstanding price-setting behavior is key to analyzing inflation dynamics and the effectiveness of policy. This study examines how supermarket chains in Uruguay adjust prices over time, using administrative data to evaluate frequency, magnitude, and synchronization of price changes.\n\nKey Questions\n\nAre pricing strategies consistent within chains?\n\nHow synchronized are price changes across firms?\n\nDo firms follow time-based or state-dependent pricing models?"
+  },
+  {
+    "objectID": "research.html#data",
+    "href": "research.html#data",
+    "title": "Research",
+    "section": "📊 Data",
+    "text": "📊 Data\n\n154 products | 267 stores | 12 chains\n\n2011–2019 time period\n\n\n2.6 million observations\n\n\n✔ Monthly aggregation to remove promotional noise\n✔ Consistent product panel construction\n✔ Quality-checked administrative data"
+  },
+  {
+    "objectID": "research.html#methodology",
+    "href": "research.html#methodology",
+    "title": "Research",
+    "section": "⚙️ Methodology",
+    "text": "⚙️ Methodology\n\nPrice Dynamics\n\nFrequency of price changes\n\nMagnitude of adjustments\n\nImplicit duration\n\n\n\nDuration Analysis\n\nSurvival functions\n\nHazard models\n\n👉 Provides evidence on how long prices remain fixed and when firms adjust\n\n\nSynchronization\n\nFisher–Konieczny index (0 = no sync, 1 = perfect sync)"
+  },
+  {
+    "objectID": "research.html#results",
+    "href": "research.html#results",
+    "title": "Research",
+    "section": "📈 Results",
+    "text": "📈 Results\n\nPrice Behavior\n\n~26% of prices change monthly\n\nAverage duration ~ 4 months\n\nAverage change ~ 3.9%\n\n👉 Firms balance flexibility with adjustment costs\n\n\n\nFirm Strategies\n\nStrong heterogeneity across chains\n\nWithin-chain behavior is highly consistent\n\n👉 Suggests centralized pricing strategies\n\n\n\nDuration & Adjustment\n\n\n50% of prices change within 2 months\n\nHazard function is upward-sloping\n\n✅ Evidence supports state-dependent pricing\n\n\n\nSynchronization\n\nFK index: 0.52 – 0.75\n\n👉 Moderate coordination, not perfect alignment\n👉 Organizational structure explains differences"
+  },
+  {
+    "objectID": "research.html#policy-insights",
+    "href": "research.html#policy-insights",
+    "title": "Research",
+    "section": "🧠 Policy Insights",
+    "text": "🧠 Policy Insights\n\nMicro-price rigidity shapes inflation dynamics\n\nFrequency of adjustments affects policy transmission\n\nFirm-level behavior influences market outcomes"
+  },
+  {
+    "objectID": "research.html#limitations",
+    "href": "research.html#limitations",
+    "title": "Research",
+    "section": "⚠️ Limitations",
+    "text": "⚠️ Limitations\n\nNo demand-side data\n\nStrategy drivers not directly observed\n\nProduct mix differs across chains"
+  },
+  {
+    "objectID": "research.html#future-work",
+    "href": "research.html#future-work",
+    "title": "Research",
+    "section": "🔮 Future Work",
+    "text": "🔮 Future Work\n\nIntegrate demand and competition data\n\nUse geospatial analysis\nStudy consumer response"
   },
   {
     "objectID": "research.html#masters-thesis-advisor",

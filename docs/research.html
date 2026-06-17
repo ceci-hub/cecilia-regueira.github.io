@@ -175,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#master-thesis" id="toc-master-thesis" class="nav-link active" data-scroll-target="#master-thesis">Master Thesis</a></li>
-  <li><a href="#masters-thesis-advisor" id="toc-masters-thesis-advisor" class="nav-link" data-scroll-target="#masters-thesis-advisor">🎓 Master’s Thesis Advisor</a></li>
+  <li><a href="#full-report-includes-full-methodology-and-appendix" id="toc-full-report-includes-full-methodology-and-appendix" class="nav-link" data-scroll-target="#full-report-includes-full-methodology-and-appendix">📄 Full Report (includes full methodology and appendix):</a></li>
   </ul>
 </nav>
     </div>
@@ -204,11 +204,211 @@ ul.task-list li input[type="checkbox"] {
 <section id="master-thesis" class="level2">
 <h2 class="anchored" data-anchor-id="master-thesis">Master Thesis</h2>
 <p><strong>Pricing Strategies of Supermarkets in Uruguay</strong></p>
+<p>🔹 Master’s Thesis — M.S. Economics, Universidad de la República<br>
+🔹 Administrative dataset: <strong>2.6M+ price observations</strong><br>
+🔹 Focus: pricing dynamics, inflation, firm behavior</p>
+</section>
+<section id="full-report-includes-full-methodology-and-appendix" class="level2">
+<h2 class="anchored" data-anchor-id="full-report-includes-full-methodology-and-appendix">📄 Full Report (includes full methodology and appendix):</h2>
+<div style="text-align:center; margin-top:1.5em;">
+<p><a href="./files/Pricing Strategies of Supermarkets in Uruguay.pdf" target="_blank" class="btn btn-primary btn-lg"> 📄 Download Full Thesis (PDF) </a></p>
+</div>
+<div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1.5em;">
+<div style="flex:1; min-width:250px; border:1px solid #e5e5e5; border-radius:10px; padding:1em;">
+<h4 class="anchored">
+📊 Methods
+</h4>
 <ul>
-<li>Master in Economics – Universidad de la República</li>
-<li>Dataset &gt; 700,000 price observations</li>
-<li>Methods: descriptive analysis, price duration, applied ML</li>
+<li>
+Descriptive statistics
+</li>
+<li>
+Survival analysis
+</li>
+<li>
+Hazard modeling
+</li>
+<li>
+Panel data analysis
+</li>
 </ul>
+</div>
+<div style="flex:1; min-width:250px; border:1px solid #e5e5e5; border-radius:10px; padding:1em;">
+<h4 class="anchored">
+🎯 Research Focus
+</h4>
+<ul>
+<li>
+Price-setting behavior
+</li>
+<li>
+Inflation dynamics
+</li>
+<li>
+Market structure
+</li>
+<li>
+Firm strategy
+</li>
+</ul>
+</div>
+<div style="flex:1; min-width:250px; border:1px solid #e5e5e5; border-radius:10px; padding:1em;">
+<h4 class="anchored">
+📈 Key Findings
+</h4>
+<ul>
+<li>
+26% of prices change monthly
+</li>
+<li>
+Inverse frequency–magnitude pattern
+</li>
+<li>
+Evidence of state-dependent pricing
+</li>
+</ul>
+</div>
+</div>
+<details>
+<summary>
+<strong>📘 Trimmed Version</strong>
+</summary>
+<section id="research-summary" class="level2">
+<h2 class="anchored" data-anchor-id="research-summary">🔍 Research Summary</h2>
+<p>Understanding price-setting behavior is key to analyzing inflation dynamics and the effectiveness of policy. This study examines how supermarket chains in Uruguay adjust prices over time, using administrative data to evaluate frequency, magnitude, and synchronization of price changes.</p>
+<section id="key-questions" class="level3">
+<h3 class="anchored" data-anchor-id="key-questions">Key Questions</h3>
+<ul>
+<li>Are pricing strategies consistent within chains?<br>
+</li>
+<li>How synchronized are price changes across firms?<br>
+</li>
+<li>Do firms follow time-based or state-dependent pricing models?</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">📊 Data</h2>
+<ul>
+<li><strong>154 products | 267 stores | 12 chains</strong><br>
+</li>
+<li><strong>2011–2019 time period</strong><br>
+</li>
+<li><blockquote class="blockquote">
+<p>2.6 million observations</p>
+</blockquote></li>
+</ul>
+<p>✔ Monthly aggregation to remove promotional noise<br>
+✔ Consistent product panel construction<br>
+✔ Quality-checked administrative data</p>
+<hr>
+</section>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">⚙️ Methodology</h2>
+<section id="price-dynamics" class="level3">
+<h3 class="anchored" data-anchor-id="price-dynamics">Price Dynamics</h3>
+<ul>
+<li>Frequency of price changes<br>
+</li>
+<li>Magnitude of adjustments<br>
+</li>
+<li>Implicit duration</li>
+</ul>
+</section>
+<section id="duration-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="duration-analysis">Duration Analysis</h3>
+<ul>
+<li>Survival functions<br>
+</li>
+<li>Hazard models</li>
+</ul>
+<p>👉 Provides evidence on how long prices remain fixed and when firms adjust</p>
+</section>
+<section id="synchronization" class="level3">
+<h3 class="anchored" data-anchor-id="synchronization">Synchronization</h3>
+<ul>
+<li>Fisher–Konieczny index (0 = no sync, 1 = perfect sync)</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">📈 Results</h2>
+<section id="price-behavior" class="level3">
+<h3 class="anchored" data-anchor-id="price-behavior">Price Behavior</h3>
+<ul>
+<li>~<strong>26% of prices change monthly</strong><br>
+</li>
+<li>Average duration ~ <strong>4 months</strong><br>
+</li>
+<li>Average change ~ <strong>3.9%</strong></li>
+</ul>
+<p>👉 Firms balance flexibility with adjustment costs</p>
+<hr>
+</section>
+<section id="firm-strategies" class="level3">
+<h3 class="anchored" data-anchor-id="firm-strategies">Firm Strategies</h3>
+<ul>
+<li>Strong heterogeneity across chains<br>
+</li>
+<li>Within-chain behavior is highly consistent</li>
+</ul>
+<p>👉 Suggests centralized pricing strategies</p>
+<hr>
+</section>
+<section id="duration-adjustment" class="level3">
+<h3 class="anchored" data-anchor-id="duration-adjustment">Duration &amp; Adjustment</h3>
+<ul>
+<li><blockquote class="blockquote">
+<p>50% of prices change within 2 months</p>
+</blockquote></li>
+<li>Hazard function is <strong>upward-sloping</strong></li>
+</ul>
+<p>✅ Evidence supports <strong>state-dependent pricing</strong></p>
+<hr>
+</section>
+<section id="synchronization-1" class="level3">
+<h3 class="anchored" data-anchor-id="synchronization-1">Synchronization</h3>
+<ul>
+<li>FK index: <strong>0.52 – 0.75</strong></li>
+</ul>
+<p>👉 Moderate coordination, not perfect alignment<br>
+👉 Organizational structure explains differences</p>
+<hr>
+</section>
+</section>
+<section id="policy-insights" class="level2">
+<h2 class="anchored" data-anchor-id="policy-insights">🧠 Policy Insights</h2>
+<ul>
+<li>Micro-price rigidity shapes inflation dynamics<br>
+</li>
+<li>Frequency of adjustments affects policy transmission<br>
+</li>
+<li>Firm-level behavior influences market outcomes</li>
+</ul>
+<hr>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">⚠️ Limitations</h2>
+<ul>
+<li>No demand-side data<br>
+</li>
+<li>Strategy drivers not directly observed<br>
+</li>
+<li>Product mix differs across chains</li>
+</ul>
+<hr>
+</section>
+<section id="future-work" class="level2">
+<h2 class="anchored" data-anchor-id="future-work">🔮 Future Work</h2>
+<ul>
+<li>Integrate demand and competition data<br>
+</li>
+<li>Use <strong>geospatial analysis</strong></li>
+<li>Study consumer response</li>
+</ul>
+</section></details>
 <hr>
 </section>
 <section id="masters-thesis-advisor" class="level2">
@@ -221,8 +421,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 </section>
+</main></div>
 
-</main> <!-- /main -->
+
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -623,7 +825,7 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-</div> <!-- /content -->
+ <!-- /content -->
 
 
 
