@@ -504,6 +504,13 @@
     "text": "Business Impact:\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (All Fraud)\nFraud Captured ($)\nFalse Alerts / 10K\nNet Benefit\n\n\n\n\nRandom Forest\n78.6%\n90.6%\n255\n$2,050\n\n\nLogistic Regression\n21.4%\n37.0%\n73\n$977"
   },
   {
+    "objectID": "Mentorias/TakeawayFT.html#decision-criteria",
+    "href": "Mentorias/TakeawayFT.html#decision-criteria",
+    "title": "Detecting Fraud",
+    "section": "Decision Criteria:",
+    "text": "Decision Criteria:\n\nIf the primary goal is to minimize false negatives and ensure that most fraud cases are identified, then the logit model may be the better choice despite its higher false positive rate.\nConversely, if the focus is on achieving greater overall accuracy and reducing false alarms, the random forest model could be better, provided that the cost of missed fraud is acceptable."
+  },
+  {
     "objectID": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
     "href": "Mentorias/TakeawayFT.html#top-5-random-forest-drivers",
     "title": "Detecting Fraud",
@@ -532,11 +539,39 @@
     "text": "Q & A\nThank you!"
   },
   {
-    "objectID": "Mentorias/TakeawayFT.html#why-was-a-transaction-flagged",
-    "href": "Mentorias/TakeawayFT.html#why-was-a-transaction-flagged",
+    "objectID": "Mentorias/TakeawayFT.html#why-was-a-transaction-flagged-shap",
+    "href": "Mentorias/TakeawayFT.html#why-was-a-transaction-flagged-shap",
     "title": "Detecting Fraud",
-    "section": "Why was a transaction flagged?",
-    "text": "Why was a transaction flagged?"
+    "section": "Why was a transaction flagged? SHAP",
+    "text": "Why was a transaction flagged? SHAP"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#stacking",
+    "href": "Mentorias/TakeawayFT.html#stacking",
+    "title": "Detecting Fraud",
+    "section": "Stacking",
+    "text": "Stacking\n            Transaction\n                 |\n          ┌──────┴──────┐\n          |             |\n       Logistic        Random\n      Regression       Forest\n          |             |\n      Fraud Prob.   Fraud Prob.\n          \\             /\n           \\           /\n            \\         /\n              Model\n     \n                  |\n                  |\n         Final Fraud Score"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#section-9",
+    "href": "Mentorias/TakeawayFT.html#section-9",
+    "title": "Detecting Fraud",
+    "section": "",
+    "text": "The idea is:\n\nLogistic Regression captures simple linear relationships\nRandom Forest captures nonlinear interactions\n\nA meta-model learns when to trust each model\n“Two fraud analysts review the transaction independently, and a third analyst makes the final decision.”"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#section-10",
+    "href": "Mentorias/TakeawayFT.html#section-10",
+    "title": "Detecting Fraud",
+    "section": "",
+    "text": "Ensemble / Stacking\n\nNo single model sees all fraud patterns.\n\n\n\n\n\n\n\n\n\nModel Performance Comparison\n\n\nFraud Detection vs Customer Impact\n\n\nModel\nRecall (All Fraud)\nFraud Captured ($)\nFalse Alerts / 1K\nNet Benefit\n\n\n\n\nRandom Forest\n78.6%\n90.6%\n255\n$2,050\n\n\nLogistic Regression\n21.4%\n37.0%\n73\n$977\n\n\nStacked Ensemble\n78.6%\n90.6%\n219\n$2,212"
+  },
+  {
+    "objectID": "Mentorias/TakeawayFT.html#section-11",
+    "href": "Mentorias/TakeawayFT.html#section-11",
+    "title": "Detecting Fraud",
+    "section": "",
+    "text": "While the ensemble combined insights from both Logistic Regression and Random Forest, the Random Forest model delivered the strongest fraud detection performance in this analysis. Nonetheless, the ensemble demonstrates how multiple models can be combined into a single risk score, potentially increasing robustness and reducing dependence on a single algorithm."
   },
   {
     "objectID": "Mentorias/Software_QA.html",
@@ -686,6 +721,27 @@
     "text": "Best practices for code and analysis include:\n\n1. Reproducibility and a Clean Code\nReproducibility is achieved by structuring projects so that all results can be regenerated from raw data using clearly defined master scripts. Computational reproducibility is treated as a core research output, enabling independent verification and reuse of methods across contexts and over time.\nRobert C. Martin emphasizes that code is a primary communication artifact, not merely an execution mechanism. Core contributions of Clean Code include:\n\nReadability and Intentionality – Code should be easy to read and self‑explanatory\n\nSingle Responsibility and Modularity – Each function or script should do one thing well\n\nMeaningful Comments and Documentation – Comments explain why decisions were made, not just what the code does\n\nRefactoring as a Continuous Practice – Code quality improves through regular, incremental cleanup\n\n\n\n✅ Click to read more\n\nReproducibility ensures that research findings can be independently verified and consistently regenerated using the same data and code. In practice, this requires structuring analytical workflows so that all results—tables, figures, and statistics—are produced directly from raw or well‑documented intermediate data using executable code. Reproducibility is therefore not an afterthought, but a design principle applied throughout the project lifecycle.\nA core practice is the use of a master script, which defines software versions, directory paths, and execution order, and runs all data processing and analysis steps end to end. By changing only a single file path or configuration parameter, another researcher should be able to rerun the complete workflow on a different machine and reproduce identical results.\nWell‑written reproducible code is modular, readable, and well documented. Tasks are split into separate scripts (for example, 01_clean_data, 02_construct_variables, 03_analysis), each with clear headers describing inputs, outputs, and purpose. Version control systems such as Git track changes over time, enabling transparent review of how results evolve.\nReproducibility is further strengthened through dynamic documents, such as Quarto, R Markdown, or Jupyter notebooks, which integrate code, outputs, and narrative text in a single source file. Any change in data or code is immediately reflected in the final report.\nImportantly, computational reproducibility is treated as a research output in its own right. Reproducibility packages typically include executable code, minimal working data (or detailed metadata when access is restricted), documentation, and a README file with clear instructions.\n\nReproducible research requires clearly structured, documented, and executable code. While the principles of reproducibility are consistent across disciplines, their implementation varies by programming environment.\n\n 📘 View Code Examples \n\n\n\n2. Transparency\nTransparency requires thorough documentation of data, code, and research decisions, with public release whenever legally and ethically feasible. Using trusted external repositories—such as GitHub, OSF, or institutional data catalogs—ensures long‑term access, accountability, and opportunities for reuse.\nWhere transparency requires openness, Clean Code ensures that what is open is also understandable.\n\n\n3. Ethical and Secure Data Handling\nEthical and secure data handling protects research participants by enforcing informed consent, separating and encrypting sensitive information, and complying with applicable legal and institutional standards. Careful data governance throughout the project lifecycle ensures privacy, minimizes risk, and maintains trust while still enabling scientific transparency.\nIn higher education settings, researchers and analysts must comply with the Family Educational Rights and Privacy Act (FERPA), which governs access to student education records. Compliance requires limiting access to personally identifiable information, applying appropriate de‑identification practices, and ensuring data are used solely for legitimate educational or research purposes.\n\n\n4.Data Work as a Collaborative Process\nData work is inherently collaborative and depends on shared standards, clear communication, and coordinated workflows across research teams. Treating data work as a collective responsibility—rather than an individual or ad hoc activity—reduces errors, improves efficiency, and strengthens institutional memory.\nEffective collaborative data work relies on standardization and transparency. Common folder structures, naming conventions, coding styles, and version control systems allow team members to contribute with minimal friction. Documentation of decisions and data transformations ensures continuity across staff transitions and supports meaningful peer review.\nEqually important is the use of shared tools and workflows, such as version‑controlled repositories, task‑tracking systems, and dynamic documents that integrate code and outputs. Regular code review and clear role definition foster accountability while encouraging collective learning.\nWhere collaborative data work requires shared standards, Agile software development provides the team practices that sustain those standards over time.\n\n\n✅ Click to read about Agile practices\n\nAgile Software Development emphasizes team‑based workflows, rapid feedback, and adaptability:\n\nIterative development supports early validation of assumptions and outputs\n\nShared ownership of code reduces risk from staff turnover\n\nContinuous integration and testing prevent silent errors\n\nProfessional responsibility emphasizes correctness, clarity, and maintainability\n\nTogether, these principles reinforce the view that reproducibility is a continuous process and that collaboration must be intentionally designed and maintained."
   },
   {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Unable to display PDF. CV/Cecilia_Regueira_CV.pdf."
+  },
+  {
+    "objectID": "applied-project.html",
+    "href": "applied-project.html",
+    "title": "5 minutes Applied Data Projects",
+    "section": "",
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+  },
+  {
+    "objectID": "applied-project.html#overview",
+    "href": "applied-project.html#overview",
+    "title": "5 minutes Applied Data Projects",
+    "section": "",
+    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
+  },
+  {
     "objectID": "awards.html",
     "href": "awards.html",
     "title": "Awards & Honors",
@@ -714,20 +770,6 @@
     "text": "Phi Theta Kappa Honor Society\n⭐ Member – Phi Theta Kappa\nInternational honor society recognizing academic excellence, leadership,\nand commitment to service among high‑achieving students in higher education.\n\n\n🏆 Love DATAWEEK 2024 — First Place Award\nRecipient of the First‑Place Award for Innovative Visualizations at Love DATAWEEK 2024, recognizing excellence in data visualization, design, and analytical storytelling with Federico Veneri.\nProject"
   },
   {
-    "objectID": "applied-project.html",
-    "href": "applied-project.html",
-    "title": "5 minutes Applied Data Projects",
-    "section": "",
-    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
-  },
-  {
-    "objectID": "applied-project.html#overview",
-    "href": "applied-project.html#overview",
-    "title": "5 minutes Applied Data Projects",
-    "section": "",
-    "text": "This page presents applied data science and visualization projects developed using publicly available datasets, with a strong focus on education, public policy, and institutional analytics.\nThe projects are designed both for teaching purposes and for demonstrating real‑world applications of data science methods.\n\n\n\nHigh School to Higher Education Enrollment\nThe project analyzes student migration patterns across the United States, with a focus on where high school graduates enroll in higher education institutions.\n\n\n\nData: National Center for Education Statistics (NCES)\nTools: R · Shiny · Geospatial visualization\n🚀 Open Live Dashboard NCES\n\n\n\n\nDashboard based on public data\nThis Shiny app explores player and team performance under pressure during UEFA European Championship matches using StatsBomb event data. It focuses on how pressure influences passing, ball reception, and subsequent actions. The app includes five interactive views:\nOverall Pass Performance Summarises players’ pass success rates under pressure by year, team, and player, combining bar charts with supporting tables.\nPasses Under Pressure Visualises the location and direction of pressured passes on a football pitch, showing completion outcomes and common passing sources.\nBall Receipts Displays where players receive the ball and colours receptions by opponent proximity, highlighting moments of high and low pressure.\nNext Event Analysis Examines what actions occur immediately after a ball reception, revealing decision patterns under pressure.\nPlayer Info Profile Provides a compact table and bar chart summarising individual player behaviour under pressure, with filters by position, team, and year.\nOverall, the app allows users to interactively explore how pressure shapes on‑ball decisions, combining event-level data, pitch visualisations, and intuitive filters for exploratory football analytics.\n👉 Interactive Dash:\n📍 Interactive Dash Soccer\n\nThese examples illustrate how open data can be transformed into actionable insights for decision‑making, communication, and teaching in Data Science and Analytics."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Cecilia Regueira",
@@ -735,11 +777,25 @@
     "text": "NoteProfile\n\n\n\nEconomist and Data Scientist with over ten years of experience across higher education analytics, applied data science, and economic consulting. My work spans academic research and real‑world applications, with a strong focus on causal inference, statistical modeling, machine learning, and data visualization. I have led data‑driven projects for universities, international organizations, government agencies, and private firms, applying econometrics and advanced analytics to problems in pricing, public expenditure, labor markets, and decision‑making under uncertainty. I bring extensive experience translating complex analytical findings into clear, actionable insights for diverse stakeholders, and I am deeply committed to evidence‑based policy and data‑informed decision‑making.\nKey words: data analysis, applied statistics, machine learning, and data visualization."
   },
   {
+    "objectID": "index.html#curriculum-vitae",
+    "href": "index.html#curriculum-vitae",
+    "title": "Cecilia Regueira",
+    "section": "📄 Curriculum Vitae",
+    "text": "📄 Curriculum Vitae\nView CV Online"
+  },
+  {
     "objectID": "index.html#current-positions",
     "href": "index.html#current-positions",
     "title": "Cecilia Regueira",
     "section": "Current Positions",
-    "text": "Current Positions\n💻📊 2022 – Present\nSenior Data Analyst\nEnrollment Research & Analytics – Iowa State University\nAlthough my formal title is Data Analyst, my role functions as a lead data science position. I lead institution‑wide data modeling and advanced analytics initiatives that support undergraduate and graduate recruitment and enrollment strategy, working closely with senior leadership and enrollment stakeholders. My work includes designing and implementing innovative statistical and machine learning models—such as enrollment forecasting, recruitment targeting, and financial aid elasticity models—to improve student recruitment effectiveness and inform high‑stakes decision‑making. These efforts directly contribute to strategic planning, resource allocation, and institutional sustainability, and have been recognized with institutional awards for innovation in analytics and modeling.\n👩🎓 2023 – Present\nProfessor – Statistics, Master in Data Science\nUniversidad de Montevideo\nDeliver graduate-level instruction in applied statistics for data science Teach probability, statistical inference, experimentation, and interpretation with a focus on machine learning applications\n👩🎓📈2022 – Present\nProfessor – Data Visualization, Master in Data Science\nUniversidad de Montevideo\nLead courses on data visualization, emphasizing effective visual communication and data storytelling Train students in exploratory analysis and visualization to support data-driven decision-making"
+    "text": "Current Positions\n👩🎓 July 2026 – Present\nVolunteer Statistician\nStatistics Without Borders\nProvide pro bono statistical and data science support to nonprofit organizations and international development projects. Collaborate with multidisciplinary teams to apply statistical methods, data analysis, visualization, and evidence-based approaches to address social, health, education, and humanitarian challenges.\n👩🎓 2023 – Present\nProfessor – Statistics, Master in Data Science\nUniversidad de Montevideo\nDeliver graduate-level instruction in applied statistics for data science Teach probability, statistical inference, experimentation, and interpretation with a focus on machine learning applications\n👩🎓📈2022 – Present\nProfessor – Data Visualization, Master in Data Science\nUniversidad de Montevideo\nLead courses on data visualization, emphasizing effective visual communication and data storytelling Train students in exploratory analysis and visualization to support data-driven decision-making"
+  },
+  {
+    "objectID": "index.html#previous-professional-experience",
+    "href": "index.html#previous-professional-experience",
+    "title": "Cecilia Regueira",
+    "section": "Previous Professional Experience",
+    "text": "Previous Professional Experience\n💻📊 2022 – July 2026\nSenior Data Analyst\nEnrollment Research & Analytics – Iowa State University\nAlthough my formal title was Data Analyst, my role functioned as a lead data science position. I led institution-wide data modeling and advanced analytics initiatives that supported undergraduate and graduate recruitment and enrollment strategy, working closely with senior leadership and enrollment stakeholders. My work included designing and implementing innovative statistical and machine learning models, such as enrollment forecasting, recruitment targeting, and financial aid elasticity models, to improve student recruitment effectiveness and inform high-stakes decision-making. These efforts contributed directly to strategic planning, resource allocation, and institutional sustainability and were recognized with institutional awards for innovation in analytics and modeling.\nConcluded this appointment in July 2026 following a relocation."
   },
   {
     "objectID": "index.html#research-interests",
