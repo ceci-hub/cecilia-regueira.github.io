@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Cecilia Regueira">
+
+<title>Q &amp; A for DS – Cecilia Regueira</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Cecilia Regueira</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teaching" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teaching</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teaching">    
+        <li>
+    <a class="dropdown-item" href="../STAT/index.html">
+ <span class="dropdown-text">STAT Course</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Vizualizacion/index.html">
+ <span class="dropdown-text">Data Visualization Course</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../STAT/tool.html">
+ <span class="dropdown-text">Tools for Inference</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-project" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">5’ Project</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-project">    
+        <li>
+    <a class="dropdown-item" href="../applied-project.html">
+ <span class="dropdown-text">Dash in Shiny</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tienda/index.html">
+ <span class="dropdown-text">Story Telling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Mentorias/TakeawayFT.html">
+ <span class="dropdown-text">Case_study</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Mentorias/academoc_assistant.html">
+ <span class="dropdown-text">LLM_study</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mentor" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Mentor</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mentor">    
+        <li>
+    <a class="dropdown-item" href="../Mentorias/STAT_QA.html">
+ <span class="dropdown-text">Mock Int Stat</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Mentorias/Code_BP.html">
+ <span class="dropdown-text">Code BP</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Mentorias/DS questions.html">
+ <span class="dropdown-text">DSQ</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../awards.html"> 
+<span class="menu-text">Awards</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#modelling-questions" id="toc-modelling-questions" class="nav-link active" data-scroll-target="#modelling-questions">Modelling Questions</a></li>
+  <li><a href="#database-fundamentals" id="toc-database-fundamentals" class="nav-link" data-scroll-target="#database-fundamentals">Database Fundamentals</a></li>
+  <li><a href="#descriptive-stats-viz" id="toc-descriptive-stats-viz" class="nav-link" data-scroll-target="#descriptive-stats-viz">Descriptive Stats &amp; Viz</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Q &amp; A for DS</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cecilia Regueira </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="modelling-questions" class="level2">
+<h2 class="anchored" data-anchor-id="modelling-questions">Modelling Questions</h2>
+<p><strong>1. Whats is the role od a data scientist in an organization?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>A data scientist bridges the gap between raw data and actionable business insights. They design experiments, build predictible model and communicate findings to non technical stakeholders to drive data informed decisions.</p>
+</details>
+<p><strong>2. Explain the bias-variance trade-off</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Bias measures how far the model predictions are from the true values (underfitting risk), while variance measures sensibility to fluctuations in training data (overfitting risk). A polymonial degree-1 model on curved data has a high bias, a degree 20 model on noisy data has high variance. The sweet spot minimizes total error.</p>
+</details>
+<p><strong>3. Whats cross validation and why should you use k fold instead of a single train-test split?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Cross-validation repeatedly splits data into training and validation folds to estimate generalization error k-fold CV uses every sample for both training and validation across k rounds, giving a lower-variance performance estimate and making better use of limited data than a single split.</p>
+</details>
+<p><strong>4.Walks through the key steps of data processing before modelling</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>The pipeline typically covers:</p>
+<ul>
+<li><ol type="1">
+<li>data collection &amp; auditing</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>handling missing values</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>outline detection</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>features encoding for categorical</li>
+</ol></li>
+<li><ol start="5" type="1">
+<li>scaling/normalization</li>
+</ol></li>
+<li><ol start="6" type="1">
+<li>feature engineering</li>
+</ol></li>
+<li><ol start="7" type="1">
+<li>train-test splitting.</li>
+</ol></li>
+</ul>
+<p>Each step reduces noise and ensures the model receives clean, comparable input.</p>
+<div style="text-align:center; margin-top:2em;">
+<p><a href="../Mentorias/pipeline.html" class="btn btn-outline-primary btn-lg"> 📘 View Code Examples </a></p>
+</div>
+</details>
+<p><strong>5. Compare L1(Lasso) and L2 (Ridge) regularization - when would you choose each?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>L1 adds the sum of the absolute coefficient values as a penalty, shrinking irrelevant coefficients to exactly zero and producing sparse models - ideal for feature selection. L2 adds the sum of squared coefficients, distributing shrinkage across all features without zeroing them - preferred when all features may be relevant. Elastic combines both.</p>
+</details>
+<p><strong>6. What strategies exist for handling missing data, and what are the trade-offs?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Options include: - (1) listwise deletion -simple but loses information - (2) mean/ median/ mode imputation - fast but ignores uncertainty - (3) K- nearest neighbour imputation - captures local patterns - (4) multiple imputation - gold standard, preserves variability - (5) model- based imputation using algorithms such as a Random Forest.</p>
+<p>The best choice depends on the missing data mechanism (MCAR, MAR or MNAR)</p>
+</details>
+<p><strong>7. How does K-means clustering work, and what are the mains limitations?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>K means iteratively assigns each point to its nearest centroid, then recomputes centroids until convergence, minimizing within-cluster sum squares. Limitations: requires the number of clusters K to be specified in advance, assumes spherical clusters of similar size, is sensitive to initialization and ouliers, and struggles with non-convexed shapes.</p>
+</details>
+<p><strong>8. What metrics would you use to evaluate a classification model, and when does accurancy mislead you? </strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Key metrics: precision, recall, F1, score, ROC-AUC, and log loss, accuracy misleads when datasets are imbalanced - a model predicting the majority class for every observation can achieve 99%, accuracy on 99:1 data set while being useless. In such case F1 score or PR-AUC are more informative.</p>
+</details>
+<p><strong>9. Interpret a confusion matrix and explain precision and recall are derived from it</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>A confusion matrix cross-tabulates actual vs predicted classes. True Positives (TP) are correct positive predictions: False Negatives (FN) are missed positives, True Negatives (TN) are corrected negative predictions. Precisions = TP/ (TP +FP), Recall = TP / (TP + FN). Precisions answers how many flagged cases are real?, recall answers: ” how many real cases did we catch?”</p>
+</details>
+<p><strong>10. What is feature scaling important, and which algorithms are most sensitive to it?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Feature scaling ensures all features contribute equally to distance and gradient computations. Algorithms sensitive to scale includes K-nearest neighbors (uses Euclidean distance), SVM (maximizes margin in feature space), neural networks (gradient descent converges faster), and PCA (variance-based). Tree-based models such as Random Forest and XGBoost are scale-invariant.</p>
+</details>
+<p><strong>11. How a Random Forest difer from a single Decision Tree, and what makes it more robust? </strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>A single decision tree is prone to over fitting because it memorises training data . Random Forest builds many trees on boostramp samples of the data at each split considers only a random subset of features (bagging + features randomness). The ensemble averages predictions, dramatically reducing variance without increasing bias.</p>
+</details>
+<p><strong>12. Explain the difference between bagging and boosting </strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Bagging (e.g.Random Forest) trains models independently in parallel on random data subsets and average results - primarily reducing variance. Boosting (e.g.&nbsp;XGBoosr, AdaBoost) trains models sequentially, with each learner focusing on the errors of its predecessor - primary reducing bias. Bagging is less prone to over fitting, boosting often achieves higher accuracy, but needs carefully tuning.</p>
+</details>
+<p><strong>13. What is gradient descent, and how to do batch, mini-batch and stochastic variants differ </strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Gradient descent iteratively updates model parameters by moving in the direction of the steepest loss decreases. Batch GD uses the full data set per update - stable but slow for large data. Stochastic GD updates after each sample - fast but noisy. Mini-batch GD (the standard in the deep learning) uses a small random batches, balancing speed and stability.</p>
+</details>
+<p><strong>14. What is multicollinearity, how do you detect it, and what can you do about it? </strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Multicollinearity occurs when predictor variables are highly correlated, inflating coefficient standard errors and making model interpretations unstable.</p>
+<p>Detection methods include calculating Variance Inflation Factor (VIF &gt; 10 indicates a problem), examining correlation heatmaps, and checking condition numbers.</p>
+<p>To address it: remove one of the correlated features, combine them, apply PCA to create orthogonal components, or use regularised models like Ridge regression that handle collinearity effectively.</p>
+</details>
+<p><strong>15. Explain the intuition behind Support Vector Machines (SVM) </strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>SVM aims to find the optimal hyperplane that separates classes by maximising the margin—the distance between the boundary and the nearest data points (support vectors). These support vectors define the decision boundary.</p>
+<p>For non-linearly separable data, SVM uses kernel functions (e.g., RBF, polynomial) to map inputs into a higher-dimensional space where linear separation becomes possible. SVMs are effective in high-dimensional spaces and work well with smaller datasets.</p>
+</details>
+<p><strong>16. How does the Naive Bayes classifier work, and why is the ‘naive’ assumption problematic?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Naive Bayes applies Bayes’ theorem assuming that features are conditionally independent given the class label. It calculates posterior probabilities for each class and predicts the class with the highest probability.</p>
+<p>The “naive” assumption is often unrealistic because features are usually correlated (e.g., words in text). Despite this, Naive Bayes performs well in practice, especially for high-dimensional problems like text classification, due to its simplicity and efficiency.</p>
+</details>
+<p><strong>17. How do you handle outliers in a dataset? </strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>First, determine whether outliers are genuine data points or errors.</p>
+<p>For genuine outliers: use robust models (e.g., tree-based) or robust loss functions (e.g., Huber).</p>
+<p>For errors: remove them or cap values using winsorization.</p>
+<p>Transformations such as log or square-root can reduce skewness. Always apply any treatment using training data only to avoid data leakage.</p>
+</details>
+<p><strong>18. State the Central Limit Theorem and explain its practical significance in data science</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>The Central Limit Theorem states that the sampling distribution of the sample mean approaches a normal distribution as sample size increases, regardless of the population distribution (assuming finite variance).</p>
+<p>Practically, it justifies the use of normal-based statistical tests (z-tests, t-tests), supports confidence interval estimation, and explains why many real-world aggregated measurements tend to follow a normal distribution.</p>
+</details>
+<p><strong>19. What is Principal Component Analysis (PCA) and when should you apply it?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>PCA is a dimensionality reduction technique that projects data onto orthogonal components capturing maximum variance. These components are linear combinations of the original features.</p>
+<p>It is useful when features are highly correlated, when reducing dimensionality for visualisation (2D/3D), or when lowering computational cost. A key drawback is reduced interpretability since components are not directly tied to original features.</p>
+</details>
+<p><strong>20. Explain ensemble learning and give examples of when it outperforms individual models</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Ensemble learning combines predictions from multiple base models to improve accuracy and robustness. It performs best when models have complementary strengths, when data is noisy (reducing variance via bagging), or when the problem is complex (reducing bias via boosting).</p>
+<p>Common methods include Random Forest (bagging), Gradient Boosting (XGBoost, LightGBM), and stacking. Ensembles often dominate in real-world competitions and structured data problems.</p>
+</details>
+<p><strong>21. What is XGBoost and what makes it more effective than traditional Gradient Boosting?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>XGBoost extends gradient boosting with several optimization: second-order Taylor approximation of the loss, built-in L1/L2 regularization, column and row sub sampling, efficient parallel tree construction, and native handling of missing values.</p>
+<p>These enhancements make it faster, more regularized, and highly effective on tabular data sets.</p>
+</details>
+<p><strong>22. How do you select the optimal number of clusters K in K-Means?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Common approaches include: (1) Elbow method — plot inertia vs K and identify the point where improvement slows; (2) Silhouette score — measures cohesion and separation (higher is better); (3) Gap statistic — compares clustering performance to a reference null distribution.</p>
+<p>Final choice should be validated with domain knowledge and interpretability.</p>
+</details>
+<p><strong>23. Explain the purpose and mechanics of LSTM networks</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>LSTMs are a type of recurrent neural network designed to capture long-term dependencies in sequential data. They address the vanishing gradient problem using gating mechanisms: forget gate removes irrelevant information, input gate controls what new information is stored, and output gate determines what is passed forward.</p>
+<p>They are widely used for time series, text, and sequential signal modelling.</p>
+</details>
+<p><strong>24. What is the difference between RMSE and MAE, and when would you prefer each?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>RMSE (Root Mean Squared Error) squares errors before averaging, penalising large errors more heavily. MAE (Mean Absolute Error) averages absolute differences, treating all errors equally.</p>
+<p>Use RMSE when large errors are particularly undesirable (e.g., forecasting), and MAE when robustness to outliers is important. RMSE is smooth and easier to optimise, while MAE is more interpretable.</p>
+</details>
+<p><strong>25. How do you handle imbalanced datasets in a classification problem?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Strategies include: (1) Resampling — oversample minority class (e.g., SMOTE) or undersample majority; (2) Class weighting — penalise minority class errors more; (3) Threshold tuning — optimise decision threshold for F1 or recall; (4) Algorithm choice — use models robust to imbalance (e.g., XGBoost with scale_pos_weight).</p>
+<p>Evaluation should use metrics like F1, PR-AUC, or MCC instead of accuracy.</p>
+</details>
+<p><strong>26. What is the purpose of a recommendation system, and what are the main approaches?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Recommendation systems predict user preferences to surface relevant items.</p>
+<p>Main approaches: (1) Collaborative filtering — finds similar users/items or learns latent factors; (2) Content-based filtering — recommends based on item features and user history; (3) Hybrid methods — combine both to improve performance and handle cold-start problems.</p>
+</details>
+<p><strong>27. Explain the vanishing gradient problem in deep networks and how modern architectures address it</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>In deep networks, gradients shrink exponentially during back propagation, especially with sigmoid/tanh activation, preventing early layers from learning effectively.</p>
+<p>Solutions include: (1) ReLU activation — reduces saturation; (2) Batch Normalization — stabilizes activation; (3) Residual connections (ResNet) — allow gradients to flow directly; (4) Proper weight initialization (He, Xavier).</p>
+</details>
+<p><strong>28. What is overfitting, and what is your toolkit for combating it?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Overfitting occurs when a model memorises training data and fails to generalise.</p>
+<p>Mitigation techniques include: (1) More training data; (2) Cross-validation; (3) Regularization (L1/L2, dropout); (4) Early stopping based on validation loss; (5) Reducing model complexity; (6) Data augmentation.</p>
+</details>
+<p><strong>29. Describe the concept of backpropagation in neural networks</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Back propagation computes the gradient of the loss with respect to each model weight using the chain rule of calculus, propagating errors backward from the output layer to the input layer.</p>
+<p>The forward pass generates predictions, the backward pass calculates gradients, and an optimizer (e.g., SGD, Adam) updates weights in the direction that minimizes loss. This process repeats across many iterations (epochs).</p>
+</details>
+<p><strong>30. What is the purpose of t-SNE, and how does it differ from PCA for visualization?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>t-SNE is a non-linear dimensional reduction technique designed for visualizing high-dimensional data in 2D or 3D. It preserves local structure, meaning nearby points in high dimensions stay close in the projection.</p>
+<p>Unlike PCA (which preserves global variance through linear projections), t-SNE reveals clusters and manifold structure but is computationally expensive, non-deterministic, and does not preserve global distances between clusters.</p>
+</details>
+<p><strong>31. What is feature importance in tree-based models, and how is it measured?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Feature importance measures how much each feature contributes to model predictions. In tree-based models, it is typically computed as the total reduction in impurity (Gini or entropy) from splits involving that feature, weighted by sample counts.</p>
+<p>Permutation importance is a model-agnostic alternative that measures performance drop when a feature is randomly shuffled, making it more reliable when features are correlated.</p>
+</details>
+<p><strong>32. How do you diagnose and address multicollinearity in a regression model?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Diagnosis includes examining correlation matrices and calculating Variance Inflation Factor (VIF). A VIF above ~5–10 indicates problematic multicollinearity.</p>
+<p>Solutions include removing one of the correlated features, combining features, applying PCA for orthogonal components, or using regularised models like Ridge regression.</p>
+</details>
+<p><strong>33. What is the Gini index and how is it used to build a Decision Tree?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>The Gini index measures node impurity: Gini = 1 − Σ(p²), where p represents class probabilities. A pure node has Gini = 0.</p>
+<p>At each split, the algorithm evaluates all possible splits and selects the one that maximises the reduction in Gini impurity (i.e., increases node purity). Entropy (information gain) is an alternative criterion.</p>
+</details>
+<p><strong>34. Explain the concept of R-squared and its limitations as a regression metric</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>R² measures the proportion of variance in the target variable explained by the model: R² = 1 − (SS_res / SS_tot).</p>
+<p>Limitations: it always increases with more predictors (use Adjusted R² instead), does not indicate statistical significance of features, and a high R² does not guarantee good generalisation on unseen data.</p>
+</details>
+<p><strong>35. What is the Apriori algorithm, and where is it applied?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Apriori identifies frequent itemsets in transactional data using the anti-monotonicity property: if an itemset is infrequent, all its supersets are also infrequent. This enables efficient pruning.</p>
+<p>It generates association rules evaluated by support, confidence, and lift. A common application is market basket analysis (e.g., identifying products frequently bought together).</p>
+</details>
+<p><strong>36. How do you handle highly skewed data distributions before modelling?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Common approaches include: - (1) Log transformation — effective for right-skewed, positive data; - (2) Square-root or cube-root transformations — milder compression; - (3) Box-Cox transformation — a parameterised family including log as a special case; - (4) Yeo-Johnson — extends Box-Cox to zero and negative values; - (5) Quantile transformation — maps data to a uniform or normal distribution.</p>
+<p>Always fit transformations on training data only and apply the same parameters to validation/test sets.</p>
+</details>
+<p><strong>37. What is Mean Average Precision (MAP) and in what context is it used?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>MAP is a metric for ranked retrieval systems (e.g., search engines, recommenders). For each query, Average Precision (AP) sums precision at each rank where a relevant item is retrieved. MAP is the mean of AP across all queries.</p>
+<p>It rewards systems that rank relevant results higher and penalises those that push them lower in the list.</p>
+</details>
+<p><strong>38. Explain the Euclidean and Cosine distance metrics — when does each apply?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Euclidean distance measures straight-line distance between two points and is appropriate when magnitude matters (e.g., K-means on continuous data).</p>
+<p>Cosine similarity measures the angle between vectors, ignoring magnitude, making it ideal for high-dimensional sparse data like text (e.g., TF-IDF vectors in NLP).</p>
+</details>
+<p><strong>39. How do you handle non-linearly separable data in classification?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Approaches include: (1) Kernel SVM — maps data to higher-dimensional space using RBF, polynomial, or sigmoid kernels; (2) Feature engineering — add polynomial or interaction terms; (3) Non-linear models — Decision Trees, Random Forests, and neural networks learn complex boundaries directly; (4) Dimensionality reduction methods (t-SNE, UMAP) for visualising non-linear structure.</p>
+</details>
+<p><strong>40. What is the Chi-square test, and how is it used in feature selection?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>The Chi-square test checks whether two categorical variables are independent by comparing observed vs expected frequencies.</p>
+<p>In feature selection, a high Chi-square statistic (low p-value) between a feature and the target indicates strong dependence, meaning the feature is informative and should be retained.</p>
+</details>
+<p><strong>41. What is ANOVA, and when would a data scientist apply it?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>ANOVA (Analysis of Variance) tests whether the means of three or more groups differ significantly. It compares between-group variance to within-group variance using the F-statistic.</p>
+<p>It is used to compare model performance, evaluate whether a feature differs across target classes (feature selection), and validate A/B tests with more than two variants.</p>
+</details>
+<p><strong>42. How do you handle time-series data in a machine learning pipeline?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Key steps: (1) Use chronological train-test splits — never use future data to predict the past; (2) Engineer time features such as lags, rolling statistics, and seasonality indicators; (3) Choose appropriate models — ARIMA (stationary), Prophet (trend + seasonality), LSTM (long dependencies); (4) Evaluate using time-series cross-validation (walk-forward validation) instead of random k-fold.</p>
+</details>
+<p><strong>43. What is the K-Nearest Neighbours (KNN) algorithm, and what are its computational challenges?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>KNN predicts a new point using the majority label (classification) or average value (regression) of its K nearest neighbours based on a distance metric (e.g., Euclidean, cosine).</p>
+<p>Challenges: (1) Prediction time is O(n·d), scaling poorly with dataset size and dimensionality; (2) Curse of dimensionality makes distances less meaningful; (3) Sensitive to irrelevant features and scale, requiring preprocessing.</p>
+</details>
+<p><strong>44. Explain Log Loss and why it is preferred over accuracy for probabilistic classifiers.</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Log Loss (cross-entropy) measures the negative log-probability assigned to the true label: −(y·log(p) + (1−y)·log(1−p)).</p>
+<p>It penalises confident wrong predictions much more than uncertain ones, rewarding well-calibrated probabilities rather than just correct classifications. This makes it more informative than accuracy for probabilistic models.</p>
+</details>
+<p><strong>45. What techniques address high-dimensional data (the ‘curse of dimensionality’)?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>High dimensionality leads to sparse data and less meaningful distances. Solutions include:</p>
+<ul>
+<li><ol type="1">
+<li>Feature selection — remove irrelevant/redundant features (Lasso, mutual information, RFE);</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Dimensionality reduction — PCA (linear), t-SNE/UMAP (non-linear);</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>Regularization — penalize model complexity;</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>Domain knowledge — engineer meaningful low-dimensional features.</li>
+</ol></li>
+</ul>
+</details>
+<p><strong>46. What is the F1 score, and when should you optimise for it over precision or recall alone?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>F1 score is the harmonic mean of precision and recall:</p>
+<p>F1 = 2 × (Precision × Recall) / (Precision + Recall).</p>
+<p>It balances both metrics and is useful when false positives and false negatives are equally important, especially in imbalanced datasets. If costs are asymmetric, use Fβ= (1+ β2) × (Precision × Recall) / (β2 X Precision + Recall). where β &gt; 1 emphasizes recall and β &lt; 1 emphasizes precision.</p>
+</details>
+<p><strong>47. Explain hyperparameter tuning — what methods exist and how do you avoid overfitting to the validation set?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Hyperparameters control model structure (e.g., learning rate, tree depth, regularization strength). Common tuning methods include: (1) Grid Search — exhaustive but expensive; (2) Random Search — more efficient and often comparable results; (3) Bayesian Optimization (e.g., Optuna, Hyperopt) — builds a probabilistic model to guide search; (4) Early stopping on a validation set. To avoid overfitting to the validation set, use nested cross-validation or keep a completely untouched final test set that is only evaluated once after tuning.</p>
+</details>
+<p><strong>48. What is data leakage, and why is it one of the most dangerous pitfalls in machine learning?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Data leakage occurs when information from outside the training dataset is used to build the model — for example, scaling using test-set statistics, including features derived from the target after the event, or improperly splitting time-series data.</p>
+<p>Leaked models often appear to perform exceptionally well during training but fail in real-world deployment because they rely on information that would not be available in practice. Prevention involves fitting preprocessing steps strictly on training data and properly separating training, validation, and test sets.</p>
+</details>
+<p><strong>49. What is the purpose of the logistic function in logistic regression?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>The logistic (sigmoid) function σ(z) = 1 / (1 + e^-z) maps any real-valued linear combination of features into the interval (0, 1), allowing outputs to be interpreted as probabilities.</p>
+<p>The decision boundary is typically set where σ(z) = 0.5 (i.e., z = 0). The model is trained using binary cross-entropy (log loss), which is convex and enables efficient gradient-based optimisation.</p>
+</details>
+<p><strong>50. How do you approach feature engineering, and what impact does it typically have on model performance?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Feature engineering transforms raw data into more informative representations. Key techniques include: (1) interaction and polynomial features; (2) aggregations (mean, standard deviation across related records); (3) date/time decomposition (hour, day-of-week, is_weekend); (4) target encoding for high-cardinality categorical variables; (5) domain-specific ratios (e.g., debt-to-income). Strong feature engineering often has a larger impact on performance than model choice, especially for structured/tabular data.</p>
+</details>
+<p><strong>51. What is the difference between supervised and unsupervised learning?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Supervised learning trains a model on labelled data where the target variable is known, allowing the model to learn a mapping from inputs to outputs (e.g., classification, regression).</p>
+<p>Unsupervised learning works with unlabeled data and identifies underlying patterns or structure (e.g., clustering, dimensionality reduction).</p>
+</details>
+<p><strong>52. Explain the concept of gradient descent and its role in optimizing machine learning models</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Gradient descent is an optimisation algorithm that minimises a loss function by iteratively updating model parameters in the direction of the steepest decrease (negative gradient).</p>
+<p>It is fundamental to training many models, including linear models and neural networks, enabling them to converge toward optimal parameters.</p>
+</details>
+<p><strong>53. What is a Convolutional Neural Network (CNN), and how is it applied in image recognition tasks?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>A CNN is a deep learning architecture designed for processing grid-like data such as images. It uses convolutional layers to learn spatial hierarchies of features (edges → textures → objects).</p>
+<p>CNNs automatically extract features from images and achieve high performance in tasks such as image classification, detection, and segmentation.</p>
+</details>
+<p><strong>54. How would you handle overfitting in a machine-learning model?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Overfitting occurs when a model memorises training data but performs poorly on unseen data.</p>
+<p>Mitigation strategies include regularisation (L1/L2), early stopping, cross-validation, reducing model complexity, adding more data, and applying data augmentation.</p>
+</details>
+<p><strong>55. Explain the concept of transfer learning and its advantages in machine learning</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Transfer learning reuses a model trained on a large dataset and adapts it to a related task.</p>
+<p>It reduces training time, requires less data, and improves performance, especially when labelled data is limited.</p>
+</details>
+<p><strong>56. How would you evaluate the performance of a machine learning model?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Evaluation depends on the task. Classification metrics include accuracy, precision, recall, F1-score, and ROC-AUC. Regression metrics include MSE, RMSE, and MAE.</p>
+<p>Cross-validation provides robust estimates, and curves such as ROC or precision-recall help analyse performance across thresholds.</p>
+</details>
+<p><strong>57. How would you handle imbalanced datasets in machine learning?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Imbalanced datasets have unequal class distributions. Techniques include oversampling the minority class (e.g., SMOTE), undersampling the majority class, using class weights, and adjusting decision thresholds.</p>
+<p>Models should be evaluated with metrics such as F1, PR-AUC, or MCC rather than accuracy.</p>
+</details>
+<p><strong>58. Explain the Central Limit Theorem and its significance in statistics</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>The Central Limit Theorem states that the sampling distribution of the sample mean approaches a normal distribution as sample size increases, regardless of the original distribution (under finite variance).</p>
+<p>It enables statistical inference, supports confidence intervals, and justifies hypothesis testing methods.</p>
+</details>
+<p><strong>59. What is hypothesis testing, and how would you approach it for a dataset?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Hypothesis testing is a statistical framework for making decisions about a population using sample data.</p>
+<p>Steps:</p>
+<ul>
+<li><ol type="1">
+<li>define null (H₀) and alternative (H₁) hypotheses</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>choose a test statistic</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>set significance level (α)</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>compute p-value</li>
+</ol></li>
+<li><ol start="5" type="1">
+<li>reject or fail to reject H₀ based on the result.</li>
+</ol></li>
+</ul>
+</details>
+<p><strong>60. Explain the concept of correlation and its interpretation in statistics</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Correlation measures the strength and direction of the linear relationship between two variables. It ranges from −1 to +1, where −1 indicates perfect negative correlation, +1 indicates perfect positive correlation, and 0 indicates no linear relationship.</p>
+<p>The correlation coefficient helps quantify how strongly variables move together, but it does not imply causation.</p>
+</details>
+<p><strong>61. What are confidence intervals, and how do they relate to hypothesis testing?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>A confidence interval provides a range of plausible values for a population parameter based on sample data. For example, a 95% confidence interval means that, over repeated samples, 95% of such intervals would contain the true parameter.</p>
+<p>They relate to hypothesis testing because if a hypothesised value (e.g., μ₀) lies outside the interval, the null hypothesis would be rejected at the corresponding significance level.</p>
+</details>
+<p><strong>62. What is the difference between Type I and Type II errors in hypothesis testing?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>A Type I error occurs when a true null hypothesis is incorrectly rejected (false positive), while a Type II error occurs when a false null hypothesis is not rejected (false negative).</p>
+<p>Type I error is controlled by the significance level (α), whereas Type II error is related to statistical power (1 − β), which reflects the ability to detect real effects.</p>
+</details>
+<p><strong>63. How would you perform hypothesis testing for comparing two population means?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>To compare two population means, use a t-test: an independent t-test for two separate groups, or a paired t-test for dependent samples.</p>
+<p>Steps: - (1) define null (means are equal) and alternative hypotheses; - (2) choose the appropriate test; - (3) compute the test statistic; - (4) calculate p-value; - (5) decide whether to reject the null hypothesis based on α.</p>
+<p>Assumptions include normality (or large samples) and, for independent t-tests, equal variance (or use Welch’s t-test).</p>
+</details>
+<p><strong>64. Explain the concept of p-value and its interpretation in hypothesis testing</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>The p-value is the probability of observing data as extreme as (or more extreme than) the observed result, assuming the null hypothesis is true.</p>
+<p>A small p-value indicates strong evidence against the null hypothesis. If the p-value is less than the significance level (α), the null hypothesis is rejected.</p>
+</details>
+<p><strong>65. What is ANOVA (Analysis of Variance), and when is it used in statistical analysis?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>ANOVA is used to compare the means of three or more groups to determine whether at least one group differs significantly.</p>
+<p>It works by partitioning total variance into between-group and within-group components and evaluating their ratio using the F-statistic. ANOVA is commonly used in experiments, A/B/n testing, and feature analysis.</p>
+</details>
+<p><strong>66. Imagine you are tasked with improving the search functionality of a search engine like Google. How would you approach this challenge?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Improving search involves understanding user intent, analysing queries and behaviour, and improving relevance ranking.</p>
+<p>Techniques include natural language processing (NLP), query expansion, semantic search, and learning-to-rank models. Continuous A/B testing, feedback loops, and monitoring metrics such as click-through rate (CTR) and dwell time are critical for iterative improvement.</p>
+</details>
+<p><strong>67. How would you measure the impact and success of a new feature release in a mobile app?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Measure success using metrics aligned with the feature’s goal, such as adoption rate, engagement (time spent, usage frequency), retention, and conversion.</p>
+<p>Use A/B testing to compare users exposed to the feature versus a control group, and complement quantitative metrics with qualitative feedback (reviews, surveys).</p>
+</details>
+<p><strong>68. Suppose you are tasked with improving the user onboarding process for a software platform. How would you approach this?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Start by identifying user pain points through analytics and user research. Simplify workflows, provide guided tutorials, tooltips, and progressive onboarding experiences.</p>
+<p>Measure success using activation rate, drop-off points, and time-to-value, and iterate based on user feedback and behavioural data.</p>
+</details>
+<p><strong>69. How would you prioritize and manage multiple concurrent data science projects with competing deadlines?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Prioritization should be based on business impact, urgency, dependencies, and resource availability. Break projects into milestones and use frameworks like Agile for iterative delivery.</p>
+Clear stakeholder communication, expectation setting, and regular progress tracking ensure deadlines are met effectively.
+</details>
+<p><strong>70. Suppose you are asked to design a fraud detection system for an online payment platform. How would you approach this task?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Design involves combining supervised learning (fraud classification) with anomaly detection for unseen patterns. Engineer features such as transaction amount, frequency, location, device, and user behaviour.</p>
+<p>Handle class imbalance, use real-time scoring, and deploy monitoring systems. Continuously retrain models using new data and collaborate with domain experts to refine rules and improve detection accuracy.</p>
+</details>
+</section>
+<section id="database-fundamentals" class="level2">
+<h2 class="anchored" data-anchor-id="database-fundamentals">Database Fundamentals</h2>
+<p><strong>1. What is a primary key in a database? </strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>A primary key is a unique, non-null identifier for each record in a table. It ensures that every row can be uniquely identified and prevents duplicate entries. Primary keys are fundamental for maintaining data integrity and enabling efficient indexing and relationships between tables.</p>
+</details>
+<p><strong>2. What is a foreign key in a database?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>A foreign key is a column that references the primary key of another table, establishing a relationship between tables.</p>
+<p>It enforces referential integrity, ensuring that values in the foreign key column correspond to valid entries in the referenced table.</p>
+</details>
+<p><strong>3. What is ETL?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>ETL stands for Extract, Transform, Load. It is a pipeline process where data is extracted from source systems, transformed into a usable format, and loaded into a data warehouse or database.</p>
+<p>It is essential for integrating data from multiple sources and preparing it for analysis.</p>
+</details>
+<p><strong>4. What is data analytics?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Data analytics is the process of collecting, cleaning, transforming, and analysing data to extract insights, support decision-making, and drive business outcomes. It combines statistical, computational, and domain knowledge techniques.</p>
+</details>
+<p><strong>5. What are the types of data analytics?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>The main types are:</p>
+<p>Descriptive — summarises past data Predictive — forecasts future outcomes Prescriptive — recommends actions</p>
+<p>Each type builds on the previous to provide increasing value.</p>
+</details>
+<strong>6. What is a pivot table?</strong>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>A pivot table is a data summarisation tool used to reorganise, filter, and aggregate data (e.g., sums, counts, averages).</p>
+<p>It is widely used in spreadsheets and BI tools for quick exploratory analysis.</p>
+</details>
+<p><strong>7. What is data normalization?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Data normalization is the process of structuring or scaling data to reduce redundancy and improve consistency.</p>
+<p>In databases, it removes duplication (normal forms). In machine learning, it scales features to a standard range.</p>
+</details>
+<p><strong>8. Explain the concept of data warehousing</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>A data warehouse is a centralised repository that stores integrated data from multiple sources, optimised for querying and analysis.</p>
+<p>It enables reporting, dashboards, and historical analysis across an organisation.</p>
+</details>
+</section>
+<section id="descriptive-stats-viz" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-stats-viz">Descriptive Stats &amp; Viz</h2>
+<p><strong>1. Explain the difference between qualitative and quantitative data</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Qualitative data is non-numeric (e.g., categories, text), while quantitative data is numeric (e.g., counts, measurements).</p>
+<p>Quantitative data is typically easier to analyse statistically, while qualitative data provides richer context.</p>
+</details>
+<p><strong>2. What is data cleaning?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Data cleaning is the process of identifying and correcting errors such as missing values, inconsistencies, incorrect formats, and duplicates.</p>
+<p>It is a critical preprocessing step to ensure data quality and reliable model performance.</p>
+</details>
+<p><strong>3. What is an outlier?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>An outlier is a data point that significantly differs from the rest of the dataset.</p>
+<p>Statistically, it is often defined as a value far from the mean (e.g., more than 3 standard deviations). Outliers may indicate errors or meaningful rare events.</p>
+</details>
+<p><strong>4. What is a histogram?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>A histogram is a graphical representation of data distribution using bins to show the frequency of values. It helps identify patterns such as skewness, spread, and modality.</p>
+</details>
+<strong>5. What is a box plot?</strong>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>A box plot visualises data distribution using quartiles, showing the median, interquartile range (IQR), and potential outliers.</p>
+<p>It is useful for comparing distributions across groups.</p>
+</details>
+<strong>6. What is correlation vs causation?</strong>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Correlation indicates a statistical relationship between two variables, while causation means one variable directly affects another.</p>
+<p>Correlation alone does not imply causation due to confounding variables or coincidence.</p>
+</details>
+<strong>7. How do you handle missing data in a dataset?</strong>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Missing data can be handled by: (1) Imputation (mean, median, mode); (2) Removing rows/columns; (3) Using models that handle missing values; or (4) Adding missing indicators.</p>
+<p>The best approach depends on the context and the reason data is missing.</p>
+</details>
+<p><strong>8. How do you deal with outliers in a dataset?</strong></p>
+<details>
+<summary>
+<strong>✅ Click to read more</strong>
+</summary>
+<p>Outliers can be handled by removing them, transforming the data (log, scaling), capping values (winsorization), or using robust models less sensitive to extreme values.</p>
+<p>The first step is always to determine whether the outlier is an error or meaningful signal.</p>
+</details>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

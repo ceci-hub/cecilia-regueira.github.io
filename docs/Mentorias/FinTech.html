@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Cecilia Regueira">
+
+<title>Case of Study: Transactions Analysis – Cecilia Regueira</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Cecilia Regueira</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teaching" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teaching</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teaching">    
+        <li>
+    <a class="dropdown-item" href="../STAT/index.html">
+ <span class="dropdown-text">STAT Course</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Vizualizacion/index.html">
+ <span class="dropdown-text">Data Visualization Course</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../STAT/tool.html">
+ <span class="dropdown-text">Tools for Inference</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-project" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">5’ Project</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-project">    
+        <li>
+    <a class="dropdown-item" href="../applied-project.html">
+ <span class="dropdown-text">Dash in Shiny</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tienda/index.html">
+ <span class="dropdown-text">Story Telling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Mentorias/TakeawayFT.html">
+ <span class="dropdown-text">Case_study</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Mentorias/academoc_assistant.html">
+ <span class="dropdown-text">LLM_study</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mentor" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Mentor</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mentor">    
+        <li>
+    <a class="dropdown-item" href="../Mentorias/STAT_QA.html">
+ <span class="dropdown-text">Mock Int Stat</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Mentorias/Code_BP.html">
+ <span class="dropdown-text">Code BP</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Mentorias/DS questions.html">
+ <span class="dropdown-text">DSQ</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../awards.html"> 
+<span class="menu-text">Awards</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#data-loading" id="toc-data-loading" class="nav-link" data-scroll-target="#data-loading">Data Loading</a></li>
+  <li><a href="#describe-the-structure-of-the-data" id="toc-describe-the-structure-of-the-data" class="nav-link" data-scroll-target="#describe-the-structure-of-the-data">Describe the Structure of the Data</a>
+  <ul class="collapse">
+  <li><a href="#transactions-and-clients." id="toc-transactions-and-clients." class="nav-link" data-scroll-target="#transactions-and-clients.">Transactions and clients.</a></li>
+  <li><a href="#summary-of-numeric-variables" id="toc-summary-of-numeric-variables" class="nav-link" data-scroll-target="#summary-of-numeric-variables">Summary of Numeric Variables</a></li>
+  </ul></li>
+  <li><a href="#histogram-of-the-amounts-for-each-transaction" id="toc-histogram-of-the-amounts-for-each-transaction" class="nav-link" data-scroll-target="#histogram-of-the-amounts-for-each-transaction">Histogram of the amounts for each transaction</a>
+  <ul class="collapse">
+  <li><a href="#a-look-at-outliers" id="toc-a-look-at-outliers" class="nav-link" data-scroll-target="#a-look-at-outliers">A look at outliers</a></li>
+  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses">Hypotheses</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#data-wrangling---duplicate-transactions" id="toc-data-wrangling---duplicate-transactions" class="nav-link" data-scroll-target="#data-wrangling---duplicate-transactions">Data Wrangling - Duplicate Transactions</a>
+  <ul class="collapse">
+  <li><a href="#identifying-reversed-transaction" id="toc-identifying-reversed-transaction" class="nav-link" data-scroll-target="#identifying-reversed-transaction">Identifying reversed transaction</a></li>
+  <li><a href="#identifying-multi-swipe" id="toc-identifying-multi-swipe" class="nav-link" data-scroll-target="#identifying-multi-swipe">Identifying multi-swipe:</a></li>
+  <li><a href="#did-you-find-anything-interesting-about-either-type-of-transaction" id="toc-did-you-find-anything-interesting-about-either-type-of-transaction" class="nav-link" data-scroll-target="#did-you-find-anything-interesting-about-either-type-of-transaction">Did you find anything interesting about either type of transaction?</a></li>
+  </ul></li>
+  <li><a href="#modeling-fraud" id="toc-modeling-fraud" class="nav-link" data-scroll-target="#modeling-fraud">Modeling Fraud</a>
+  <ul class="collapse">
+  <li><a href="#data-engineering-and-feature-selection" id="toc-data-engineering-and-feature-selection" class="nav-link" data-scroll-target="#data-engineering-and-feature-selection">Data Engineering and feature selection:</a>
+  <ul class="collapse">
+  <li><a href="#merchants-and-transactions-amounts" id="toc-merchants-and-transactions-amounts" class="nav-link" data-scroll-target="#merchants-and-transactions-amounts">Merchants and transactions amounts</a></li>
+  <li><a href="#transactions-type-and-information." id="toc-transactions-type-and-information." class="nav-link" data-scroll-target="#transactions-type-and-information.">Transactions type and information.</a></li>
+  </ul></li>
+  <li><a href="#creating-a-model" id="toc-creating-a-model" class="nav-link" data-scroll-target="#creating-a-model">Creating a model</a>
+  <ul class="collapse">
+  <li><a href="#we-create-a-client-database" id="toc-we-create-a-client-database" class="nav-link" data-scroll-target="#we-create-a-client-database">We create a client database</a></li>
+  <li><a href="#methods-and-resampling" id="toc-methods-and-resampling" class="nav-link" data-scroll-target="#methods-and-resampling">Methods and resampling:</a></li>
+  <li><a href="#modeling-algorithm-for-classification-problem" id="toc-modeling-algorithm-for-classification-problem" class="nav-link" data-scroll-target="#modeling-algorithm-for-classification-problem">Modeling Algorithm for Classification Problem:</a></li>
+  <li><a href="#top.-performance" id="toc-top.-performance" class="nav-link" data-scroll-target="#top.-performance">Top. Performance</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps:</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Case of Study: Transactions Analysis</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cecilia Regueira </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Credit card fraud</strong> is a significant challenge for banks and can occur in many ways, ranging from individual stolen cards to large-scale breaches involving compromised card data. Using a dataset of transactions labeled with an isFraud indicator, the goal is to <strong>develop a predictive model</strong> that can identify whether a transaction is fraudulent.</p>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This document serves as an example of a report for a FinTech company. It aims to present commented code along with a step-by-step process.</p>
+<section id="data-loading" class="level2">
+<h2 class="anchored" data-anchor-id="data-loading">Data Loading</h2>
+<p>For this analysis, we will utilize the transaction dataset available on the FinTech page.</p>
+</section>
+<section id="describe-the-structure-of-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="describe-the-structure-of-the-data">Describe the Structure of the Data</h2>
+<p>The dataset contains 786,363 observations and 30 variables. Initially, I examined the variable names, their classes, and the percentage of missing values (NAs) for each variable in the data frame.</p>
+<p>At first glance, it seemed that missing values were not an issue. However, upon further inspection, I discovered that six variables contained censored data that were left blank(” “). These variables will not be included in the report but could have been useful if not censored. The following tables provide basic descriptive statistics categorized by variable types.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Initial data structure</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">name</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Class</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">distinct</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">%NAs</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">%Blanks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">accountNumber</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">5000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">customerId</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">5000</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">creditLimit</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">availableMoney</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">521916</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">transactionDateTime</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">776637</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">transactionAmount</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">66038</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">merchantName</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">2490</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">acqCountry</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.58</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">merchantCountryCode</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.09</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">posEntryMode</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">posConditionCode</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">merchantCategoryCode</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">currentExpDate</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">165</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">accountOpenDate</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1820</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dateOfLastAddressChange</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">2184</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">cardCVV</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">899</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">enteredCVV</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">976</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">cardLast4Digits</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">5246</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">transactionType</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.09</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">echoBuffer</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">currentBalance</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: right;">487318</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">merchantCity</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">merchantState</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">merchantZip</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">cardPresent</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">posOnPremises</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">recurringAuthInd</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">100.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">expirationDateKeyInMatch</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">isFraud</td>
+<td style="text-align: left;">logical</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">transactionTime</td>
+<td style="text-align: left;">POSIXct</td>
+<td style="text-align: right;">776637</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="transactions-and-clients." class="level3">
+<h3 class="anchored" data-anchor-id="transactions-and-clients.">Transactions and clients.</h3>
+<p>Account number and customer ID allow to identify the clients. There are 5,000 unique clients. It seems there is a one-to-one relationship between accounts and customers. I expected to see multiple cards for the same account.</p>
+<p>On average, they have 157 transactions each. The median of 50 suggests a right-tail distribution, with few customers having many transactions.</p>
+<div class="cell">
+<div id="tbl-numeric-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-numeric-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary of Numeric Variables in Transactions
+</figcaption>
+<div aria-describedby="tbl-numeric-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<caption>Unique Clientes and transactions</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Transactions</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Accounts</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Customers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">786363</td>
+<td style="text-align: right;">5000</td>
+<td style="text-align: right;">5000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<caption>Transaction by clients</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean.Transaction</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">median.Transaction</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Min.Transaction</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">max.Transaction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">157.27</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">32850</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="summary-of-numeric-variables" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-numeric-variables">Summary of Numeric Variables</h3>
+<p>Multiple variables are associated with the account holder, credit limit, available money, and current balance. The latter adjusts after each transaction. availableMoney shows negative values, which could be due to an overdraft or insufficient funds.</p>
+<p>The main variable associated with the transaction is transactionAmount, which has only 66,038 unique values. The transaction average is 136.99. This suggests that clients typically conduct transactions for small amounts. Lastly, the database has a categorical variable encoded as a binary (1=Fraud). The fraud rate in the database is approximately 2%.</p>
+<p>Other variables associated with the transaction present information about the merchant’s name and type, how the transaction was conducted (POS), if the CCV and expiration date were entered correctly. Some of these variables are encoded without a label. A more in-depth analysis and discussion are done during the data exploration and modeling process in the following sections</p>
+<div class="cell">
+<div id="tbl-numeric-summary2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-numeric-summary2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Summary of Numeric Variables in Transactions
+</figcaption>
+<div aria-describedby="tbl-numeric-summary2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<caption>Summary of Numeric Variables in Transactions</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Nulls</th>
+<th style="text-align: left;">Unique</th>
+<th style="text-align: left;">Min</th>
+<th style="text-align: left;">Max</th>
+<th style="text-align: left;">Mean</th>
+<th style="text-align: left;">NonNA_Records</th>
+<th style="text-align: left;">Total_Records</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">creditLimit</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">250,00</td>
+<td style="text-align: left;">50.000,00</td>
+<td style="text-align: left;">10.759,46</td>
+<td style="text-align: left;">786.363</td>
+<td style="text-align: left;">786.363</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">availableMoney</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">521.916</td>
+<td style="text-align: left;">-1.005,63</td>
+<td style="text-align: left;">50.000,00</td>
+<td style="text-align: left;">6.250,73</td>
+<td style="text-align: left;">786.363</td>
+<td style="text-align: left;">786.363</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">transactionAmount</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">66.038</td>
+<td style="text-align: left;">0,00</td>
+<td style="text-align: left;">2.011,54</td>
+<td style="text-align: left;">136,99</td>
+<td style="text-align: left;">786.363</td>
+<td style="text-align: left;">786.363</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">currentBalance</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">487.318</td>
+<td style="text-align: left;">0,00</td>
+<td style="text-align: left;">47.498,81</td>
+<td style="text-align: left;">4.508,74</td>
+<td style="text-align: left;">786.363</td>
+<td style="text-align: left;">786.363</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">isFraud</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0,00</td>
+<td style="text-align: left;">1,00</td>
+<td style="text-align: left;">0,02</td>
+<td style="text-align: left;">786.363</td>
+<td style="text-align: left;">786.363</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section id="histogram-of-the-amounts-for-each-transaction" class="level2">
+<h2 class="anchored" data-anchor-id="histogram-of-the-amounts-for-each-transaction">Histogram of the amounts for each transaction</h2>
+<p>The histogram below shows that the transactions range from $0 to $2011, and the distribution shape is right-skewed, indicating many small transactions and few large ones.</p>
+<p>Most transactions are small, but fraud tends to occur in larger, less frequent purchases—suggesting fraudsters exploit high-value opportunities</p>
+<div class="cell" data-tbl-cap="Histogram Plot">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/histo-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The Mode is near 0, and if we exclude the zero the amount is $8.21.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  transactionAmount   n
+1             $8.21 132</code></pre>
+</div>
+</div>
+<section id="a-look-at-outliers" class="level3">
+<h3 class="anchored" data-anchor-id="a-look-at-outliers">A look at outliers</h3>
+<p>Outliers may indicate errors, large purchases, or fraud attempts. I used a boxplot to identify extreme values, values larger than 500 are more unusual.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/outlier_plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>One of the things I noticed was that there were almost no transactions over $1500, this might reflect a spending limit.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/Gaps-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="hypotheses" class="level3">
+<h3 class="anchored" data-anchor-id="hypotheses">Hypotheses</h3>
+<p>To summarize so far, clients typically make small transactions that reflect everyday purchases. In contrast, larger expenditures may indicate potential fraud.</p>
+</section>
+</section>
+</section>
+<section id="data-wrangling---duplicate-transactions" class="level1">
+<h1>Data Wrangling - Duplicate Transactions</h1>
+<p>This section answers the identification of programmatically reverse transactions and multiple swipes.</p>
+<section id="identifying-reversed-transaction" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-reversed-transaction">Identifying reversed transaction</h2>
+<p>I define a reverse transaction when a purchase is followed by a reversal:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Summary of Reversed Transactions</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Cases</th>
+<th style="text-align: center;">Total Amount ($)</th>
+<th style="text-align: center;">Cases (%)</th>
+<th style="text-align: center;">Amount (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">17757</td>
+<td style="text-align: center;">2666479</td>
+<td style="text-align: center;">2.26</td>
+<td style="text-align: center;">2.48</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Error detection: There are some returns that do not have a prior purchase.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Sample of Suspicious Duplicate Keys (More Reversals than Purchases)</caption>
+<colgroup>
+<col style="width: 58%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">dup_key</th>
+<th style="text-align: right;">purchase_count</th>
+<th style="text-align: right;">reversal_count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">101376441_0_cheapfast.com_128_6683</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">101380713_0_Lyft_551_7553</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">101380713_5.03_sears.com_551_7553</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">101661970_18.15_American Airlines_266_2796</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">101876201_0_gap.com_371_4725</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="identifying-multi-swipe" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-multi-swipe">Identifying multi-swipe:</h2>
+<p>Multi swipe, when a vendor accidentally charges a customer’s card multiple times within a short time span.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Summary of Multi-Swipe Transactions</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Multi-Swipe</th>
+<th style="text-align: center;">Cases</th>
+<th style="text-align: center;">Total Amount ($)</th>
+<th style="text-align: center;">Cases (%)</th>
+<th style="text-align: center;">Amount (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">20156</td>
+<td style="text-align: center;">2201824</td>
+<td style="text-align: center;">2.56</td>
+<td style="text-align: center;">2.04</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="did-you-find-anything-interesting-about-either-type-of-transaction" class="level2">
+<h2 class="anchored" data-anchor-id="did-you-find-anything-interesting-about-either-type-of-transaction">Did you find anything interesting about either type of transaction?</h2>
+<p>Identifying reverse transactions can be challenging, especially if they are not clearly marked in the system. It can be difficult to detect identical purchases that lack a defined time limit. However, if we correctly identify the relevant columns, we can distinguish between actual reverses and transactions that are not reverses, as there was no prior purchase, as previously demonstrated.</p>
+</section>
+</section>
+<section id="modeling-fraud" class="level1">
+<h1>Modeling Fraud</h1>
+<p>As mentioned in the problem prompt, fraud poses a significant issue for banks. It can manifest in various forms, ranging from someone stealing a single credit card to large batches of stolen credit card numbers being used online. Additionally, substantial compromises can occur when credit card numbers are stolen from merchants through tools like credit card skimming devices.</p>
+<p>The following sections deals with modeling strategies to predict credit card fraud. I consider the target variables “isFraud”, which is a categorical value, 1 in the case when the transaction was tagged as a fraud.</p>
+<p>The following sections describe the process to create features useful for detecting fraud, my modeling strategy and results.</p>
+<section id="data-engineering-and-feature-selection" class="level2">
+<h2 class="anchored" data-anchor-id="data-engineering-and-feature-selection">Data Engineering and feature selection:</h2>
+<section id="merchants-and-transactions-amounts" class="level3">
+<h3 class="anchored" data-anchor-id="merchants-and-transactions-amounts">Merchants and transactions amounts</h3>
+<p>First I estimated densities by the target variable to identify if any variable could separate the fraud cases. Initial result suggest that transaction amounts tend to be larger for fraudulent transactions, and that the other variables associated with the account (Credit limit,balance and availability) may not be good predictors.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/model_plot2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To further explore features that could be useful for predicting fraud, I examined the different types of transactions and merchants, focusing in particular on their associated amounts.</p>
+<p>Airlines, rideshares, online retailers, and gift transactions are likely to be fraudulent. Notably, online retailers also represent a significant portion of the total transactions in the database.</p>
+<p>Across different types of merchants, larger transactions are, on average, more likely associated with fraud. Since the definition of a “large transaction” varies by merchant type, I standardized the transaction amounts in the modeling step.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/model_plot3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/model_plot4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/model_plot4-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Next, I explored merchant names. There are 2,490 unique merchant names in the database; however, these don’t necessarily represent different companies, as some fast food chains share the same company name but are counted as different venues. I wrote a short function to extract the company names (cleanMerchant).</p>
+<p>The next plot illustrates the relationship between the number of transactions per merchant and the fraud rate, highlighting the top five merchants with the highest fraud rates. It appears that certain companies may be more susceptible to fraud or may be preferred by scammers, as they show a higher number of fraud cases despite having a lower volume of transactions.</p>
+<p>While identifying merchants at risk could be useful, it may harm business relationships and lead to a reduction in the volume of transactions so I won’t use it for my model.</p>
+<p>It might be interesting to go deeper into which franchises of popular merchants are associated with a higher fraud rate, as specific areas could be more susceptible to fraud. However, this information was censored in the database.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/model_plot6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="transactions-type-and-information." class="level3">
+<h3 class="anchored" data-anchor-id="transactions-type-and-information.">Transactions type and information.</h3>
+<p>One of the variables that could be used to identify a fraudulent transaction is the errors made by the user during the transaction. In particular, the database records the CVV entered from the card. I computed the Hamming distance as a measure of error (0 means all characters match, while 3 means none match). It is less likely that a user would make a significant error, but these cases are more often associated with fraud.</p>
+<p>Another variable I identified, which is similar in nature, is the expiration date. I hoped that a mismatch in this area could suggest fraud; however, this was not the case, or I may be interpreting the variable incorrectly.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/model_plotcvv-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/model_plotcvv-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Other types of variables, such as the use of POS, could be relevant. Having a NA (blank value) was associated with a higher risk of being a fraudulent transaction. Understanding the codes and their meaning could be useful to produce a better algorithm.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Other variables associated with the time of the transaction were created and explored.</p>
+</section>
+</section>
+<section id="creating-a-model" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-model">Creating a model</h2>
+<p>While each transaction can be considered independently, they are are associated with the same clients. The following sections builds a proof of concept for a client based prediction model.</p>
+<section id="we-create-a-client-database" class="level3">
+<h3 class="anchored" data-anchor-id="we-create-a-client-database">We create a client database</h3>
+<p>I followed a traditional Train-test split (70-30) but we have client data so I first sample IDs and then within IDs sample transactions.</p>
+<p>The next section standardize the transaction amount by transaction type to better detect outliers.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/trat-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Not Fraud     Fraud 
+     98.8       1.2 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Not Fraud     Fraud 
+98.257143  1.742857 </code></pre>
+</div>
+</div>
+</section>
+<section id="methods-and-resampling" class="level3">
+<h3 class="anchored" data-anchor-id="methods-and-resampling">Methods and resampling:</h3>
+<p>I used K-fold cross-validation to evaluate how well a model predicts unseen data before using the test set. In this case, I used k=5 folds.</p>
+<p>To convert categorical data into binary variables, I used one-hot encoding.</p>
+<p>The target variable, Fraud, is infrequent. This results in an unbalanced dataset, with fraud cases representing less than 2% of the total.</p>
+<p>I use two resampling method to address this: downsampling and the Synthetic Minority Oversampling Technique (SMOTE). The downsampling method reduces the size of the majority class (no fraud) to match the size of the minority class (fraud). Meanwhile, SMOTE oversamples the minority class by generating additional examples from the fraud cases in the training dataset before fitting the model.</p>
+<p>In summary:</p>
+<ol type="1">
+<li><p>K-fold cross-validation to assess model performance on unseen data before using the testing set.</p></li>
+<li><p>One-hot encoding to transform categorical variables into a numerical/binary format.</p></li>
+<li><p>Downsampling and SMOTE to tackle the problem of class imbalance in the dataset.</p></li>
+<li><p>Feature selection: All the columns were explored, and new variables were created. I selected the ones that were more related to fraud and were also meaningful from a business perspective. The selected variables are as follows:<br>
+</p></li>
+</ol>
+<ul>
+<li>CVV distance (new variable)<br>
+</li>
+<li>Standardized transaction amount (transformation of the original Transaction Amount)<br>
+</li>
+<li>Weekday and hour (new variable)<br>
+</li>
+<li>Merchant category code, as some types of transaction where more likely a fraud.</li>
+</ul>
+</section>
+<section id="modeling-algorithm-for-classification-problem" class="level3">
+<h3 class="anchored" data-anchor-id="modeling-algorithm-for-classification-problem">Modeling Algorithm for Classification Problem:</h3>
+<p>I tested tree based methods (Random Forest and XGBoost) and a logistic Regression and selected the one that demonstrated better performance.</p>
+<p>Random forest is a classic method of ensemble learning that tend to perform nicely in classification problem. Unlike, random forest that can be classified as bagging, I also used Xgboost which sequentially adds trees to correct the errors made, resulting in a stronger model.</p>
+<p>However, tree-based models can be challenging to interpret; therefore, when presenting a model to non-technical users, it is often preferable to use one that is easier to understand so I included a logistic regression as a benchmark. This method establishes a relationship between fraud and the features selected using a linear combination of the features.</p>
+<p>The following plot presents the AUC resulting of the combination of re sampling and models used in k-folds to asses the model performance.</p>
+<p>The best results are asociated with SMOTE and Logistic Regression and Random Forest.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinTech_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="top.-performance" class="level3">
+<h3 class="anchored" data-anchor-id="top.-performance">Top. Performance</h3>
+<p>Using the RF and logistic regresion with a SMOTE resampling step, as the best modelos I used the test hold out data to compute the confusion matrix and illustrates the errors made by the model.</p>
+<p>Random Forest confusion matrix:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>          Truth
+Prediction    N    Y
+         N 1369   12
+         Y  113    6</code></pre>
+</div>
+</div>
+<p>Logit confusion matrix:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>          Truth
+Prediction   N   Y
+         N 942   7
+         Y 540  11</code></pre>
+</div>
+</div>
+<p>After examining the confusion matrix for the logit model, I find that 63.5% of predictions are correct. However, since we are working with imbalanced data, I also calculated the true positive rate (recall). The model correctly identifies 61.1% of fraud cases, but the false positive rate is quite high. The model is flagging 540 transactions as fraud, only 11 are truly fraud cases (about 2%).</p>
+<p>In comparison, the random forest model shows an accuracy of 91.4%, but its recall is only 33.3%, resulting in a false rate of 4.8%.</p>
+<p>Choosing the best model between the logit model and the random forest model depends on the specific goals: the importance of precision versus recall.</p>
+<p><strong>Decision Criteria</strong>: - If the primary goal is to minimize false negatives and ensure that most fraud cases are identified, then the logit model may be the better choice despite its higher false positive rate. - Conversely, if the focus is on achieving greater overall accuracy and reducing false alarms, the random forest model could be better, provided that the cost of missed fraud is acceptable.</p>
+</section>
+<section id="next-steps" class="level3">
+<h3 class="anchored" data-anchor-id="next-steps">Next Steps:</h3>
+<p>I began my analysis focusing on clients rather than solely transactions because I wanted to incorporate more features associated with the previous behavior of the client. For example, create an alert if we are dealing with a new merchant or if the client makes a large purchase that is 10-20% higher than the previous month by merchant Category. This could be further refined in a latter report and would prove more valuable than a transaction based model.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
